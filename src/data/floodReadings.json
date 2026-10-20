@@ -1,1 +1,26 @@
-[{ "id": "FL-001", "roadId": "RD-001", "cameraId": "CAM-02", "waterLevelCm": 16, "floodRiskPercent": 87, "simulated": true }]
+[
+  {
+    "id": "FL-001",
+    "roadId": "RD-001",
+    "cameraId": "CAM-02",
+    "waterLevelCm": 16,
+    "floodRiskPercent": 87,
+    "simulated": true
+  },
+  {
+    "id": "FL-002",
+    "roadId": "RD-004",
+    "cameraId": "CAM-04",
+    "waterLevelCm": 4,
+    "floodRiskPercent": 35,
+    "simulated": true
+  },
+  {
+    "id": "FL-003",
+    "roadId": "RD-006",
+    "cameraId": "CAM-06",
+    "waterLevelCm": 0,
+    "floodRiskPercent": 8,
+    "simulated": true
+  }
+]

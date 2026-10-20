@@ -1,5 +1,126 @@
 [
-  { "id": "RG-001", "coordinates": { "lat": 3.1785, "lng": 101.507, "isMock": true }, "detectedAt": "2026-10-20T10:20:00+08:00", "simulated": true, "roadId": "RD-001", "type": "Flood", "risk": "CRITICAL", "status": "Awaiting response", "cameraId": "CAM-02", "floodReadingId": "FL-001", "summary": "Water level 16 cm · Flood risk 87%", "mapPosition": { "x": 35, "y": 35 } },
-  { "id": "RG-002", "coordinates": { "lat": 3.181, "lng": 101.512, "isMock": true }, "detectedAt": "2026-10-20T10:10:00+08:00", "simulated": true, "roadId": "RD-002", "type": "Tree Fall Risk", "risk": "HIGH", "status": "Inspection needed", "treeId": "T-204", "summary": "Risk score 86% · Highly saturated soil", "mapPosition": { "x": 69, "y": 49 } },
-  { "id": "RG-003", "coordinates": { "lat": 3.1755, "lng": 101.51, "isMock": true }, "detectedAt": "2026-10-20T09:55:00+08:00", "simulated": true, "roadId": "RD-003", "type": "Pothole", "risk": "WATCH", "originalSeverity": "Medium", "status": "Under monitoring", "cameraId": "CAM-03", "detectionConfidence": 91, "summary": "Detection confidence 91%", "mapPosition": { "x": 43, "y": 75 } }
+  {
+    "id": "RG-001",
+    "coordinates": {
+      "lat": 3.1785,
+      "lng": 101.507,
+      "isMock": true
+    },
+    "detectedAt": "2026-10-20T10:20:00+08:00",
+    "simulated": true,
+    "roadId": "RD-001",
+    "type": "Flood",
+    "risk": "CRITICAL",
+    "status": "Awaiting response",
+    "cameraId": "CAM-02",
+    "floodReadingId": "FL-001",
+    "summary": "Water level 16 cm · Flood risk 87%",
+    "mapPosition": {
+      "x": 35,
+      "y": 35
+    }
+  },
+  {
+    "id": "RG-002",
+    "coordinates": {
+      "lat": 3.181,
+      "lng": 101.512,
+      "isMock": true
+    },
+    "detectedAt": "2026-10-20T10:10:00+08:00",
+    "simulated": true,
+    "roadId": "RD-002",
+    "type": "Tree Fall Risk",
+    "risk": "HIGH",
+    "status": "Inspection needed",
+    "treeId": "T-204",
+    "summary": "Risk score 86% · Highly saturated soil",
+    "mapPosition": {
+      "x": 69,
+      "y": 49
+    }
+  },
+  {
+    "id": "RG-003",
+    "coordinates": {
+      "lat": 3.1755,
+      "lng": 101.51,
+      "isMock": true
+    },
+    "detectedAt": "2026-10-20T09:55:00+08:00",
+    "simulated": true,
+    "roadId": "RD-003",
+    "type": "Pothole",
+    "risk": "WATCH",
+    "originalSeverity": "Medium",
+    "status": "Under monitoring",
+    "cameraId": "CAM-03",
+    "detectionConfidence": 91,
+    "summary": "Detection confidence 91%",
+    "mapPosition": {
+      "x": 43,
+      "y": 75
+    }
+  },
+  {
+    "id": "RG-004",
+    "roadId": "RD-004",
+    "type": "Flood",
+    "risk": "WATCH",
+    "status": "Under monitoring",
+    "cameraId": "CAM-04",
+    "floodReadingId": "FL-002",
+    "detectedAt": "2026-10-20T10:25:00+08:00",
+    "simulated": true,
+    "weatherRelated": true,
+    "summary": "Simulated early warning: water level 4 cm; flood risk 35%. Continue monitoring and inspect drainage.",
+    "coordinates": {
+      "lat": 3.1795,
+      "lng": 101.5045,
+      "isMock": true
+    }
+  },
+  {
+    "id": "RG-005",
+    "roadId": "RD-005",
+    "type": "Fallen Branch",
+    "risk": "HIGH",
+    "status": "Awaiting response",
+    "cameraId": "CAM-05",
+    "detectedAt": "2026-10-20T10:15:00+08:00",
+    "simulated": true,
+    "weatherRelated": true,
+    "verification": {
+      "status": "Confirmed in demo footage",
+      "method": "Simulated CCTV review",
+      "verifiedAt": "2026-10-20T10:18:00+08:00",
+      "simulated": true
+    },
+    "summary": "Scripted weather-related branch obstruction; simulated CCTV review confirms partial road blockage. Clearance is pending.",
+    "coordinates": {
+      "lat": 3.1825,
+      "lng": 101.5085,
+      "isMock": true
+    }
+  },
+  {
+    "id": "RG-006",
+    "roadId": "RD-006",
+    "type": "Flood",
+    "risk": "SAFE",
+    "originalRisk": "WATCH",
+    "status": "Resolved",
+    "cameraId": "CAM-06",
+    "floodReadingId": "FL-003",
+    "detectedAt": "2026-10-20T09:30:00+08:00",
+    "resolvedAt": "2026-10-20T10:05:00+08:00",
+    "simulated": true,
+    "weatherRelated": true,
+    "summary": "Resolved demo scenario: standing water cleared after a drainage check. Current water level 0 cm; road returned to SAFE.",
+    "coordinates": {
+      "lat": 3.1745,
+      "lng": 101.5065,
+      "isMock": true
+    }
+  }
 ]

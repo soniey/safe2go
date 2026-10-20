@@ -3,7 +3,7 @@ import { LayoutDashboard, CloudRain, Trees, Camera, ClipboardList } from 'lucide
 export const navigation = [
   { path: '/', label: 'Overview', icon: LayoutDashboard },
   { path: '/flood', label: 'Flood & Weather', icon: CloudRain },
-  { path: '/trees', label: 'Tree Risk', icon: Trees },
+  { path: '/trees', label: 'Tree Risk & Registry', icon: Trees },
   { path: '/vision', label: 'Road Vision', icon: Camera },
-  { path: '/incidents', label: 'Incidents', icon: ClipboardList },
+  { path: '/incidents', label: 'Incident & Response Center', icon: ClipboardList },
 ];

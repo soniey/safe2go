@@ -1,8 +1,134 @@
 [
-  { "id": "RD-001", "name": "Jalan Elmina 3", "risk": "CRITICAL" },
-  { "id": "RD-002", "name": "Persiaran Elmina", "risk": "HIGH" },
-  { "id": "RD-003", "name": "Jalan Elmina 2", "risk": "WATCH" },
-  { "id": "RD-004", "name": "Jalan Elmina 1", "risk": "WATCH" },
-  { "id": "RD-005", "name": "Elmina Central", "risk": "SAFE" },
-  { "id": "RD-006", "name": "Elmina Park Access", "risk": "SAFE" }
+  {
+    "id": "RD-001",
+    "name": "Jalan Elmina 3",
+    "risk": "CRITICAL",
+    "illustrativePath": {
+      "isMock": true,
+      "positions": [
+        [
+          3.178,
+          101.5063
+        ],
+        [
+          3.1785,
+          101.507
+        ],
+        [
+          3.1789,
+          101.5078
+        ]
+      ]
+    }
+  },
+  {
+    "id": "RD-002",
+    "name": "Persiaran Elmina",
+    "risk": "HIGH",
+    "illustrativePath": {
+      "isMock": true,
+      "positions": [
+        [
+          3.1804,
+          101.5113
+        ],
+        [
+          3.181,
+          101.512
+        ],
+        [
+          3.1816,
+          101.5124
+        ]
+      ]
+    }
+  },
+  {
+    "id": "RD-003",
+    "name": "Jalan Elmina 2",
+    "risk": "WATCH",
+    "illustrativePath": {
+      "isMock": true,
+      "positions": [
+        [
+          3.1751,
+          101.5093
+        ],
+        [
+          3.1755,
+          101.51
+        ],
+        [
+          3.176,
+          101.5107
+        ]
+      ]
+    }
+  },
+  {
+    "id": "RD-004",
+    "name": "Jalan Elmina 1",
+    "risk": "WATCH",
+    "illustrativePath": {
+      "isMock": true,
+      "positions": [
+        [
+          3.179,
+          101.5038
+        ],
+        [
+          3.1795,
+          101.5045
+        ],
+        [
+          3.1801,
+          101.505
+        ]
+      ]
+    }
+  },
+  {
+    "id": "RD-005",
+    "name": "Elmina Central",
+    "risk": "HIGH",
+    "illustrativePath": {
+      "isMock": true,
+      "positions": [
+        [
+          3.182,
+          101.5078
+        ],
+        [
+          3.1825,
+          101.5085
+        ],
+        [
+          3.183,
+          101.5092
+        ]
+      ]
+    }
+  },
+  {
+    "id": "RD-006",
+    "name": "Elmina Park Access",
+    "risk": "SAFE",
+    "illustrativePath": {
+      "isMock": true,
+      "positions": [
+        [
+          3.174,
+          101.5058
+        ],
+        [
+          3.1745,
+          101.5065
+        ],
+        [
+          3.175,
+          101.5071
+        ]
+      ]
+    }
+  }
 ]

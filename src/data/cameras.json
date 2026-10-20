@@ -1,1 +1,27 @@
-[{ "id": "CAM-02", "roadId": "RD-001", "simulated": true }, { "id": "CAM-03", "roadId": "RD-003", "simulated": true }]
+[
+  {
+    "id": "CAM-02",
+    "roadId": "RD-001",
+    "simulated": true
+  },
+  {
+    "id": "CAM-03",
+    "roadId": "RD-003",
+    "simulated": true
+  },
+  {
+    "id": "CAM-04",
+    "roadId": "RD-004",
+    "simulated": true
+  },
+  {
+    "id": "CAM-05",
+    "roadId": "RD-005",
+    "simulated": true
+  },
+  {
+    "id": "CAM-06",
+    "roadId": "RD-006",
+    "simulated": true
+  }
+]

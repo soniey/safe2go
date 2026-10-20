@@ -1,6 +1,9 @@
 import roads from '../data/roads.json';
 import incidents from '../data/incidents.json';
 import { riskLevels } from './risk';
+import floodReadings from '../data/floodReadings.json';
+import trees from '../data/trees.json';
+import cameras from '../data/cameras.json';
 
 export { roads };
 
@@ -20,15 +23,15 @@ export const stats = {
 };
 
 const hazardGroups = [
-  { id: 'flood', title: 'Flood hazards', types: ['Flood'], to: '/flood' },
-  { id: 'trees', title: 'Tree hazards', types: ['Tree Fall Risk'], to: '/trees' },
-  { id: 'roads', title: 'Road-condition hazards', types: ['Pothole', 'Road Obstruction', 'Obstruction'], to: '/vision' },
+  { id: 'flood', title: 'Flooding & rising water', scope: 'core', types: ['Flood'], to: '/flood', description: 'Monitor water levels and flood risk before and while roads become unsafe.' },
+  { id: 'trees', title: 'Weather-related tree risk', scope: 'core', types: ['Tree Fall Risk'], to: '/trees', description: 'Prioritise inspections using tree vulnerability and soil conditions.' },
+  { id: 'verification', title: 'Climate-hazard verification', scope: 'verification', types: ['Fallen Tree', 'Fallen Branch', 'Road Obstruction', 'Obstruction'], to: '/vision', description: 'Verify fallen trees, branches and obstructions through Road Vision.' },
+  { id: 'roads', title: 'Road damage', scope: 'extended', types: ['Pothole', 'Road Surface Damage'], to: '/vision', description: 'Extended Road Vision detections; separate from the core climate-risk focus.' },
 ];
-
 export function getHazardSummaries(records) {
   const active = getActiveIncidents(records);
   return hazardGroups.map(group => {
-    const matches = active.filter(incident => group.types.includes(incident.type));
+    const matches = active.filter(incident => group.types.includes(incident.type) && (group.scope !== 'verification' || incident.weatherRelated === true));
     const highestRisk = [...riskLevels].reverse().find(risk => matches.some(incident => incident.risk === risk)) ?? null;
     return { ...group, count: matches.length, highestRisk };
   });
@@ -67,3 +70,26 @@ export function getPriorityHazards(records) {
 }
 
 export const priorityHazards = getPriorityHazards(hazards);
+
+export const coreHazardSummaries = hazardSummaries.filter(group => group.scope === 'core' || group.scope === 'verification');
+export const extendedHazardSummaries = hazardSummaries.filter(group => group.scope === 'extended');
+
+export function isCoreClimateHazard(incident) {
+  return hazardGroups.some(group => (group.scope === 'core' || (group.scope === 'verification' && incident.weatherRelated === true)) && group.types.includes(incident.type));
+}
+
+export const corePriorityHazards = priorityHazards.filter(isCoreClimateHazard);
+export const extendedPriorityHazards = priorityHazards.filter(incident =>
+  hazardGroups.some(group => group.scope === 'extended' && group.types.includes(incident.type))
+);
+export const coreRecentIncidents = getRecentIncidents(incidents.filter(isCoreClimateHazard)).map(incident => ({
+  ...incident, location: roads.find(road => road.id === incident.roadId)?.name ?? 'Unknown road',
+}));
+
+// Source joins explain the demo's supplied risk levels; this is not a prediction model.
+export const roadRiskEvidence = corePriorityHazards.map(incident => ({
+  ...incident,
+  floodReading: floodReadings.find(reading => reading.id === incident.floodReadingId && reading.roadId === incident.roadId),
+  tree: trees.find(tree => tree.id === incident.treeId && tree.roadId === incident.roadId),
+  camera: cameras.find(camera => camera.id === incident.cameraId && camera.roadId === incident.roadId),
+}));

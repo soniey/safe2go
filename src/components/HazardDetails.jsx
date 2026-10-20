@@ -19,13 +19,13 @@ export default function HazardDetails({ hazard, onClose }) {
         <div><dt className="text-neutral-500">Hazard type</dt><dd className="mt-1">{hazard.type}</dd></div>
         <div><dt className="text-neutral-500">Risk level</dt><dd className="mt-1"><RiskBadge risk={hazard.risk} /></dd></div>
         <div><dt className="text-neutral-500">Incident status</dt><dd className="mt-1">{hazard.status}</dd></div>
-        <div><dt className="text-neutral-500">Detection time</dt><dd className="mt-1">{detectionTime}{hazard.simulated && detectionDate && !Number.isNaN(detectionDate.getTime()) && <span> (simulated)</span>}</dd></div>
+        <div><dt className="text-neutral-500">Detection time</dt><dd className="mt-1">{detectionTime}</dd></div>
         {hazard.cameraId && <div><dt className="text-neutral-500">Camera</dt><dd className="mt-1">{hazard.cameraId}</dd></div>}
         {hazard.treeId && <div><dt className="text-neutral-500">Tree ID</dt><dd className="mt-1">{hazard.treeId}</dd></div>}
-        {hazard.originalSeverity && <div><dt className="text-neutral-500">Original demo severity</dt><dd className="mt-1">{hazard.originalSeverity}</dd></div>}
+        {hazard.verification?.simulated && <div><dt className="text-neutral-500">Verification (simulated)</dt><dd className="mt-1">{hazard.verification.status} · {hazard.verification.method}</dd></div>}{hazard.originalSeverity && <div><dt className="text-neutral-500">Original demo severity</dt><dd className="mt-1">{hazard.originalSeverity}</dd></div>}
       </dl>
       {hazard.summary && <p className="mt-4 text-xs text-neutral-500">{hazard.summary}</p>}
-      <p className="mt-3 text-xs text-neutral-500">Simulated incident. Map position is illustrative and is not a verified geographical location.</p>
+      <p className="mt-3 text-xs text-neutral-500">Illustrative hazard location; not a verified road position.</p>
     </section>
   );
 }
