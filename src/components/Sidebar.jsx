@@ -4,9 +4,9 @@ import { navigation } from '../utils/navigation';
 
 export default function Sidebar({ open, hidden, onClose }) {
   return <>{open && <button className="sidebar-backdrop" aria-label="Close navigation" onClick={onClose} />}
-    <aside id="main-sidebar" inert={hidden} className={`sidebar ${open ? 'sidebar-open' : ''}`}>
+    <aside aria-label="Township navigation" id="main-sidebar" inert={hidden} className={`sidebar ${open ? 'sidebar-open' : ''}`}>
       <a href="#main-content" className="sr-only focus:not-sr-only">Skip to content</a>
-      <div className="brand"><span className="brand-mark"><ShieldCheck size={23} strokeWidth={1.7} /></span><div><strong>RoadGuard<span className="text-neutral-400">.</span></strong><p>Township Safety Intelligence</p></div><button className="icon-button ml-auto lg:hidden" onClick={onClose} aria-label="Close navigation"><X size={18} /></button></div>
+      <div className="brand"><span className="brand-mark"><ShieldCheck size={23} strokeWidth={1.7} /></span><div><strong>Safe2Go<span className="text-neutral-400">.</span></strong><p>Township Safety Intelligence</p></div><button className="icon-button ml-auto lg:hidden" onClick={onClose} aria-label="Close navigation"><X size={18} /></button></div>
       <div className="township-selector"><span className="township-icon">E</span><div><strong>City of Elmina</strong><p>Township workspace</p></div><ChevronDown size={14} className="ml-auto text-neutral-400" /></div>
       <p className="eyebrow px-3 mb-3 mt-7">Township operations</p>
       <nav aria-label="Main navigation" className="space-y-1">{navigation.map(({ path, label, icon: Icon }) => <NavLink key={path} to={path} end={path === '/'} onClick={onClose} className={({ isActive }) => `nav-item ${isActive ? 'nav-active' : ''}`}><Icon size={18} strokeWidth={1.7} /><span>{label}</span>{path === '/' && <span className="ml-auto text-xs text-neutral-400">01</span>}</NavLink>)}</nav>

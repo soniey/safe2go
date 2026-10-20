@@ -1,4 +1,4 @@
-# RoadGuard / Safe2Go
+# Safe2Go
 
 Shared township operations dashboard foundation for the Township of Tomorrow University Hackathon 2026. React + Vite, JSX, Tailwind CSS, React Router, Lucide, and Recharts. All readings and detections are simulated. No authentication, backend, external map service, or database is used.
 
