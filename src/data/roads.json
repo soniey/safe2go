@@ -1,8 +1,0 @@
-[
-  { "id": "RD-001", "name": "Jalan Elmina 3", "risk": "CRITICAL" },
-  { "id": "RD-002", "name": "Persiaran Elmina", "risk": "HIGH" },
-  { "id": "RD-003", "name": "Jalan Elmina 2", "risk": "WATCH" },
-  { "id": "RD-004", "name": "Jalan Elmina 1", "risk": "WATCH" },
-  { "id": "RD-005", "name": "Elmina Central", "risk": "SAFE" },
-  { "id": "RD-006", "name": "Elmina Park Access", "risk": "SAFE" }
-]
