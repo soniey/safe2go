@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { ShieldCheck, Radio, ChevronDown, X } from 'lucide-react';
+import { ChevronDown, ShieldCheck, Radio, X } from 'lucide-react';
 import { navigation } from '../utils/navigation';
 
 export default function Sidebar({ open, hidden, onClose }) {
