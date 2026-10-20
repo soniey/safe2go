@@ -1,0 +1,8 @@
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { ShieldAlert } from 'lucide-react';
+import { distribution, overallRisk, roads } from '../utils/dashboard';
+import { riskStyles } from '../utils/risk';
+import RiskBadge from './RiskBadge';
+export default function RiskStatus() {
+  return <section className="panel risk-status"><div className="panel-heading"><div><h2>Township Risk Status</h2><p>Across {roads.length} monitored roads.</p></div><ShieldAlert size={17} className="text-neutral-400" /></div><div className="flex justify-between items-center px-5 pt-4 text-xs"><span className="text-neutral-500">Overall risk</span><RiskBadge risk={overallRisk} /></div><div className="risk-chart" role="img" aria-label={distribution.map(item => `${item.name}: ${item.value} roads`).join(', ')}><ResponsiveContainer width="100%" height="100%"><PieChart><Pie data={distribution} dataKey="value" innerRadius={58} outerRadius={73} paddingAngle={5} stroke="none" startAngle={90} endAngle={-270} isAnimationActive={false}>{distribution.map(item => <Cell key={item.name} fill={riskStyles[item.name].color} />)}</Pie></PieChart></ResponsiveContainer><div className="chart-center"><strong>{roads.length}</strong><span>monitored roads</span></div></div><div className="risk-distribution">{distribution.map(item => <div key={item.name}><span className="flex items-center gap-2"><i style={{ background: riskStyles[item.name].color }} />{riskStyles[item.name].label}</span><strong>{item.value}<span className="text-neutral-400 font-normal ml-1">roads</span></strong></div>)}</div><div className="risk-footnote">Prioritize critical locations for response.</div></section>;
+}

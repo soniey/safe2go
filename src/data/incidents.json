@@ -1,0 +1,5 @@
+[
+  { "id": "RG-001", "roadId": "RD-001", "type": "Flood", "risk": "CRITICAL", "status": "Awaiting response", "cameraId": "CAM-02", "floodReadingId": "FL-001", "summary": "Water level 16 cm · Flood risk 87%", "mapPosition": { "x": 35, "y": 35 } },
+  { "id": "RG-002", "roadId": "RD-002", "type": "Tree Fall Risk", "risk": "HIGH", "status": "Inspection needed", "treeId": "T-204", "summary": "Risk score 86% · Highly saturated soil", "mapPosition": { "x": 69, "y": 49 } },
+  { "id": "RG-003", "roadId": "RD-003", "type": "Pothole", "risk": "WATCH", "status": "Under monitoring", "cameraId": "CAM-03", "detectionConfidence": 91, "summary": "Detection confidence 91%", "mapPosition": { "x": 43, "y": 75 } }
+]
