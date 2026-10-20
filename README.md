@@ -31,6 +31,14 @@ The production output is `dist/`. Production hosting must serve `index.html` for
 - Six roads provide a distribution of two SAFE, two WATCH, one HIGH, and one CRITICAL. Three incident records provide the three active hazards. The additional WATCH road is monitored without an open incident.
 - Hazard coordinates are explicitly marked `isMock: true`. They are illustrative demo positions around an approximate Elmina viewport, not verified incident locations or road geometry. Legacy `mapPosition` percentages are retained for compatibility but are no longer used by the map.
 - Notification and settings icons are visual placeholders. Incident links intentionally open the Incidents starter page; incident details are future work.
+- localStorage is used by the tree risk demo to retain newly recorded inspection details in the browser.
+
+## Tree risk module (`lip` branch)
+
+- `/trees` shows tree records ranked by a calculated risk score using age, health, soil condition, and tilt.
+- Tree records are seeded from `src/data/trees.json`. The `treeApi` adapter in `src/utils/treeRisk.js` exposes async list and inspection update operations; inspection updates persist in browser localStorage for the demo.
+- Inspection history is available from each row. Saving an inspection updates the record and recalculates its score and priority.
+- This is a front-end API prototype with simulated records, not a server-backed database. The adapter can be replaced with HTTP requests when the project backend is connected.
 - Map filters persist under `safe2go.mapFilters.v1` in localStorage. Invalid saved values fall back to All; blocked storage leaves the map usable for the session. Incident workflow persistence is not implemented.
 
 ## Team ownership
@@ -42,6 +50,11 @@ The production output is `dist/`. Production hosting must serve `index.html` for
 | Member 3 (confirm branch) | `src/pages/TreeRisk.jsx` | `/trees` |
 | Member 4 (confirm branch) | `src/pages/RoadVision.jsx` | `/vision` |
 | Member 5 (confirm branch) | `src/pages/Incidents.jsx` | `/incidents` |
+| `feature/overview` | `src/pages/Overview.jsx` | `/` |
+| `feature/flood-weather` | `src/pages/FloodWeather.jsx` | `/flood` |
+| `lip` | `src/pages/TreeRisk.jsx` | `/trees` |
+| `feature/road-vision` | `src/pages/RoadVision.jsx` | `/vision` |
+| `feature/incidents` | `src/pages/Incidents.jsx` | `/incidents` |
 
 Each developer can replace their starter page without changing routing or the shared shell. Coordinate changes to shared mock schemas, risk definitions, and components. The four feature modules are intentionally placeholders.
 
