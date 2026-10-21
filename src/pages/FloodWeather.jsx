@@ -12,6 +12,7 @@ import {
 import PageHeader from '../components/PageHeader';
 import StatCard from '../components/StatCard';
 import RiskBadge from '../components/RiskBadge';
+import { riskStyles } from '../utils/risk';
 import './flood-weather.css';
 import { floodRiskFromScore, useSharedData } from '../utils/sharedData';
 
@@ -151,7 +152,7 @@ export default function FloodWeather() {
       <div className="fw-summary-row grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <Metric label="Monitored Roads" value={floodRoads.length} description="Road-level flood watchlist" icon={MapPin} note="Elmina" />
         <Metric label="Active Flood Alerts" value={floodIncidents.length} description="Linked to shared incident records" icon={ShieldAlert} note="Action required" />
-        <Metric label="Highest Flood Risk" value={`${highest.score}%`} description={`${highest.name} · ${highest.risk}`} icon={Gauge} note="Risk index" />
+        <Metric label="Highest Flood Risk" value={`${highest.score}%`} description={`${highest.name} · ${highest.risk}`} icon={Gauge} note="Risk index" tone={highest.risk} />
         <Metric label="Peak Forecast Rain" value={`${peakRain} mm/h`} description="Highest simulated hourly rainfall" icon={CloudRain} note="Next 4 hours" />
       </div>
 

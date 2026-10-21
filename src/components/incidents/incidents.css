@@ -34,13 +34,7 @@
 .inc-icon-btn:hover { background: var(--paper); color: var(--navy); }
 .inc-page :focus-visible { outline: 2px solid var(--g); outline-offset: 2px; }
 
-/* Risk tags: colour + icon + word */
-.inc-risk { display: inline-flex; align-items: center; gap: 4px; padding: 2px 7px; border-radius: 3px; font-size: 11px; font-weight: 600; white-space: nowrap; line-height: 1.5; }
-.inc-risk-lg { font-size: 12px; padding: 4px 10px; }
-.inc-risk-safe { background: var(--safe-tint); color: var(--safe-text); }
-.inc-risk-watch { background: var(--watch-tint); color: var(--watch-text); }
-.inc-risk-high { background: var(--high-tint); color: var(--high-text); box-shadow: inset 0 0 0 1px var(--red); }
-.inc-risk-critical { background: var(--red); color: #fff; }
+/* Risk tags (colour + icon + word) use the shared .risk-badge rules in src/index.css */
 .inc-tint-safe { background: var(--safe-tint); color: var(--safe); }
 .inc-tint-watch { background: var(--watch-tint); color: var(--watch-text); }
 .inc-tint-high { background: var(--high-tint); color: var(--red); }

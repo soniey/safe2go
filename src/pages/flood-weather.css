@@ -25,7 +25,7 @@
 .flood-page .fw-road-left small { display: block; margin-top: 5px; font-size: 9px; color: #a3a3a3; }
 .flood-page .fw-road-pin { width: 7px; height: 7px; flex-shrink: 0; border-radius: 50%; }
 .flood-page .fw-road-right { flex-shrink: 0; }
-.flood-page .fw-road-right > strong { color: #262626; font-size: 16px; font-weight: 600; letter-spacing: -.5px; }
+.flood-page .fw-road-right > strong { color: var(--brand-navy); font-family: var(--font-mono); font-size: 16px; font-weight: 600; letter-spacing: 0; }
 .flood-page .fw-road-right > strong small { color: #a3a3a3; font-size: 9px; font-weight: 400; }
 .flood-page .fw-empty { padding: 32px 20px; text-align: center; color: #909090; font-size: 11px; }
 .flood-page .fw-panel-note { display: flex; align-items: center; gap: 7px; padding: 13px 17px; color: #909090; font-size: 9px; line-height: 1.5; background: #fcfcfc; }
@@ -36,7 +36,7 @@
 .flood-page .fw-location small { margin-left: auto; font-size: 9px; font-weight: 400; color: #a3a3a3; }
 .flood-page .fw-score-line { display: flex; align-items: flex-end; justify-content: space-between; gap: 15px; margin-top: 18px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
 .flood-page .fw-mini-label { color: #909090; font-size: 10px; }
-.flood-page .fw-large-score { margin-top: 6px; color: #171717; font-size: 46px; font-weight: 600; line-height: 1.05; letter-spacing: -2px; }
+.flood-page .fw-large-score { margin-top: 6px; color: var(--brand-navy); font-family: var(--font-mono); font-size: 46px; font-weight: 600; line-height: 1.05; letter-spacing: 0; }
 .flood-page .fw-large-score span { color: #a3a3a3; font-size: 14px; font-weight: 400; letter-spacing: 0; margin-left: 3px; }
 .flood-page .fw-score-caption { display: block; color: #737373; margin-top: 8px; font-size: 10px; }
 .flood-page .fw-score-meter { width: min(44%, 200px); height: 7px; overflow: hidden; border-radius: 999px; margin-bottom: 7px; background: #ededed; }
