@@ -1,3 +1,83 @@
-import { ClipboardList } from 'lucide-react';
-import ModulePlaceholder from '../components/ModulePlaceholder';
-export default function Incidents() { return <ModulePlaceholder title="Incident & Response Center" description="Planned module: verify hazards, assign teams, dispatch, monitor response and record resolution." icon={ClipboardList} />; }
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { OctagonAlert, RotateCcw, ChevronRight } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
+import IncidentQueue from '../components/incidents/IncidentQueue';
+import IncidentDetail from '../components/incidents/IncidentDetail';
+import { useIncidents, resetDemo } from '../utils/incidentStore';
+import '../components/incidents/incidents.css';
+
+export default function Incidents() {
+  const incidents = useIncidents();
+  const [params, setParams] = useSearchParams();
+  const [filter, setFilter] = useState('open');
+
+  // /incidents?incident=RG-002 opens a specific incident (Road Vision already links this way).
+  const requested = params.get('incident') || params.get('id');
+  const selected = incidents.find(item => item.id === requested) || incidents.find(item => item.isOpen) || incidents[0];
+  const select = id => setParams({ incident: id }, { replace: true });
+
+  // Pin the default choice in the URL so the view doesn't jump when that incident is resolved.
+  useEffect(() => {
+    if (selected && params.get('incident') !== selected.id) setParams({ incident: selected.id }, { replace: true });
+  }, [selected, params, setParams]);
+
+  // Arriving from another page (e.g. Road Vision) should start at the top.
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  // If someone links to a closed incident, show the list it belongs to.
+  useEffect(() => {
+    if (selected && !selected.isOpen && filter === 'open' && requested === selected.id) setFilter('all');
+  }, [selected, requested, filter]);
+
+  const open = incidents.filter(item => item.isOpen);
+  const critical = open.filter(item => item.risk === 'CRITICAL');
+  const stats = [
+    { label: 'Open incidents', value: open.length, note: 'Not yet resolved' },
+    { label: 'Awaiting assignment', value: open.filter(item => item.stage === 'detected' || item.stage === 'verified').length, note: 'Need a crew', warn: true },
+    { label: 'Teams on the job', value: open.filter(item => ['assigned', 'dispatched', 'in_progress'].includes(item.stage)).length, note: 'Assigned or on site' },
+    { label: 'Roads closed', value: incidents.filter(item => item.roadClosed).length, note: 'Detour active', alert: true },
+  ];
+
+  function reset() {
+    resetDemo();
+    setFilter('open');
+    setParams({}, { replace: true });
+  }
+
+  return (
+    <div className="inc-page">
+      <PageHeader title="Incident & Response Center" description="Turn detected hazards into assigned, tracked and resolved work.">
+        <div className="heading-meta">
+          <span className="simulation-badge"><span className="h-1.5 w-1.5 rounded-full bg-neutral-500" />SIMULATED DATA</span>
+          <button type="button" className="inc-btn inc-btn-ghost inc-btn-sm" onClick={reset}><RotateCcw size={13} aria-hidden="true" />Reset demo</button>
+        </div>
+      </PageHeader>
+
+      {critical.length > 0 && (
+        <div className="inc-banner" role="alert">
+          <OctagonAlert size={18} aria-hidden="true" />
+          <span className="min-w-0"><strong>{critical.length} critical road{critical.length > 1 ? 's' : ''} need{critical.length > 1 ? '' : 's'} response</strong> · {critical.map(item => `${item.location} (${item.type.toLowerCase()})`).join(', ')}</span>
+          {selected?.id !== critical[0].id && (
+            <button type="button" onClick={() => select(critical[0].id)}>Open {critical[0].id}<ChevronRight size={14} aria-hidden="true" /></button>
+          )}
+        </div>
+      )}
+
+      <div className="inc-stats">
+        {stats.map(stat => (
+          <div key={stat.label} className={`inc-stat${stat.alert && stat.value ? ' is-alert' : ''}${stat.warn && stat.value ? ' is-warn' : ''}`}>
+            <p>{stat.label}</p>
+            <strong>{stat.value}</strong>
+            <span>{stat.note}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="inc-layout">
+        <IncidentQueue incidents={incidents} selectedId={selected?.id} onSelect={select} filter={filter} onFilter={setFilter} />
+        {selected && <IncidentDetail key={selected.id} incident={selected} incidents={incidents} />}
+      </div>
+    </div>
+  );
+}
