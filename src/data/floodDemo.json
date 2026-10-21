@@ -1,0 +1,99 @@
+{
+  "scenario": "Simulated township flood monitoring — 20 October 2026",
+  "currentRainfallMmH": 4.2,
+  "rainfallNote": "Current light rain; heavier showers are forecast later in the demo scenario.",
+  "forecast": [
+    { "time": "2026-10-20T11:00:00+08:00", "condition": "Rain", "rainfallMmH": 8, "windKmh": 16 },
+    { "time": "2026-10-20T12:00:00+08:00", "condition": "Heavy rain", "rainfallMmH": 28, "windKmh": 27 },
+    { "time": "2026-10-20T13:00:00+08:00", "condition": "Heavy rain", "rainfallMmH": 22, "windKmh": 31 },
+    { "time": "2026-10-20T14:00:00+08:00", "condition": "Showers", "rainfallMmH": 9, "windKmh": 18 }
+  ],
+  "roads": [
+    {
+      "roadId": "RD-001",
+      "source": "Shared flood reading FL-001",
+      "susceptibility": "High — low-lying road section",
+      "riskFactors": ["Water level rose rapidly in the last 5 minutes", "Forecast heavier rainfall may increase run-off", "Low-lying road section needs early inspection"],
+      "history": [
+        { "time": "2026-10-20T09:55:00+08:00", "levelCm": 2 },
+        { "time": "2026-10-20T10:00:00+08:00", "levelCm": 3 },
+        { "time": "2026-10-20T10:05:00+08:00", "levelCm": 4 },
+        { "time": "2026-10-20T10:10:00+08:00", "levelCm": 5 },
+        { "time": "2026-10-20T10:15:00+08:00", "levelCm": 6 },
+        { "time": "2026-10-20T10:20:00+08:00", "levelCm": 7 },
+        { "time": "2026-10-20T10:25:00+08:00", "levelCm": 8 },
+        { "time": "2026-10-20T10:30:00+08:00", "levelCm": 16 }
+      ]
+    },
+    {
+      "roadId": "RD-002",
+      "source": "Demo road estimate · no linked flood sensor",
+      "demoRiskScore": 38,
+      "susceptibility": "Moderate — nearby drainage catchment",
+      "riskFactors": ["Small increases in surface water in the demo scenario", "Heavier rain is forecast for the next two hours", "Continue routine monitoring; tree risk is assessed separately"],
+      "history": [
+        { "time": "2026-10-20T10:10:00+08:00", "levelCm": 2 },
+        { "time": "2026-10-20T10:15:00+08:00", "levelCm": 3 },
+        { "time": "2026-10-20T10:20:00+08:00", "levelCm": 4 },
+        { "time": "2026-10-20T10:25:00+08:00", "levelCm": 5 },
+        { "time": "2026-10-20T10:30:00+08:00", "levelCm": 6 }
+      ]
+    },
+    {
+      "roadId": "RD-003",
+      "source": "Demo road estimate · no linked flood sensor",
+      "demoRiskScore": 31,
+      "susceptibility": "Low — road drainage under routine watch",
+      "riskFactors": ["Limited simulated water accumulation", "Rainfall forecast warrants continued monitoring", "Existing pothole detection is handled by Road Vision"],
+      "history": [
+        { "time": "2026-10-20T10:10:00+08:00", "levelCm": 1 },
+        { "time": "2026-10-20T10:15:00+08:00", "levelCm": 2 },
+        { "time": "2026-10-20T10:20:00+08:00", "levelCm": 2 },
+        { "time": "2026-10-20T10:25:00+08:00", "levelCm": 3 },
+        { "time": "2026-10-20T10:30:00+08:00", "levelCm": 4 }
+      ]
+    },
+    {
+      "roadId": "RD-004",
+      "source": "Demo road estimate · no linked flood sensor",
+      "demoRiskScore": 27,
+      "susceptibility": "Low — generally functioning drainage",
+      "riskFactors": ["Minor simulated pooling near the kerb", "Rainfall is expected to intensify", "No confirmed flood incident in shared records"],
+      "history": [
+        { "time": "2026-10-20T10:10:00+08:00", "levelCm": 1 },
+        { "time": "2026-10-20T10:15:00+08:00", "levelCm": 1 },
+        { "time": "2026-10-20T10:20:00+08:00", "levelCm": 2 },
+        { "time": "2026-10-20T10:25:00+08:00", "levelCm": 2 },
+        { "time": "2026-10-20T10:30:00+08:00", "levelCm": 3 }
+      ]
+    },
+    {
+      "roadId": "RD-005",
+      "source": "Demo road estimate · no linked flood sensor",
+      "demoRiskScore": 16,
+      "susceptibility": "Low — no current flood indicators",
+      "riskFactors": ["Low simulated standing-water reading", "No flood incident linked to this road", "Monitor only if future rainfall creates new conditions"],
+      "history": [
+        { "time": "2026-10-20T10:10:00+08:00", "levelCm": 0 },
+        { "time": "2026-10-20T10:15:00+08:00", "levelCm": 0 },
+        { "time": "2026-10-20T10:20:00+08:00", "levelCm": 1 },
+        { "time": "2026-10-20T10:25:00+08:00", "levelCm": 1 },
+        { "time": "2026-10-20T10:30:00+08:00", "levelCm": 1 }
+      ]
+    },
+    {
+      "roadId": "RD-006",
+      "source": "Demo road estimate · no linked flood sensor",
+      "demoRiskScore": 12,
+      "susceptibility": "Low — no current flood indicators",
+      "riskFactors": ["Stable simulated water-level readings", "No active flood incident linked to this road", "Continue routine monitoring"],
+      "history": [
+        { "time": "2026-10-20T10:10:00+08:00", "levelCm": 0 },
+        { "time": "2026-10-20T10:15:00+08:00", "levelCm": 0 },
+        { "time": "2026-10-20T10:20:00+08:00", "levelCm": 0 },
+        { "time": "2026-10-20T10:25:00+08:00", "levelCm": 0 },
+        { "time": "2026-10-20T10:30:00+08:00", "levelCm": 0 }
+      ]
+    }
+  ]
+}
