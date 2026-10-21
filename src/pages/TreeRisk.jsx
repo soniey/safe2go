@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react';
-import { ArrowDownUp, ChevronRight, ClipboardCheck, Clock3, Leaf, OctagonAlert, Search, ShieldAlert, Trees, X } from 'lucide-react';
+import { ArrowDownUp, ClipboardCheck, Clock3, Leaf, Search, ShieldAlert, Trees, X } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import RiskBadge from '../components/RiskBadge';
 import { treeApi, useTrees } from '../utils/treeRisk';
@@ -40,18 +40,10 @@ export default function TreeRisk() {
 
   }
 
-  const criticalTrees = trees.filter(tree => tree.risk === 'CRITICAL');
-
   return <div className="tree-page">
     <PageHeader title="Tree Risk" description="Assess tree condition, environmental factors and inspection priorities.">
       <div className="heading-meta"><span className="simulation-badge"><span className="h-1.5 w-1.5 rounded-full bg-neutral-500" />DEMO RECORDS</span><span className="flex items-center gap-1.5 text-[11px] text-neutral-400"><Clock3 size={12} />Risk recalculated from latest inspection</span></div>
     </PageHeader>
-
-    {criticalTrees.length > 0 && <div className="tree-critical-banner" role="alert">
-      <OctagonAlert size={18} aria-hidden="true" />
-      <span className="tree-critical-message"><strong>{criticalTrees.length} critical tree{criticalTrees.length === 1 ? '' : 's'} need{criticalTrees.length === 1 ? 's' : ''} assessment</strong><span> · {criticalTrees.map(tree => `${tree.location} (${tree.id})`).join(', ')}</span></span>
-      <button type="button" onClick={() => { setFilter('Critical'); document.getElementById('tree-register')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>Review critical trees<ChevronRight size={14} aria-hidden="true" /></button>
-    </div>}
 
     <div className="tree-summary grid grid-cols-2 gap-3 sm:grid-cols-4">
       <article className="panel tree-metric"><span>Total tree records</span><strong>{trees.length}</strong><Trees size={17} /></article>
@@ -65,17 +57,18 @@ export default function TreeRisk() {
         <label className="tree-search"><Search size={14} /><span className="sr-only">Search tree records</span><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Search ID, species or location" /></label>
       </div>
       <div className="tree-filters" aria-label="Filter by risk level">{filters.map(item => <button key={item} type="button" onClick={() => setFilter(item)} className={filter === item ? 'tree-filter tree-filter-active' : 'tree-filter'}>{item}{item === 'Critical' && counts.CRITICAL ? <span>{counts.CRITICAL}</span> : null}</button>)}</div>
-      <div className="overflow-x-auto"><table className="tree-table"><caption className="sr-only">Tree records ordered by calculated risk</caption><thead><tr>{['Tree record', 'Condition', 'Soil', 'Tilt', 'Risk score', 'Last inspection', ''].map(label => <th key={label} scope="col">{label}</th>)}</tr></thead><tbody>
+      <div className="overflow-x-auto"><table className="tree-table"><caption className="sr-only">Tree records ordered by calculated risk</caption><thead><tr>{['Tree record', 'Zone / street', 'Condition', 'Soil', 'Tilt', 'Risk score', 'Last inspection', ''].map(label => <th key={label} scope="col">{label}</th>)}</tr></thead><tbody>
         {visibleTrees.map(tree => <Fragment key={tree.id}>
           <tr key={tree.id} className={tree.risk === 'CRITICAL' || tree.risk === 'HIGH' ? 'tree-priority-row' : ''}>
             <td><strong className="tree-id">{tree.id}</strong><span className="tree-species">{tree.species} · {tree.age} yrs</span><span className="tree-location">{tree.location}</span></td>
+            <td><span className="tree-zone-street">{tree.location.split(' · ')[0]}</span><span className="tree-zone-label">{tree.zone}</span></td>
             <td><span className={`condition-pill condition-${tree.health.toLowerCase()}`}>{tree.health}</span></td><td>{tree.soil}</td><td>{tree.tilt}&deg;</td>
             <td><div className="tree-risk-score"><strong>{tree.riskScore}</strong><RiskBadge risk={tree.risk} /></div></td><td>{new Date(`${tree.lastInspection}T12:00:00`).toLocaleDateString('en-MY', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kuala_Lumpur' })}</td>
             <td><div className="tree-actions"><button type="button" className="tree-history-button" onClick={() => setHistoryId(historyId === tree.id ? null : tree.id)}>History</button><button type="button" className="tree-inspect-button" onClick={() => setInspectTree(tree)}>Inspect</button></div></td>
           </tr>
-          {historyId === tree.id && <tr key={`${tree.id}-history`} className="history-row"><td colSpan="7"><div className="inspection-history"><div className="history-title"><ClipboardCheck size={14} />Inspection history <span>{tree.history?.length || 0} entries</span></div>{(tree.history || []).map((item, index) => <article key={`${item.date}-${index}`}><time>{new Date(`${item.date}T12:00:00`).toLocaleDateString('en-MY', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kuala_Lumpur' })}</time><div><strong>{item.inspector}</strong><p>{item.notes}</p></div></article>)}</div></td></tr>}
+          {historyId === tree.id && <tr key={`${tree.id}-history`} className="history-row"><td colSpan="8"><div className="inspection-history"><div className="history-title"><ClipboardCheck size={14} />Inspection history <span>{tree.history?.length || 0} entries</span></div>{(tree.history || []).map((item, index) => <article key={`${item.date}-${index}`}><time>{new Date(`${item.date}T12:00:00`).toLocaleDateString('en-MY', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kuala_Lumpur' })}</time><div><strong>{item.inspector}</strong><p>{item.notes}</p></div></article>)}</div></td></tr>}
         </Fragment>)}
-        {visibleTrees.length === 0 && <tr><td colSpan="7" className="tree-empty">No tree records match this view.</td></tr>}
+        {visibleTrees.length === 0 && <tr><td colSpan="8" className="tree-empty">No tree records match this view.</td></tr>}
       </tbody></table></div>
       <div className="tree-table-footer"><span><Leaf size={13} />Risk score combines age, health, soil condition and trunk tilt.</span><span><ArrowDownUp size={12} />Highest priority first</span></div>
     </section>

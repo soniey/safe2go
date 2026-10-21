@@ -54,7 +54,7 @@ export function getTrees() {
       const roadId = seed?.roadId ?? tree.roadId;
       const road = roads.find(item => item.id === roadId);
       const riskScore = scoreTree(tree);
-      return { ...tree, roadId, location: road ? `${road.name}${seed?.locationSuffix ? ` · ${seed.locationSuffix}` : ''}` : tree.location,
+      return { ...tree, zone: tree.zone ?? seed?.zone, roadId, location: road ? `${road.name}${seed?.locationSuffix ? ` · ${seed.locationSuffix}` : ''}` : tree.location,
         riskScore, risk: treeRiskLevel(riskScore) };
     }).sort((a, b) => b.riskScore - a.riskScore);
   }
@@ -96,6 +96,7 @@ export const treeApi = {
   async addInspection(id, inspection) {
     const records = readRecords().map(tree => tree.id === id ? {
       ...tree,
+      zone: tree.zone ?? seedTrees.find(item => item.id === tree.id)?.zone,
       lastInspection: inspection.date,
       history: [inspection, ...(tree.history || [])],
       ...(inspection.health ? { health: inspection.health } : {}),
