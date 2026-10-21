@@ -222,3 +222,46 @@ used for display and is surfaced in road/incident cards to avoid claiming aliase
 real street names. RG-002 uses mapped Persiaran Elmina. Other demo aliases use nearby
 named road segments; those are demonstration placements, not verified hazard locations.
 No external request is required at runtime beyond the existing map tiles.
+## Maintenance Team Registry (admin workspace)
+
+Route: `/teams`. Files: `pages/MaintenanceTeams.jsx`, `pages/maintenance-teams.css`,
+`utils/teamRegistry.js`. The page reuses Incident & Response Center panel/button styles
+and reads existing demo teams from `data/teams.json` without changing those seed records.
+
+Admins can register teams (name, specialty, crew size, estimated travel time, optional
+leader/contact and service area), search the directory, and filter by specialty.
+Registration validates names, duplicates and numeric bounds. It persists only custom
+records under `safe2go.maintenanceTeams.v1`; malformed or blocked browser storage produces
+an error instead of silently losing or overwriting saved records. There is no backend
+or new authentication mechanism; this remains a local prototype workspace.
+
+Per Yina's scope decision, this page is registry-only. The Incident Center still uses
+its original static team assignment list. New registrations do not become assignable
+until a separately approved integration of Member 5's implementation.
+
+Validation: production build; isolated store checks for invalid values, duplicate names,
+round-trip persistence and blocked/corrupted storage; browser registration/reload and
+search empty-state checks on a separate localhost origin; normal preview kept unchanged;
+375px mobile layout checked without horizontal overflow.
+
+## Demo login
+
+Route `/login` is outside the shared navigation shell. Workspace routes redirect there
+until a demo session exists, preserving the requested route after sign-in. The page reuses
+Incident & Response Center colours, typography and form/button treatment.
+
+Demo accounts: `admin@safe2go.demo` / `Safe2GoDemo!` (Township Admin) and
+`maintenance@safe2go.demo` / `MaintenanceDemo!` (Maintenance Team).
+The header and sidebar display the signed-in role. Both accounts currently access the
+same workspace; role-based permissions and team assignment integration are not implemented.
+These are public sample credentials,
+not real authentication. The client-side route guard is for demonstration flow only.
+Session metadata (email and demo role) is stored under `safe2go.demoSession.v1` in
+sessionStorage; passwords are never stored. Refresh retains a session in that tab.
+If session storage is blocked, sign-in works in memory until refresh. Sign out in the
+header clears the demo session; existing incident/registry demo data is retained.
+
+Files: `pages/Login.jsx`, `pages/login.css`, `utils/demoSession.jsx`,
+`components/RequireDemoSession.jsx`, plus route/header integration.
+Browser validation: invalid credentials, password visibility, redirect back to /teams,
+refresh persistence, sign-out and 375px mobile layout. Production build passes.
