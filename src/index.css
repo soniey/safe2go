@@ -53,6 +53,7 @@ main { padding: 30px 26px; max-width: 1600px; width: 100%; margin: 0 auto; flex:
 .map-simulation { max-width: calc(100% - 24px); }
 
 @media (min-width: 1024px) {
+  .sidebar .brand .icon-button { display: none; }
   .sidebar-hidden .sidebar { display: none; }
   .sidebar-hidden .workspace { margin-left: 0; }
 }
