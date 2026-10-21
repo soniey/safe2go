@@ -6,13 +6,13 @@
 }
 
 .rv-metric { min-width: 0; }
-.rv-metric-network { --metric-color: #2563a6; --metric-tint: #edf4fc; }
-.rv-metric-online { --metric-color: #247044; --metric-tint: #eaf5ee; }
-.rv-metric-offline { --metric-color: #b04438; --metric-tint: #fdf0ed; }
-.rv-metric-detections { --metric-color: #946211; --metric-tint: #fff6e2; }
+/* Safe2Go palette: red stays reserved for road risk and blue for water, so camera cards use navy, green and yellow. */
+.rv-metric-network { --metric-color: #14213d; --metric-tint: #f5f3ee; --metric-ink: #14213d; }
+.rv-metric-online { --metric-color: #1e8e4e; --metric-tint: #dff3e6; --metric-ink: #14532d; }
+.rv-metric-offline { --metric-color: #f2b705; --metric-tint: #fdf3cf; --metric-ink: #6b4e00; }
+.rv-metric-detections { --metric-color: #14213d; --metric-tint: #f5f3ee; --metric-ink: #14213d; }
 .rv-metric .stat-card { height: 100%; border-left: 4px solid var(--metric-color); }
-.rv-metric .stat-icon { color: var(--metric-color); background: var(--metric-tint); }
-.rv-metric .stat-value { color: var(--metric-color); }
+.rv-metric .stat-icon { color: var(--metric-ink); background: var(--metric-tint); }
 
 .rv-workspace {
   display: grid;

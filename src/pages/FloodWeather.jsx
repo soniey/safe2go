@@ -12,6 +12,7 @@ import {
 import PageHeader from '../components/PageHeader';
 import StatCard from '../components/StatCard';
 import RiskBadge from '../components/RiskBadge';
+import { riskStyles } from '../utils/risk';
 import './flood-weather.css';
 import { useSharedData } from '../utils/sharedData';
 
@@ -22,7 +23,7 @@ const formatTime = value => new Intl.DateTimeFormat('en-MY', {
 const formatDate = value => new Intl.DateTimeFormat('en-MY', {
   timeZone: 'Asia/Kuala_Lumpur', day: 'numeric', month: 'short', year: 'numeric',
 }).format(new Date(value));
-const colorByRisk = { SAFE: '#15803d', WATCH: '#a37308', HIGH: '#c26617', CRITICAL: '#cc4141' };
+const colorByRisk = { SAFE: riskStyles.SAFE.color, WATCH: riskStyles.WATCH.color, HIGH: riskStyles.HIGH.color, CRITICAL: riskStyles.CRITICAL.color };
 
 // Base location/incident/sensor facts always come from the team's shared files.
 // Other road scores, chart histories and forecast are explicitly simulated demo extensions.
@@ -59,8 +60,8 @@ function buildFloodRoads({ roads, floodReadings, incidents, floodDemo }) {
 
 
 
-  function Metric({ label, value, description, icon, note }) {
-    return <StatCard label={label} value={value} description={description} icon={icon} note={note} />;
+  function Metric({ label, value, description, icon, note, tone }) {
+    return <StatCard label={label} value={value} description={description} icon={icon} note={note} tone={tone} />;
   }
 
   function WaterTooltip({ active, payload, label }) {
@@ -105,7 +106,7 @@ function buildFloodRoads({ roads, floodReadings, incidents, floodDemo }) {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <Metric label="Monitored Roads" value={floodRoads.length} description="Road-level flood watchlist" icon={MapPin} note="Elmina" />
         <Metric label="Active Flood Alerts" value={floodIncidents.length} description="Linked to shared incident records" icon={ShieldAlert} note="Action required" />
-        <Metric label="Highest Flood Risk" value={`${highest.score}%`} description={`${highest.name} · ${highest.risk}`} icon={Gauge} note="Risk index" />
+        <Metric label="Highest Flood Risk" value={`${highest.score}%`} description={`${highest.name} · ${highest.risk}`} icon={Gauge} note="Risk index" tone={highest.risk} />
         <Metric label="Peak Forecast Rain" value={`${peakRain} mm/h`} description="Highest simulated hourly rainfall" icon={CloudRain} note="Next 4 hours" />
       </div>
 
