@@ -1,9 +1,8 @@
-import demoContacts from '../data/teamRegistryContacts.json';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UsersRound, UserPlus, Search } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
-import { readTeamRegistry, registerMaintenanceTeam, TEAM_REGISTRY_KEY, TEAM_SPECIALTIES } from '../utils/teamRegistry';
+import { readTeamRegistry, useTeams, registerMaintenanceTeam, TEAM_REGISTRY_KEY, TEAM_SPECIALTIES } from '../utils/teamRegistry';
 import '../components/incidents/incidents.css';
 import './maintenance-teams.css';
 
@@ -12,8 +11,7 @@ const specialtyLabels = { Flood: 'Flood & drainage', 'Tree Fall Risk': 'Tree ins
 
 export default function MaintenanceTeams() {
   const [registry, setRegistry] = useState(() => readTeamRegistry());
-  // Keep seed contacts current when Vite preserves existing component state on refresh.
-  const directoryTeams = registry.teams.map(team => team.source === 'seed' ? { ...team, ...demoContacts[team.id] } : team);
+  const directoryTeams = useTeams();
   const [form, setForm] = useState({ ...emptyForm });
   const [search, setSearch] = useState('');
   const [specialty, setSpecialty] = useState('ALL');
@@ -45,7 +43,7 @@ export default function MaintenanceTeams() {
       <PageHeader title="Maintenance Team Registry" description="Register maintenance crews and maintain the township response directory.">
         <div className="heading-meta"><span className="simulation-badge">ADMIN WORKSPACE</span><Link to="/incidents" className="inc-btn inc-btn-ghost inc-btn-sm">Incident &amp; Response Center</Link></div>
       </PageHeader>
-      <p className="team-registry-note">Registrations are saved on this browser. Assignment integration is not enabled; new teams do not appear in the Incident &amp; Response Center's assignment list yet.</p>
+      <p className="team-registry-note">Registrations are saved on this browser. Registered teams are available in the Incident &amp; Response Center assignment list.</p>
       <div className="inc-stats">
         <div className="inc-stat"><p>Teams in directory</p><strong>{directoryTeams.length}</strong><span>Existing and registered teams</span></div>
         <div className="inc-stat"><p>Registered teams</p><strong>{directoryTeams.filter(team => team.source === 'registered').length}</strong><span>Saved in this browser</span></div>

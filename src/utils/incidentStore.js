@@ -11,9 +11,11 @@ import baseIncidents from '../data/incidents.json';
 import roads from '../data/roads.json';
 import weather from '../data/weather.json';
 import details from '../data/incidentDetails.json';
+import { getTeams, TEAM_REGISTRY_KEY, readTeamRegistry } from './teamRegistry';
 import { riskLevels } from './risk';
+import { DATA_CHANGED } from './dataEvents';
+import { getTrees } from './treeRisk';
 import { INCIDENT_STORAGE_KEY as ROAD_VISION_KEY, readRoadVisionIncidents } from './roadVisionIncidents';
-import { TEAM_REGISTRY_KEY, readTeamRegistry } from './teamRegistry';
 
 const STORAGE_KEY = 'safe2go.incidentResponse.v2';
 
@@ -156,11 +158,16 @@ function emit() { listeners.forEach(listener => listener()); }
 function subscribe(listener) {
   listeners.add(listener);
   const onStorage = event => {
-    if (event.key === STORAGE_KEY || event.key === null) saved = loadSaved();
-    if ([STORAGE_KEY, ROAD_VISION_KEY, TEAM_REGISTRY_KEY, null].includes(event.key)) emit();
+    if (event.key === STORAGE_KEY || event.key === null) { saved = loadSaved(); emit(); }
+    if (event.key === ROAD_VISION_KEY || event.key === TEAM_REGISTRY_KEY || event.key === 'roadguard.tree-records.v1') emit();
   };
   window.addEventListener('storage', onStorage);
-  return () => { listeners.delete(listener); window.removeEventListener('storage', onStorage); };
+  window.addEventListener(DATA_CHANGED, listener);
+  return () => {
+    listeners.delete(listener);
+    window.removeEventListener('storage', onStorage);
+    window.removeEventListener(DATA_CHANGED, listener);
+  };
 }
 
 function allSourceIncidents() {
@@ -176,6 +183,8 @@ function loadTeams() {
 const recordFor = incident => saved[incident.id] || seedRecord(incident);
 
 function buildIncident(incident, record, now, teamList, busyMap) {
+  const tree = getTrees().find(item => item.id === incident.treeId);
+  if (tree) incident = { ...incident, risk: tree.risk, summary: `Tree risk score ${tree.riskScore}% · ${tree.soil} soil` };
   const extra = details[incident.id] || {};
   const road = roads.find(item => item.id === incident.roadId);
   const timeline = record.timeline;
@@ -195,23 +204,23 @@ function buildIncident(incident, record, now, teamList, busyMap) {
   const dispatchedAt = last('dispatched');
   return {
     ...incident,
+    detectedAtISO: incident.detectedAt,
+    status: stages[stageIndex(record.stage)]?.label || incident.status,
     location: road?.name || incident.location || 'Unknown road',
     coordinates,
     priority: priorityByRisk[incident.risk] || 'P3',
-    whyFlagged: extra.whyFlagged || incident.summary || 'Flagged by the monitoring system.',
-    evidence,
+    whyFlagged: tree ? incident.summary : extra.whyFlagged || incident.summary || 'Flagged by the monitoring system.',
+    evidence: tree ? [{ source: tree.id, value: `Risk ${tree.riskScore}%, ${tree.soil} soil` }] : evidence,
     recommendedAction: extra.recommendedAction || '',
     crewTask: extra.crewTask || extra.recommendedAction || incident.summary || 'Inspect and make the site safe.',
     residents: extra.residents || null,
     stage: record.stage,
     stageLabel: stages[stageIndex(record.stage)]?.label || record.stage,
-    stageShort: stages[stageIndex(record.stage)]?.short || record.stage,
     team,
     teamRanking: ranking,
     recommendedTeam: recommended,
-    declines: record.declines || [],
+    recommendedTeamId: recommended?.team.id || null,
     lastDecline,
-    needsReassign: record.stage === 'verified' && !!lastDecline,
     completion: record.completion,
     roadClosed: record.roadClosed,
     roadEverClosed: record.roadEverClosed,
@@ -230,9 +239,11 @@ function buildIncident(incident, record, now, teamList, busyMap) {
 const riskRank = risk => riskLevels.indexOf(risk);
 
 function getSnapshot() {
-  const roadVisionRaw = readRaw(ROAD_VISION_KEY);
-  const teamsRaw = readRaw(TEAM_REGISTRY_KEY);
-  if (cache.saved !== saved || cache.roadVisionRaw !== roadVisionRaw || cache.teamsRaw !== teamsRaw) {
+  let roadVisionRaw = null;
+  try { roadVisionRaw = localStorage.getItem(ROAD_VISION_KEY); } catch { /* ignore */ }
+  const trees = getTrees();
+  const teams = getTeams();
+  if (cache.saved !== saved || cache.roadVisionRaw !== roadVisionRaw || cache.trees !== trees || cache.teams !== teams) {
     const sources = allSourceIncidents();
     const records = sources.map(recordFor);
     const teamList = loadTeams();
@@ -245,8 +256,7 @@ function getSnapshot() {
     const incidents = sources
       .map((incident, index) => buildIncident(incident, records[index], now, teamList, busyMap))
       .sort((a, b) => (b.isOpen - a.isOpen) || (riskRank(b.risk) - riskRank(a.risk)) || ((a.detectedAt ?? 0) - (b.detectedAt ?? 0)) || a.id.localeCompare(b.id));
-    const teams = teamList.map(team => ({ ...team, busyWith: busyMap.get(team.id) || null }));
-    cache = { saved, roadVisionRaw, teamsRaw, board: { incidents, teams, now } };
+    cache = { saved, roadVisionRaw, trees, teams, board: { incidents, teams: teamList, now } };
   }
   return cache.board;
 }
@@ -300,7 +310,7 @@ export function acknowledgeIncident(id) {
 }
 
 export function assignTeam(id, teamId, { viaAi = false } = {}) {
-  const team = teamById(teamId);
+  const team = getTeams().find(item => item.id === teamId);
   return update(id, record => {
     if (!team || record.stage !== 'verified') return false;
     record.stage = 'assigned';
@@ -312,12 +322,16 @@ export function assignTeam(id, teamId, { viaAi = false } = {}) {
 export function withdrawAssignment(id) {
   return update(id, record => {
     if (record.stage !== 'assigned') return false;
-    const team = teamById(record.teamId);
     record.stage = 'verified';
     record.teamId = null;
-    log(record, 'unassigned', { by: ADMIN, note: team ? `${team.name} released before accepting` : undefined });
+    log(record, 'unassigned', { by: ADMIN, note: 'Assignment withdrawn' });
   });
 }
+
+export function dispatchTeam(id) { return startTravel(id, getIncident(id)?.team?.id); }
+export function startMaintenance(id) { return startWork(id, getIncident(id)?.team?.id); }
+
+export function resolveIncident(id) { return completeJob(id, getIncident(id)?.team?.id); }
 
 export function closeRoad(id) {
   return update(id, record => {

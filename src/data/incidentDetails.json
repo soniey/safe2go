@@ -158,6 +158,7 @@
         "value": "Road clear"
       }
     ],
+    "recommendedTeamId": "TM-DRN-B",
     "seed": {
       "notes": {
         "detected": "Standing water reported on CAM-06",

@@ -1,5 +1,7 @@
 import seedTeams from '../data/teams.json';
 import demoContacts from '../data/teamRegistryContacts.json';
+import { useSyncExternalStore } from 'react';
+import { DATA_CHANGED, notifyDataChanged } from './dataEvents';
 
 export const TEAM_REGISTRY_KEY = 'safe2go.maintenanceTeams.v1';
 export const TEAM_SPECIALTIES = ['Flood', 'Tree Fall Risk', 'Road Obstruction', 'Pothole', 'Traffic control'];
@@ -51,8 +53,33 @@ export function registerMaintenanceTeam(values, storage) {
   try {
     const saved = loaded.teams.filter(item => item.source === 'registered').map(({ source, ...record }) => record);
     (storage ?? window.localStorage).setItem(TEAM_REGISTRY_KEY, JSON.stringify([...saved, team]));
+    notifyDataChanged();
     return { team, teams: [...loaded.teams, { ...team, source: 'registered' }], error: null };
   } catch {
     return { error: 'Registration could not be saved. Allow browser storage and try again; the form has been kept.' };
   }
 }
+
+let cachedRaw;
+let cachedTeams;
+export function getTeams() {
+  let raw = null;
+  try { raw = window.localStorage.getItem(TEAM_REGISTRY_KEY); } catch { /* Use seed teams. */ }
+  if (!cachedTeams || raw !== cachedRaw) {
+    cachedRaw = raw;
+    cachedTeams = readTeamRegistry().teams;
+  }
+  return cachedTeams;
+}
+
+function subscribe(listener) {
+  const onStorage = event => { if (event.key === TEAM_REGISTRY_KEY || event.key === null) listener(); };
+  window.addEventListener('storage', onStorage);
+  window.addEventListener(DATA_CHANGED, listener);
+  return () => {
+    window.removeEventListener('storage', onStorage);
+    window.removeEventListener(DATA_CHANGED, listener);
+  };
+}
+
+export function useTeams() { return useSyncExternalStore(subscribe, getTeams, getTeams); }
