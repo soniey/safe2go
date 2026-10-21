@@ -1,4 +1,4 @@
-# Safe2Go
+# Safe2Go — Township Road Climate Resilience & Hazard Intelligence Platform
 
 Shared township operations dashboard foundation for the Township of Tomorrow University Hackathon 2026. React + Vite, JSX, Tailwind CSS, React Router, Lucide, and Recharts. All readings and detections are simulated. No authentication, backend, or database is used. The map uses React Leaflet and OpenStreetMap tiles, which require internet access.
 
@@ -28,7 +28,7 @@ The production output is `dist/`. Production hosting must serve `index.html` for
 - Dashboard content: `src/pages/Overview.jsx`; source records: `src/data/*.json`. Derived counts and road joins: `src/utils/dashboard.js`.
 - Shared shell and reusable UI: `src/components/`.
 - `weather.json` holds the fixed demo snapshot time, displayed in Malaysia time. It does not imply a live feed.
-- Six roads provide a distribution of two SAFE, two WATCH, one HIGH, and one CRITICAL. Three incident records provide the three active hazards. The additional WATCH road is monitored without an open incident.
+- Six mock roads provide one SAFE, two WATCH, two HIGH and one CRITICAL. Six incident records provide five active hazards (four core climate hazards and one extended pothole detection), plus one resolved flood incident in history.
 - Hazard coordinates are explicitly marked `isMock: true`. They are illustrative demo positions around an approximate Elmina viewport, not verified incident locations or road geometry. Legacy `mapPosition` percentages are retained for compatibility but are no longer used by the map.
 - Notification and settings icons are visual placeholders. Incident links intentionally open the Incidents starter page; incident details are future work.
 - localStorage is used by the tree risk demo to retain newly recorded inspection details in the browser.
@@ -60,7 +60,7 @@ Each developer can replace their starter page without changing routing or the sh
 
 ## Validation
 
-Production build passes. All five routes and the not-found route passed server-render smoke checks; shared counts were checked against 3 active hazards, 1 critical road, 2 WATCH roads, and 3 open incidents. The risk chart is loaded in a separate bundle. Subsequent Member 1 browser checks cover responsive layouts at 320px, 375px and 768px, all five routes, map filters and reset, persistent filter reloads, marker details, tile loading and zoom. The production build passes after these additions.
+Production build passes. All five routes and the not-found route passed server-render smoke checks; shared counts were checked against 5 active hazards, 1 critical road, 2 WATCH roads, and 5 open incidents. The risk chart is loaded in a separate bundle. Subsequent Member 1 browser checks cover responsive layouts at 320px, 375px and 768px, all five routes, map filters and reset, persistent filter reloads, marker details, tile loading and zoom. The production build passes after these additions.
 
 ## File inventory / commit scope
 
@@ -131,11 +131,81 @@ src/utils/risk.js
 ### Manual demonstration check
 
 1. Start `npm run dev` and open the printed local URL.
-2. Check 3 active hazards, 1 critical road, 2 roads under watch, and 3 open incidents.
-3. Check category summaries: Flood CRITICAL, Tree HIGH, Road condition WATCH (one each).
+2. Check 5 active hazards, 1 critical road, 2 roads under watch, and 5 open incidents.
+3. Check core climate summaries: two Flood hazards (highest CRITICAL), one Tree risk (HIGH), and one weather-related physical hazard (HIGH). Check the separate extended capability: RG-003 Pothole WATCH, original severity Medium.
 4. Filter the map by type and risk, check the no-match state, then reset.
 5. Select each marker or its button; confirm shared IDs, risk, status and simulated MYT time.
 6. Select filters, refresh, and confirm they persist. Reset restores all hazards.
 7. Confirm recent incident times and highest-risk-first table order.
 8. On a narrow screen, open navigation, visit each module and return to Overview.
 9. Run `npm run build` before requesting commit, push or integration approval.
+## Climate-resilience positioning (revised scope)
+
+Safe2Go addresses one problem: township management needs earlier, road-level visibility
+and prioritisation of weather-related hazards before and while roads become unsafe.
+Positioning: PLANET track, Climate Resilience.
+
+- Core hazards: flooding/rising water and weather-related roadside tree instability.
+- Road Vision's primary role: verify flooding, fallen trees/branches and obstructions.
+- Extended capability: potholes and road-surface damage. RG-003 remains canonical but
+  appears separately from core climate priorities; all-capability totals still include it.
+- The Overview joins supplied incident risks with flood readings, tree/soil records,
+  camera references and the shared weather snapshot. It explains management priorities;
+  it does not calculate a new fused score or claim an implemented prediction model.
+- Workflow: DETECT → ASSESS → PREDICT → VERIFY → PRIORITISE → RESPOND → RESOLVE.
+  The workflow panel describes intended behavior. Forecast-driven prediction, CCTV
+  live verification, assignment, dispatch and interactive resolution actions await module integration. RG-005 and RG-006 contain scripted verification and resolution examples only.
+- Tree Risk & Registry is the shared navigation label. Member 3 must implement Tree
+  Passports, inspection/maintenance history and risk assessment. No exact fall-time
+  prediction or automatic disease diagnosis is claimed.
+- Road Vision and Incident & Response Center remain module integrations owned by
+  Members 4 and 5. Only starter-page labels and descriptions were aligned with the revised scope; module implementations remain untouched.
+- PACC is strategic context only; no existing PACC integration is claimed.
+- No additional major pages, backend or new shared risk states were added.
+### Additional simulated scenarios
+
+RG-001–003 retain their original record values. The following are fictional, scripted demo
+records; names and coordinates do not verify actual road hazards or road geometry.
+
+| ID | Scenario | Current risk | Status | Demonstration purpose |
+| --- | --- | --- | --- | --- |
+| RG-004 | Rising water on RD-004 | WATCH | Under monitoring | Early warning: 4 cm, supplied risk 35% |
+| RG-005 | Weather-related fallen branch on RD-005 | HIGH | Awaiting response | Scripted CCTV confirmation; pending clearance |
+| RG-006 | Cleared standing water on RD-006 | SAFE | Resolved | Historical WATCH risk; current 0 cm water; excluded from active totals/map |
+
+`weatherRelated: true` associates a physical obstruction with the climate scenario.
+Generic obstructions are not automatically classified as climate-related. RG-005's
+`verification` object is explicitly simulated. RG-006's `resolvedAt` is a fixed demo time.
+The two original hazard categories remain the core problem; branch verification supports
+that workflow. Six incidents do not imply six active hazards.
+### Demo presentation
+
+The Overview has one prominent "Demo mode — simulated data" notice. Individual weather
+values and timestamps do not repeat that label. Shared data retains all simulation flags.
+Map locations remain explicitly illustrative; scripted CCTV confirmation stays labelled.
+The full numbered workflow explanation is replaced with a compact intended-workflow line.
+The line is a process guide, not a claim that all seven stages are implemented.
+### Road-status map layer
+
+`roads.json` includes `illustrativePath: { isMock: true, positions: [[lat, lng], ...] }`.
+These fictional dashed overlays are not surveyed road segments and do not match verified
+OpenStreetMap road geometry. They demonstrate the road risk layer using the exact same
+`roads[].risk` values as Township Risk Status. Basemap streets remain external context.
+
+The road-status layer includes all six roads (including the SAFE road) and has an on/off
+checkbox. Solid circles represent active incidents. Hazard type/risk filters affect circles
+only, so a SAFE filter may show no active incidents while the SAFE road remains present.
+Road details report the road's all-active-incident count, independent of marker filters.
+Current chart/layer distribution: SAFE 1, WATCH 2, HIGH 2, CRITICAL 1.
+
+Chart segments and keyboard-accessible risk buttons now select the road-risk map layer.
+Selection fits the map to matching road paths and restores the road layer if hidden.
+"Show all roads" clears the road filter. This filter is independent of hazard filters
+and does not change township-wide chart totals. Selecting a road button or dashed path
+fits and highlights that road, including SAFE roads with no active incidents. Repeated
+selections recenter after manual panning. Road paths remain explicitly illustrative.
+
+Selecting a hazard now opens a compact map popup (ID, location, type, risk and status).
+"View details below" scrolls and focuses the full details for that same shared record.
+Hazard filters clear hidden selections; road/chart selection clears the hazard popup.
+The compact popup is readable on mobile, with full detail retained below the map.

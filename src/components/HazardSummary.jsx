@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import RiskBadge from './RiskBadge';
 
-export default function HazardSummary({ title, count, highestRisk, to }) {
+export default function HazardSummary({ title, description, count, highestRisk, to }) {
   return (
     <article className="panel p-5">
       <h3 className="text-sm font-semibold">{title}</h3>
-      <p className="mt-3 text-sm text-neutral-500">
+      <p className="mt-2 text-xs text-neutral-500">{description}</p><p className="mt-3 text-sm text-neutral-500">
         <strong className="text-neutral-800">{count}</strong> active {count === 1 ? 'hazard' : 'hazards'}
       </p>
       <div className="mt-3 flex items-center gap-2 text-xs text-neutral-500">
