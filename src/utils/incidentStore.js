@@ -176,8 +176,13 @@ function allSourceIncidents() {
   return [...baseIncidents, ...fromVision.filter(item => !baseIncidents.some(base => base.id === item.id))];
 }
 
+// The registry no longer records travel time, so registered teams get a default arrival estimate.
+// Passwords never leave the registry.
+const DEFAULT_ETA_MIN = 15;
 function loadTeams() {
-  try { return readTeamRegistry().teams; } catch { return []; }
+  try {
+    return readTeamRegistry().teams.map(({ password, ...team }) => ({ ...team, etaMin: Number.isInteger(team.etaMin) ? team.etaMin : DEFAULT_ETA_MIN }));
+  } catch { return []; }
 }
 
 const recordFor = incident => saved[incident.id] || seedRecord(incident);
@@ -221,7 +226,9 @@ function buildIncident(incident, record, now, teamList, busyMap) {
     teamRanking: ranking,
     recommendedTeam: recommended,
     recommendedTeamId: recommended?.team.id || null,
+    declines: record.declines || [],
     lastDecline,
+    needsReassign: record.stage === 'verified' && !!lastDecline,
     completion: record.completion,
     roadClosed: record.roadClosed,
     roadEverClosed: record.roadEverClosed,

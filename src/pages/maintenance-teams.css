@@ -19,5 +19,19 @@
 .team-registry .team-message { border:1px solid var(--line); border-radius:6px; padding:12px 16px; margin-bottom:16px; font-size:13px; }
 .team-registry .team-message.is-error { background:var(--high-tint); color:var(--high-text); }
 .team-registry .team-message.is-success { background:var(--g-tint); color:var(--g-dark); }
+/* Crew app login + edit mode */
+.team-registry .team-login-fields { display:grid; gap:12px; margin:4px 0 0; padding:14px; border:1px solid var(--line); border-radius:8px; background:var(--paper); }
+.team-registry .team-login-fields legend { display:flex; align-items:center; gap:6px; padding:0 6px; font-size:12px; font-weight:600; color:var(--g-dark); }
+.team-registry .team-password { position:relative; display:block; }
+.team-registry .team-password input { padding-right:44px; }
+.team-registry .team-password button { position:absolute; top:2px; right:2px; }
+.team-registry .team-form-panel.is-editing { border-color:var(--g); box-shadow:0 0 0 3px var(--g-tint); }
+.team-registry .team-form-panel .inc-panel-head .inc-btn { flex-shrink:0; }
+.team-registry .team-directory-tags { display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+.team-registry .team-directory-tags .inc-btn svg { flex-shrink:0; }
+.team-registry .team-directory-list > li.is-editing { background:var(--g-tint); box-shadow:inset 3px 0 0 var(--g); }
+.team-registry .team-mono { font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:12px; }
+.team-registry .team-password-view { display:flex; align-items:center; gap:4px; min-height:24px; }
+.team-registry .team-password-view .inc-icon-btn { width:28px; height:28px; }
 @media(max-width:1100px) { .team-registry .team-registry-layout { grid-template-columns:1fr; } }
 @media(max-width:480px) { .team-registry .team-directory-filters, .team-registry .team-form-row { grid-template-columns:1fr; } }

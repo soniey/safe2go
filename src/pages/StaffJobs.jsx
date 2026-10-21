@@ -22,7 +22,9 @@ export default function StaffJobs() {
   // Jobs already waiting when the app opened don't trigger the "new job" alert.
   const [seen, setSeen] = useState(() => new Set(incidents.filter(job => job.stage === 'assigned').map(assignmentKey)));
 
-  const jobs = incidents.filter(job => job.team);
+  // A team login (from the Team Registry) sees only its own jobs; the shared Maintenance Team login sees every crew's.
+  const myTeamId = session?.teamId || null;
+  const jobs = incidents.filter(job => job.team && (!myTeamId || job.team.id === myTeamId));
   const requests = jobs.filter(job => job.stage === 'assigned');
   const active = jobs.filter(job => ACTIVE.includes(job.stage));
   const done = jobs.filter(job => (job.stage === 'resolved' || job.stage === 'reopened') && job.timeline.some(event => event.type === 'accepted'));
@@ -69,7 +71,7 @@ export default function StaffJobs() {
             <span className="crew-mark"><HardHat size={18} aria-hidden="true" /></span>
             <div className="crew-bar-title">
               <strong>Field Jobs</strong>
-              <span>{session?.label || 'Maintenance Team'} · Safe2Go</span>
+              <span>{session?.label || 'Maintenance Team'} · {myTeamId ? 'Your crew' : 'All crews'}</span>
             </div>
             <button type="button" className="crew-icon" onClick={() => (requests[0] ? scrollToJob(requests[0].id) : setToast('No new jobs right now.'))} aria-label={requests.length ? `${requests.length} new job${requests.length > 1 ? 's' : ''}` : 'No new jobs'}>
               <Bell size={19} aria-hidden="true" />
