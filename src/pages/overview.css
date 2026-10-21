@@ -1,0 +1,41 @@
+/* Match Road Vision's accent borders, tinted icons and coloured metric values. */
+.overview-metric { min-width: 0; }
+.overview-metric-hazards { --overview-metric-color: #2563a6; --overview-metric-tint: #edf4fc; }
+.overview-metric-critical { --overview-metric-color: #b04438; --overview-metric-tint: #fdf0ed; }
+.overview-metric-watch { --overview-metric-color: #946211; --overview-metric-tint: #fff6e2; }
+.overview-metric-incidents { --overview-metric-color: #2563a6; --overview-metric-tint: #edf4fc; }
+.overview-metric .stat-card { height: 100%; border-left: 4px solid var(--overview-metric-color); }
+.overview-metric .stat-icon { color: var(--overview-metric-color); background: var(--overview-metric-tint); }
+.overview-metric .stat-value { color: var(--overview-metric-color); }
+
+/* Outlined action treatment matches Incident Center's secondary buttons. */
+.overview-details-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid #14a05a;
+  border-radius: 6px;
+  background: #fff;
+  color: #0c7e45;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.overview-details-button:hover { background: #e3f5ea; color: #0c7e45; text-decoration: none; }
+.overview-details-button:focus-visible { outline: 2px solid #14a05a; outline-offset: 3px; }
+
+/* Match the 12px content scale used by Maintenance Team Registry and Reports. */
+.overview-priority-table th,
+.overview-priority-table td { font-size: 12px; line-height: 1.6; }
+.overview-priority-table .overview-incident-id { font-size: 12px; }
+
+.overview-context .overview-weather { font-size: 13px; line-height: 1.5; font-weight: 500; color: #525252; }
+
+.overview-recent-incidents .overview-recent-id { font-size: 12px; line-height: 1.5; font-weight: 600; color: #14213d; }
+
+.overview-recent-incidents .overview-recent-road { font-size: 12px; line-height: 1.6; }
+.overview-recent-incidents .risk-badge { font-size: 11px; line-height: 1.5; padding: 3px 8px; gap: 4px; }
+.overview-recent-incidents .risk-dot { width: 5px; height: 5px; }

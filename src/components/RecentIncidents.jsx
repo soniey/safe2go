@@ -6,7 +6,7 @@ const demoTime = new Intl.DateTimeFormat('en-MY', {
 
 export default function RecentIncidents({ incidents, title = 'Recent incidents' }) {
   return (
-    <section className="panel mt-6" aria-labelledby="recent-incidents-heading">
+    <section className="panel mt-6 overview-recent-incidents" aria-labelledby="recent-incidents-heading">
       <div className="panel-heading">
         <div>
           <h2 id="recent-incidents-heading">{title}</h2>
@@ -18,7 +18,7 @@ export default function RecentIncidents({ incidents, title = 'Recent incidents' 
           {incidents.map(incident => (
             <li key={incident.id} className="p-5">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="text-sm font-semibold">{incident.id} · {incident.location}</h3>
+                <div><p className="inc-mono overview-recent-id">{incident.id}</p><h3 className="overview-recent-road mt-1 font-medium text-neutral-800">{incident.location}</h3></div>
                 <RiskBadge risk={incident.risk} />
               </div>
               <p className="mt-2 text-xs text-neutral-500">{incident.type} · {incident.status}</p>

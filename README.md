@@ -304,12 +304,15 @@ requiring at least three timed records in each month. These descriptive fictiona
 comparisons are not real operational performance claims. The current October cohort
 remains separate; no comparison is inferred across incompatible historical/live demos.
 
-PDF export: select audience and month, click Export PDF, then choose Save as PDF in the
-browser print dialog. The A4 landscape print layout hides application navigation and
-controls, repeats table headers, wraps long cells and includes the selected report title
-and month. Internal audit histories expand for printing and restore their prior state
-after the dialog closes. The public view prints aggregate content only. No PDF package
-or external data service is used. Production build and whitespace checks pass.
+PDF export uses a dedicated ReportDocument template rather than the dashboard. Select
+Generate report > PDF report preview, review the document, then Save as PDF. In the browser
+print dialog choose Save as PDF and disable browser headers/footers. A4 landscape styling
+sets readable column widths, repeated table headers, row-break protection and a separate
+incident event-history appendix. Tree and public templates exclude incident audit details.
+The preview has a report reference, township, reporting month, source context and footer.
+Screen preview is continuous; final page breaks are applied by the browser print engine.
+No new package or external data service is used. Browser checks cover incident appendix,
+tree register isolation and absence of internal tables in the community report.
 
 Report generation now separates Incident Report and Tree Inspection Report. Each retains
 internal/public audience selection and the month filter. Generate report opens PDF/CSV

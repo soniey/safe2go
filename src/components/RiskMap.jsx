@@ -35,7 +35,7 @@ export default function RiskMap({ roadFocus, onRoadRiskChange }) {
     setRiskLevel('ALL');
     setSelectedId(null);
   }
-  return <section className="panel overflow-hidden"><div className="panel-heading"><div><h2>Township Risk Map</h2><p>Core climate hazards and extended detections across monitored roads.</p></div><span className="small-tag"><MapPin size={12} />Elmina</span></div><form aria-label="Map hazard filters" className="flex flex-wrap items-end gap-3 border-b border-neutral-200 p-4" onSubmit={event => event.preventDefault()}>
+  return <section className="panel overflow-hidden"><div className="panel-heading"><div><h2>Township Risk Map</h2></div><span className="small-tag"><MapPin size={12} />Elmina</span></div><form aria-label="Map hazard filters" className="flex flex-wrap items-end gap-3 border-b border-neutral-200 p-4" onSubmit={event => event.preventDefault()}>
   <label className="flex flex-col gap-1 text-xs text-neutral-500">
     Hazard type
     <select className="rounded border border-neutral-200 bg-white p-2 text-neutral-800" value={hazardType} onChange={event => { setHazardType(event.target.value); setSelectedId(null); }}>
