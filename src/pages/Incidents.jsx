@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { OctagonAlert, RotateCcw, ChevronRight } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { OctagonAlert, RotateCcw, ChevronRight, HardHat } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import IncidentQueue from '../components/incidents/IncidentQueue';
 import IncidentDetail from '../components/incidents/IncidentDetail';
-import { useIncidents, resetDemo } from '../utils/incidentStore';
+import { useIncidents, resetDemo, isCrewStage } from '../utils/incidentStore';
+import { useDemoSession } from '../utils/demoSession';
 import '../components/incidents/incidents.css';
 
 export default function Incidents() {
   const incidents = useIncidents();
+  const { session } = useDemoSession() || {};
+  const isAdmin = session?.type !== 'demo-maintenance';
   const [params, setParams] = useSearchParams();
   const [filter, setFilter] = useState('open');
 
@@ -32,10 +35,11 @@ export default function Incidents() {
 
   const open = incidents.filter(item => item.isOpen);
   const critical = open.filter(item => item.risk === 'CRITICAL');
+  const declined = open.filter(item => item.needsReassign);
   const stats = [
     { label: 'Open incidents', value: open.length, note: 'Not yet resolved' },
-    { label: 'Awaiting assignment', value: open.filter(item => item.stage === 'detected' || item.stage === 'verified').length, note: 'Need a crew', warn: true },
-    { label: 'Teams on the job', value: open.filter(item => ['assigned', 'dispatched', 'in_progress'].includes(item.stage)).length, note: 'Assigned or on site' },
+    { label: 'Need a crew', value: open.filter(item => item.stage === 'detected' || item.stage === 'verified').length, note: declined.length ? `${declined.length} declined, reassign` : 'Not yet assigned', warn: true },
+    { label: 'Crews on the job', value: open.filter(item => isCrewStage(item.stage)).length, note: 'Assigned, en route or working' },
     { label: 'Roads closed', value: incidents.filter(item => item.roadClosed).length, note: 'Detour active', alert: true },
   ];
 
@@ -49,10 +53,16 @@ export default function Incidents() {
     <div className="inc-page">
       <PageHeader title="Incident & Response Center" description="Turn detected hazards into assigned, tracked and resolved work.">
         <div className="heading-meta">
-          <span className="simulation-badge"><span className="h-1.5 w-1.5 rounded-full bg-neutral-500" />SIMULATED DATA</span>
-          <button type="button" className="inc-btn inc-btn-ghost inc-btn-sm" onClick={reset}><RotateCcw size={13} aria-hidden="true" />Reset demo</button>
+          <span className="simulation-badge"><span className="h-1.5 w-1.5 rounded-full bg-neutral-500" />{isAdmin ? 'ADMIN WORKSPACE' : 'VIEW ONLY'}</span>
+          {isAdmin
+            ? <button type="button" className="inc-btn inc-btn-ghost inc-btn-sm" onClick={reset}><RotateCcw size={13} aria-hidden="true" />Reset demo</button>
+            : <Link to="/staff" className="inc-btn inc-btn-ghost inc-btn-sm"><HardHat size={13} aria-hidden="true" />My field jobs</Link>}
         </div>
       </PageHeader>
+
+      {!isAdmin && (
+        <p className="inc-role-note">You're signed in as <strong>{session?.label || 'Maintenance Team'}</strong>. Admin actions are hidden here; update your jobs on <Link to="/staff">Field Jobs</Link>.</p>
+      )}
 
       {critical.length > 0 && (
         <div className="inc-banner" role="alert">
@@ -76,7 +86,7 @@ export default function Incidents() {
 
       <div className="inc-layout">
         <IncidentQueue incidents={incidents} selectedId={selected?.id} onSelect={select} filter={filter} onFilter={setFilter} />
-        {selected && <IncidentDetail key={selected.id} incident={selected} incidents={incidents} />}
+        {selected && <IncidentDetail key={selected.id} incident={selected} canAct={isAdmin} />}
       </div>
     </div>
   );

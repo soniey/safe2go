@@ -1,13 +1,20 @@
-import { Construction, UserRound } from 'lucide-react';
+import { Construction, UserRound, UserX } from 'lucide-react';
 import RiskTag from './RiskTag';
 import { hazardIcon } from './labels';
-import { formatTime } from '../../utils/incidentStore';
+import { formatTime, isCrewStage } from '../../utils/incidentStore';
 
 const filters = [
   { id: 'open', label: 'Open', test: incident => incident.isOpen },
   { id: 'closed', label: 'Closed', test: incident => !incident.isOpen },
   { id: 'all', label: 'All', test: () => true },
 ];
+
+function crewLine(incident) {
+  if (incident.needsReassign) return null;
+  if (incident.team && isCrewStage(incident.stage)) return `${incident.team.name} · ${incident.stageShort.toLowerCase()}`;
+  if (incident.team) return incident.team.name;
+  return 'Unassigned';
+}
 
 export default function IncidentQueue({ incidents, selectedId, onSelect, filter, onFilter }) {
   const active = filters.find(item => item.id === filter) || filters[0];
@@ -42,10 +49,12 @@ export default function IncidentQueue({ incidents, selectedId, onSelect, filter,
                   <span className="inc-queue-road"><Icon size={14} aria-hidden="true" />{incident.location}</span>
                   <span className="inc-queue-meta">
                     <RiskTag risk={incident.risk} />
-                    <span className="inc-stage-text">{incident.stageLabel}</span>
+                    <span className="inc-stage-text">{incident.needsReassign ? 'Verified' : incident.stageShort}</span>
                   </span>
                   <span className="inc-queue-team">
-                    <UserRound size={12} aria-hidden="true" />{incident.team ? incident.team.name : 'Unassigned'}
+                    {incident.needsReassign
+                      ? <span className="inc-declined-chip"><UserX size={11} aria-hidden="true" />Declined, reassign</span>
+                      : <><UserRound size={12} aria-hidden="true" />{crewLine(incident)}</>}
                     {incident.roadClosed && <span className="inc-closed-chip"><Construction size={11} aria-hidden="true" />Road closed</span>}
                   </span>
                 </button>

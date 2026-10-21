@@ -2,7 +2,7 @@ import { Signal, Wifi, BatteryFull, Route, Send, CheckCheck, UsersRound } from '
 import { formatTime, getDemoNow, notifyResidents } from '../../utils/incidentStore';
 
 // Phone-style preview of what residents receive. No real messages are sent.
-export default function ResidentAlertPreview({ incident }) {
+export default function ResidentAlertPreview({ incident, canAct = true }) {
   const residents = incident.residents;
   if (!residents) return null;
   const closed = incident.roadClosed || incident.roadEverClosed;
@@ -34,11 +34,11 @@ export default function ResidentAlertPreview({ incident }) {
       <p className="inc-alert-reach"><UsersRound size={13} aria-hidden="true" />{residents.count.toLocaleString()} residents · {residents.zone}</p>
       {sent ? (
         <p className="inc-sent-note"><CheckCheck size={14} aria-hidden="true" />Delivered to the Safe2Go resident channel</p>
-      ) : (
+      ) : canAct && incident.isOpen ? (
         <button type="button" className="inc-btn inc-btn-secondary w-full" onClick={() => notifyResidents(incident.id)}>
           <Send size={14} aria-hidden="true" />Notify residents
         </button>
-      )}
+      ) : null}
     </section>
   );
 }

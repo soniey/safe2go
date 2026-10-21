@@ -1,13 +1,22 @@
 {
   "RG-001": {
-    "whyFlagged": "Water on the road reached 16 cm with heavy rain still falling. Flood risk is 87%, the highest in the township.",
+    "whyFlagged": "Water on **Jalan Elmina 3** has reached **16 cm** and is still rising while heavy rain continues. Flood risk is **87%**, the highest in the township. CCTV **CAM-02** confirms standing water across the carriageway, so cars may stall or lose control. **Close the road now** and send a drainage crew.",
     "evidence": [
-      { "source": "Flood reading FL-001", "value": "16 cm, flood risk 87%" },
-      { "source": "CAM-02", "value": "Standing water, 87% confidence" },
-      { "source": "Weather feed", "value": "Rain continuing" }
+      {
+        "source": "Flood reading FL-001",
+        "value": "16 cm, flood risk 87%"
+      },
+      {
+        "source": "CAM-02",
+        "value": "Standing water, 87% confidence"
+      },
+      {
+        "source": "Weather feed",
+        "value": "Rain continuing"
+      }
     ],
-    "recommendedAction": "Close the road and dispatch the drainage team.",
-    "recommendedTeamId": "TM-DRN-B",
+    "recommendedAction": "Close the road and dispatch a drainage crew.",
+    "crewTask": "Clear the blocked drains and pump out the standing water.",
     "residents": {
       "zone": "Elmina West, Zone B",
       "count": 1240,
@@ -18,17 +27,26 @@
     },
     "seed": {
       "verifiedAt": "10:21",
-      "notes": { "detected": "FL-001 crossed the 15 cm alert line", "verified": "Standing water confirmed on CAM-02" }
+      "notes": {
+        "detected": "FL-001 crossed the 15 cm alert line",
+        "verified": "Standing water confirmed on CAM-02"
+      }
     }
   },
   "RG-002": {
-    "whyFlagged": "Tree T-204 has a risk score of 86% and the soil around it is highly saturated, so it is more likely to fall in wind or rain.",
+    "whyFlagged": "Roadside tree **T-204** on **Persiaran Elmina** has a risk score of **86%**. The soil around its roots is **highly saturated** after the rain, which weakens its grip, so wind could bring it down onto the road. An **arborist inspection** is needed before the next storm.",
     "evidence": [
-      { "source": "Tree T-204", "value": "Risk score 86%" },
-      { "source": "Soil condition", "value": "Highly saturated" }
+      {
+        "source": "Tree T-204",
+        "value": "Risk score 86%"
+      },
+      {
+        "source": "Soil condition",
+        "value": "Highly saturated"
+      }
     ],
     "recommendedAction": "Send an arborist to inspect before the wind picks up.",
-    "recommendedTeamId": "TM-ARB-1",
+    "crewTask": "Inspect tree T-204 and make it safe before the wind picks up.",
     "residents": {
       "zone": "Persiaran Elmina corridor",
       "count": 860,
@@ -37,16 +55,26 @@
       "title": "Persiaran Elmina lane closed",
       "message": "A lane is closed while crews make a roadside tree safe. Expect delays."
     },
-    "seed": { "notes": { "detected": "Tree risk score crossed the HIGH threshold" } }
+    "seed": {
+      "notes": {
+        "detected": "Tree risk score crossed the HIGH threshold"
+      }
+    }
   },
   "RG-003": {
-    "whyFlagged": "CAM-03 spotted surface damage in the travel lane with 91% confidence. Not urgent, but it can damage vehicles and grow after rain.",
+    "whyFlagged": "CCTV **CAM-03** detected a **pothole** in the travel lane of **Jalan Elmina 2** with **91% confidence**. It is **not urgent**, but it can damage tyres and will likely grow after more rain. Schedule a **patch repair**; no road closure is needed.",
     "evidence": [
-      { "source": "CAM-03", "value": "Pothole, 91% confidence" },
-      { "source": "Original severity", "value": "Medium" }
+      {
+        "source": "CAM-03",
+        "value": "Pothole, 91% confidence"
+      },
+      {
+        "source": "Original severity",
+        "value": "Medium"
+      }
     ],
     "recommendedAction": "Schedule a patch repair. No closure needed.",
-    "recommendedTeamId": "TM-RDW-A",
+    "crewTask": "Patch the pothole in the travel lane.",
     "residents": {
       "zone": "Jalan Elmina 2",
       "count": 410,
@@ -55,16 +83,26 @@
       "title": "Jalan Elmina 2 closed for repair",
       "message": "The road is closed for a short pothole repair. Please use another route."
     },
-    "seed": { "notes": { "detected": "Computer vision detection on CAM-03" } }
+    "seed": {
+      "notes": {
+        "detected": "Computer vision detection on CAM-03"
+      }
+    }
   },
   "RG-004": {
-    "whyFlagged": "Early warning: water is starting to collect at 4 cm. Flood risk is 35% and could rise if the rain continues.",
+    "whyFlagged": "Early warning on **Jalan Elmina 1**: water is starting to collect at **4 cm**. Flood risk is **35%** for now, but it could climb quickly if the rain keeps falling. Checking the **drains now** can stop this from becoming a flood.",
     "evidence": [
-      { "source": "Flood reading FL-002", "value": "4 cm, flood risk 35%" },
-      { "source": "CAM-04", "value": "Wet road surface" }
+      {
+        "source": "Flood reading FL-002",
+        "value": "4 cm, flood risk 35%"
+      },
+      {
+        "source": "CAM-04",
+        "value": "Wet road surface"
+      }
     ],
     "recommendedAction": "Inspect the drains now so it doesn't become a flood.",
-    "recommendedTeamId": "TM-DRN-B",
+    "crewTask": "Check and clear the drains before the water builds up.",
     "residents": {
       "zone": "Jalan Elmina 1",
       "count": 520,
@@ -73,16 +111,26 @@
       "title": "Jalan Elmina 1 is closed",
       "message": "Rising water. Use Elmina Park Access instead."
     },
-    "seed": { "notes": { "detected": "FL-002 early-warning level reached" } }
+    "seed": {
+      "notes": {
+        "detected": "FL-002 early-warning level reached"
+      }
+    }
   },
   "RG-005": {
-    "whyFlagged": "CCTV shows a weather-related fallen branch partly blocking Elmina Central. Confirmed in footage.",
+    "whyFlagged": "CCTV **CAM-05** shows a **fallen branch** partly blocking **Elmina Central** after the storm, confirmed in footage at **10:18**. Drivers swerving around it risk a collision. **Close the blocked lane** and send a crew to clear it.",
     "evidence": [
-      { "source": "CAM-05", "value": "Fallen branch, partial blockage" },
-      { "source": "CCTV review", "value": "Confirmed 10:18" }
+      {
+        "source": "CAM-05",
+        "value": "Fallen branch, partial blockage"
+      },
+      {
+        "source": "CCTV review",
+        "value": "Confirmed 10:18"
+      }
     ],
     "recommendedAction": "Close the blocked lane and send a crew to clear the branch.",
-    "recommendedTeamId": "TM-ARB-1",
+    "crewTask": "Clear the fallen branch from the blocked lane.",
     "residents": {
       "zone": "Elmina Central",
       "count": 980,
@@ -91,15 +139,30 @@
       "title": "Elmina Central lane closed",
       "message": "A lane is closed while crews clear a fallen branch. Expect delays."
     },
-    "seed": { "notes": { "detected": "Obstruction detected on CAM-05", "verified": "Confirmed in simulated CCTV review" } }
+    "seed": {
+      "notes": {
+        "detected": "Obstruction detected on CAM-05",
+        "verified": "Confirmed in simulated CCTV review"
+      }
+    }
   },
   "RG-006": {
-    "whyFlagged": "Standing water after rain at the park entrance. Cleared after a drainage check; water level is back to 0 cm.",
+    "whyFlagged": "Standing water was reported at the **Elmina Park Access** entrance after rain. A drainage check cleared it and the water level is back to **0 cm**, so the road is **safe** again.",
     "evidence": [
-      { "source": "Flood reading FL-003", "value": "0 cm, flood risk 8%" },
-      { "source": "CAM-06", "value": "Road clear" }
+      {
+        "source": "Flood reading FL-003",
+        "value": "0 cm, flood risk 8%"
+      },
+      {
+        "source": "CAM-06",
+        "value": "Road clear"
+      }
     ],
-    "recommendedTeamId": "TM-DRN-B",
-    "seed": { "notes": { "detected": "Standing water reported on CAM-06", "resolved": "Cleared after a drainage check" } }
+    "seed": {
+      "notes": {
+        "detected": "Standing water reported on CAM-06",
+        "resolved": "Cleared after a drainage check"
+      }
+    }
   }
 }

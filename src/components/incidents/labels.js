@@ -12,13 +12,20 @@ export const hazardIcon = type => hazardIcons[type] || TriangleAlert;
 export const eventLabels = {
   detected: 'Detected',
   verified: 'Verified',
-  assigned: 'Team assigned',
-  dispatched: 'Team dispatched',
+  assigned: 'Crew assigned',
+  unassigned: 'Assignment withdrawn',
+  declined: 'Crew declined the job',
+  accepted: 'Crew accepted',
+  dispatched: 'Crew en route',
+  on_site: 'Crew arrived on site',
+  in_progress: 'Work started',
+  resolved: 'Work completed',
   road_closed: 'Road closed',
-  in_progress: 'Maintenance started',
-  resolved: 'Resolved',
   reopened: 'Road reopened',
   notified: 'Residents notified',
 };
 
 export const minutesLabel = minutes => (minutes == null ? '—' : minutes < 60 ? `${minutes} min` : `${Math.floor(minutes / 60)} h ${minutes % 60} min`);
+
+// Directions link for crews (coordinates are illustrative demo positions).
+export const directionsUrl = coordinates => (coordinates ? `https://www.google.com/maps/dir/?api=1&destination=${coordinates.lat},${coordinates.lng}` : null);
