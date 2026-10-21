@@ -216,6 +216,7 @@ function buildIncident(incident, record, now, teamList, busyMap) {
     residents: extra.residents || null,
     stage: record.stage,
     stageLabel: stages[stageIndex(record.stage)]?.label || record.stage,
+    stageShort: stages[stageIndex(record.stage)]?.short || record.stage,
     team,
     teamRanking: ranking,
     recommendedTeam: recommended,
