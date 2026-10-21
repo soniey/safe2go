@@ -23,12 +23,12 @@ try {
       assert.equal((markup.match(/aria-pressed=/g) ?? []).length, visible.length);
     } else assert.ok(markup.includes('No active feed'));
   }
-  assert.equal(paths.size, 4, 'Four online cameras have existing images assigned');
+  assert.equal(paths.size, 7, 'Seven online cameras have existing images assigned');
   const { createRoadVisionIncident: create, readRoadVisionIncidents: read, findIncident, INCIDENT_STORAGE_KEY: key } = await server.ssrLoadModule('/src/utils/roadVisionIncidents.js');
   const values = new Map();
   const storage = { getItem: name => values.get(name) ?? null, setItem: (name, value) => values.set(name, value) };
   assert.equal(new Set(cameras.map(camera => camera.id)).size, cameras.length);
-  assert.equal(cameras.filter(camera => camera.status === 'Online').length, 4);
+  assert.equal(cameras.filter(camera => camera.status === 'Online').length, 7);
   assert.equal(create('DET-002', storage).incident.id, 'RG-003');
   assert.equal(create('DET-001', storage).incident.id, 'RG-001');
   assert.equal(read(storage).length, 0);

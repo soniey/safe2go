@@ -20,7 +20,8 @@
         "notes": "Moderate lean observed. Crown reduction recommended."
       }
     ],
-    "roadId": "RD-002"
+    "roadId": "RD-002",
+    "zone": "Zone C"
   },
   {
     "id": "TR-118",
@@ -38,7 +39,8 @@
         "notes": "Lean increased since previous inspection. Monitor root plate."
       }
     ],
-    "roadId": "RD-002"
+    "roadId": "RD-002",
+    "zone": "Zone B"
   },
   {
     "id": "TR-072",
@@ -55,7 +57,8 @@
         "inspector": "N. Rahman",
         "notes": "Healthy canopy. Check drainage after storm event."
       }
-    ]
+    ],
+    "zone": "Zone A"
   },
   {
     "id": "TR-301",
@@ -72,7 +75,8 @@
         "inspector": "S. Lim",
         "notes": "Deadwood in upper canopy. Pruning assessment requested."
       }
-    ]
+    ],
+    "zone": "Zone C"
   },
   {
     "id": "TR-156",
@@ -89,7 +93,8 @@
         "inspector": "A. Kumar",
         "notes": "No significant defects. Routine inspection."
       }
-    ]
+    ],
+    "zone": "Zone A"
   },
   {
     "id": "TR-089",
@@ -107,20 +112,619 @@
         "notes": "Small branch dieback. Recheck next monthly round."
       }
     ],
-    "roadId": "RD-005"
+    "roadId": "RD-005",
+    "zone": "Zone B"
   },
-  {"id":"TR-243","species":"Yellow flame tree","location":"Jalan Eserina · Verge 06","age":33,"health":"Fair","soil":"Saturated","tilt":16,"lastInspection":"2026-10-14","history":[{"date":"2026-10-14","inspector":"S. Lim","notes":"Waterlogged root zone and moderate lean. Drainage review scheduled."}]},
-  {"id":"TR-331","species":"Rain tree","location":"Elmina Valley · Trail 3","age":57,"health":"Poor","soil":"Moist","tilt":8,"lastInspection":"2026-10-11","history":[{"date":"2026-10-11","inspector":"A. Kumar","notes":"Sparse upper canopy and several dead branches. Pruning assessment requested."}]},
-  {"id":"TR-097","species":"Banyan","location":"Jalan Elaria · Pocket Park","age":44,"health":"Fair","soil":"Normal","tilt":13,"lastInspection":"2026-10-09","history":[{"date":"2026-10-09","inspector":"N. Rahman","notes":"Slight increase in trunk lean. Check root flare on next visit."}]},
-  {"id":"TR-412","species":"Angsana","location":"Elmina Valley · Trail 1","age":29,"health":"Good","soil":"Moist","tilt":4,"lastInspection":"2026-10-13","history":[{"date":"2026-10-13","inspector":"S. Lim","notes":"Canopy and root flare appear healthy. Routine monitoring."}]},
-  {"id":"TR-176","species":"Golden penda","location":"Jalan Elmina 5 · Verge 02","age":17,"health":"Good","soil":"Normal","tilt":2,"lastInspection":"2026-10-06","history":[{"date":"2026-10-06","inspector":"A. Kumar","notes":"Healthy growth and stable trunk. No action required."}]},
-  {"id":"TR-285","species":"Rain tree","location":"Persiaran Elmina · Median 07","age":51,"health":"Fair","soil":"Dry","tilt":10,"lastInspection":"2026-10-07","history":[{"date":"2026-10-07","inspector":"N. Rahman","notes":"Minor canopy thinning. Review during the next scheduled round."}]},
-  {"id":"TR-063","species":"Sea apple","location":"Jalan Eserina · Verge 11","age":22,"health":"Good","soil":"Moist","tilt":5,"lastInspection":"2026-10-05","history":[{"date":"2026-10-05","inspector":"S. Lim","notes":"Tree is stable with healthy foliage. Routine inspection."}]},
-  {"id":"TR-358","species":"Banyan","location":"Elmina Central · Green 3","age":66,"health":"Poor","soil":"Saturated","tilt":21,"lastInspection":"2026-10-17","history":[{"date":"2026-10-17","inspector":"A. Kumar","notes":"Large lean with saturated soil. Restrict nearby access pending arborist review."}]},
-  {"id":"TR-129","species":"Yellow flame tree","location":"Jalan Elmina 1 · Verge 08","age":38,"health":"Fair","soil":"Moist","tilt":7,"lastInspection":"2026-10-02","history":[{"date":"2026-10-02","inspector":"N. Rahman","notes":"Small areas of canopy dieback. Recheck at the next monthly inspection."}]},
-  {"id":"TR-447","species":"Angsana","location":"Elmina Valley · Trail 5","age":25,"health":"Good","soil":"Dry","tilt":3,"lastInspection":"2026-10-01","history":[{"date":"2026-10-01","inspector":"S. Lim","notes":"Healthy canopy. Soil dry but no visible stress."}]},
-  {"id":"TR-214","species":"Sea apple","location":"Persiaran Elmina · Median 03","age":47,"health":"Fair","soil":"Saturated","tilt":12,"lastInspection":"2026-10-18","history":[{"date":"2026-10-18","inspector":"A. Kumar","notes":"Soft ground around root plate after rain. Monitor drainage and stability."}]},
-  {"id":"TR-390","species":"Golden penda","location":"Jalan Elaria · Verge 04","age":14,"health":"Good","soil":"Normal","tilt":1,"lastInspection":"2026-10-04","history":[{"date":"2026-10-04","inspector":"N. Rahman","notes":"Young tree established well. Routine inspection only."}]},
-  {"id":"TR-265","species":"Rain tree","location":"Elmina Central · Plaza North","age":59,"health":"Poor","soil":"Dry","tilt":15,"lastInspection":"2026-10-19","history":[{"date":"2026-10-19","inspector":"S. Lim","notes":"Deadwood and declining canopy noted. Arborist assessment recommended."}]},
-  {"id":"TR-508","species":"Sea apple","location":"Jalan Elmina 4 · Verge 01","age":31,"health":"Good","soil":"Normal","tilt":6,"lastInspection":"2026-10-20","history":[{"date":"2026-10-20","inspector":"A. Kumar","notes":"Stable trunk and healthy crown. Routine inspection completed."}]}
+  {
+    "id": "TR-243",
+    "species": "Yellow flame tree",
+    "location": "Jalan Eserina · Verge 06",
+    "age": 33,
+    "health": "Fair",
+    "soil": "Saturated",
+    "tilt": 16,
+    "lastInspection": "2026-10-14",
+    "history": [
+      {
+        "date": "2026-10-14",
+        "inspector": "S. Lim",
+        "notes": "Waterlogged root zone and moderate lean. Drainage review scheduled."
+      }
+    ],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-331",
+    "species": "Rain tree",
+    "location": "Elmina Valley · Trail 3",
+    "age": 57,
+    "health": "Poor",
+    "soil": "Moist",
+    "tilt": 8,
+    "lastInspection": "2026-10-11",
+    "history": [
+      {
+        "date": "2026-10-11",
+        "inspector": "A. Kumar",
+        "notes": "Sparse upper canopy and several dead branches. Pruning assessment requested."
+      }
+    ],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-097",
+    "species": "Banyan",
+    "location": "Jalan Elaria · Pocket Park",
+    "age": 44,
+    "health": "Fair",
+    "soil": "Normal",
+    "tilt": 13,
+    "lastInspection": "2026-10-09",
+    "history": [
+      {
+        "date": "2026-10-09",
+        "inspector": "N. Rahman",
+        "notes": "Slight increase in trunk lean. Check root flare on next visit."
+      }
+    ],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-412",
+    "species": "Angsana",
+    "location": "Elmina Valley · Trail 1",
+    "age": 29,
+    "health": "Good",
+    "soil": "Moist",
+    "tilt": 4,
+    "lastInspection": "2026-10-13",
+    "history": [
+      {
+        "date": "2026-10-13",
+        "inspector": "S. Lim",
+        "notes": "Canopy and root flare appear healthy. Routine monitoring."
+      }
+    ],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-176",
+    "species": "Golden penda",
+    "location": "Jalan Elmina 5 · Verge 02",
+    "age": 17,
+    "health": "Good",
+    "soil": "Normal",
+    "tilt": 2,
+    "lastInspection": "2026-10-06",
+    "history": [
+      {
+        "date": "2026-10-06",
+        "inspector": "A. Kumar",
+        "notes": "Healthy growth and stable trunk. No action required."
+      }
+    ],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-285",
+    "species": "Rain tree",
+    "location": "Persiaran Elmina · Median 07",
+    "age": 51,
+    "health": "Fair",
+    "soil": "Dry",
+    "tilt": 10,
+    "lastInspection": "2026-10-07",
+    "history": [
+      {
+        "date": "2026-10-07",
+        "inspector": "N. Rahman",
+        "notes": "Minor canopy thinning. Review during the next scheduled round."
+      }
+    ],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-063",
+    "species": "Sea apple",
+    "location": "Jalan Eserina · Verge 11",
+    "age": 22,
+    "health": "Good",
+    "soil": "Moist",
+    "tilt": 5,
+    "lastInspection": "2026-10-05",
+    "history": [
+      {
+        "date": "2026-10-05",
+        "inspector": "S. Lim",
+        "notes": "Tree is stable with healthy foliage. Routine inspection."
+      }
+    ],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-358",
+    "species": "Banyan",
+    "location": "Elmina Central · Green 3",
+    "age": 66,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 21,
+    "lastInspection": "2026-10-17",
+    "history": [
+      {
+        "date": "2026-10-17",
+        "inspector": "A. Kumar",
+        "notes": "Large lean with saturated soil. Restrict nearby access pending arborist review."
+      }
+    ],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-129",
+    "species": "Yellow flame tree",
+    "location": "Jalan Elmina 1 · Verge 08",
+    "age": 38,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 7,
+    "lastInspection": "2026-10-02",
+    "history": [
+      {
+        "date": "2026-10-02",
+        "inspector": "N. Rahman",
+        "notes": "Small areas of canopy dieback. Recheck at the next monthly inspection."
+      }
+    ],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-447",
+    "species": "Angsana",
+    "location": "Elmina Valley · Trail 5",
+    "age": 25,
+    "health": "Good",
+    "soil": "Dry",
+    "tilt": 3,
+    "lastInspection": "2026-10-01",
+    "history": [
+      {
+        "date": "2026-10-01",
+        "inspector": "S. Lim",
+        "notes": "Healthy canopy. Soil dry but no visible stress."
+      }
+    ],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-214",
+    "species": "Sea apple",
+    "location": "Persiaran Elmina · Median 03",
+    "age": 47,
+    "health": "Fair",
+    "soil": "Saturated",
+    "tilt": 12,
+    "lastInspection": "2026-10-18",
+    "history": [
+      {
+        "date": "2026-10-18",
+        "inspector": "A. Kumar",
+        "notes": "Soft ground around root plate after rain. Monitor drainage and stability."
+      }
+    ],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-390",
+    "species": "Golden penda",
+    "location": "Jalan Elaria · Verge 04",
+    "age": 14,
+    "health": "Good",
+    "soil": "Normal",
+    "tilt": 1,
+    "lastInspection": "2026-10-04",
+    "history": [
+      {
+        "date": "2026-10-04",
+        "inspector": "N. Rahman",
+        "notes": "Young tree established well. Routine inspection only."
+      }
+    ],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-265",
+    "species": "Rain tree",
+    "location": "Elmina Central · Plaza North",
+    "age": 59,
+    "health": "Poor",
+    "soil": "Dry",
+    "tilt": 15,
+    "lastInspection": "2026-10-19",
+    "history": [
+      {
+        "date": "2026-10-19",
+        "inspector": "S. Lim",
+        "notes": "Deadwood and declining canopy noted. Arborist assessment recommended."
+      }
+    ],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-508",
+    "species": "Sea apple",
+    "location": "Jalan Elmina 4 · Verge 01",
+    "age": 31,
+    "health": "Good",
+    "soil": "Normal",
+    "tilt": 6,
+    "lastInspection": "2026-10-20",
+    "history": [
+      {
+        "date": "2026-10-20",
+        "inspector": "A. Kumar",
+        "notes": "Stable trunk and healthy crown. Routine inspection completed."
+      }
+    ],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-601",
+    "species": "Golden penda",
+    "location": "Jalan Elmina 3 · Verge 01",
+    "age": 8,
+    "health": "Good",
+    "soil": "Normal",
+    "tilt": 1,
+    "lastInspection": "2026-10-20",
+    "history": [],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-602",
+    "species": "Sea apple",
+    "location": "Jalan Elmina 3 · Verge 03",
+    "age": 11,
+    "health": "Good",
+    "soil": "Moist",
+    "tilt": 2,
+    "lastInspection": "2026-10-18",
+    "history": [],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-603",
+    "species": "Yellow flame tree",
+    "location": "Jalan Elmina 3 · Verge 05",
+    "age": 9,
+    "health": "Good",
+    "soil": "Normal",
+    "tilt": 0,
+    "lastInspection": "2026-10-16",
+    "history": [],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-604",
+    "species": "Golden penda",
+    "location": "Jalan Elmina 3 · Verge 07",
+    "age": 13,
+    "health": "Good",
+    "soil": "Normal",
+    "tilt": 2,
+    "lastInspection": "2026-10-14",
+    "history": [],
+    "zone": "Zone A"
+  },
+  {
+    "id": "TR-605",
+    "species": "Angsana",
+    "location": "Jalan Elmina 1 · Verge 02",
+    "age": 29,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 6,
+    "lastInspection": "2026-10-17",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-606",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 1 · Verge 04",
+    "age": 43,
+    "health": "Fair",
+    "soil": "Normal",
+    "tilt": 5,
+    "lastInspection": "2026-10-15",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-607",
+    "species": "Sea apple",
+    "location": "Jalan Elmina 1 · Verge 06",
+    "age": 34,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 8,
+    "lastInspection": "2026-10-13",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-608",
+    "species": "Banyan",
+    "location": "Jalan Elmina 1 · Verge 08",
+    "age": 39,
+    "health": "Fair",
+    "soil": "Normal",
+    "tilt": 4,
+    "lastInspection": "2026-10-11",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-609",
+    "species": "Yellow flame tree",
+    "location": "Jalan Elmina 1 · Verge 10",
+    "age": 27,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 7,
+    "lastInspection": "2026-10-09",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-610",
+    "species": "Angsana",
+    "location": "Jalan Elmina 1 · Verge 12",
+    "age": 46,
+    "health": "Fair",
+    "soil": "Normal",
+    "tilt": 6,
+    "lastInspection": "2026-10-07",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-611",
+    "species": "Golden penda",
+    "location": "Jalan Elmina 2 · Verge 01",
+    "age": 24,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 5,
+    "lastInspection": "2026-10-19",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-612",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 2 · Verge 03",
+    "age": 51,
+    "health": "Fair",
+    "soil": "Normal",
+    "tilt": 7,
+    "lastInspection": "2026-10-17",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-613",
+    "species": "Sea apple",
+    "location": "Jalan Elmina 2 · Verge 05",
+    "age": 32,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 4,
+    "lastInspection": "2026-10-15",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-614",
+    "species": "Banyan",
+    "location": "Jalan Elmina 2 · Verge 07",
+    "age": 42,
+    "health": "Fair",
+    "soil": "Normal",
+    "tilt": 8,
+    "lastInspection": "2026-10-13",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-615",
+    "species": "Angsana",
+    "location": "Jalan Elmina 2 · Verge 09",
+    "age": 36,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 5,
+    "lastInspection": "2026-10-11",
+    "history": [],
+    "zone": "Zone B"
+  },
+  {
+    "id": "TR-616",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 6 · Verge 01",
+    "age": 63,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 18,
+    "lastInspection": "2026-10-18",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-617",
+    "species": "Banyan",
+    "location": "Jalan Elmina 6 · Verge 03",
+    "age": 72,
+    "health": "Poor",
+    "soil": "Moist",
+    "tilt": 16,
+    "lastInspection": "2026-10-16",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-618",
+    "species": "Angsana",
+    "location": "Jalan Elmina 6 · Verge 05",
+    "age": 58,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 14,
+    "lastInspection": "2026-10-14",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-619",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 6 · Verge 07",
+    "age": 68,
+    "health": "Poor",
+    "soil": "Dry",
+    "tilt": 12,
+    "lastInspection": "2026-10-12",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-620",
+    "species": "Banyan",
+    "location": "Jalan Elmina 6 · Verge 09",
+    "age": 75,
+    "health": "Poor",
+    "soil": "Moist",
+    "tilt": 20,
+    "lastInspection": "2026-10-10",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-621",
+    "species": "Yellow flame tree",
+    "location": "Jalan Elmina 7 · Verge 02",
+    "age": 54,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 13,
+    "lastInspection": "2026-10-08",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-622",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 7 · Verge 04",
+    "age": 61,
+    "health": "Poor",
+    "soil": "Moist",
+    "tilt": 17,
+    "lastInspection": "2026-10-06",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-623",
+    "species": "Angsana",
+    "location": "Jalan Elmina 7 · Verge 06",
+    "age": 49,
+    "health": "Poor",
+    "soil": "Dry",
+    "tilt": 11,
+    "lastInspection": "2026-10-04",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-624",
+    "species": "Banyan",
+    "location": "Jalan Elmina 7 · Verge 08",
+    "age": 70,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 19,
+    "lastInspection": "2026-10-02",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-625",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 7 · Verge 10",
+    "age": 66,
+    "health": "Poor",
+    "soil": "Moist",
+    "tilt": 15,
+    "lastInspection": "2026-10-20",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-626",
+    "species": "Angsana",
+    "location": "Jalan Elmina 8 · Verge 01",
+    "age": 57,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 16,
+    "lastInspection": "2026-10-18",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-627",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 8 · Verge 03",
+    "age": 74,
+    "health": "Poor",
+    "soil": "Moist",
+    "tilt": 18,
+    "lastInspection": "2026-10-16",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-628",
+    "species": "Banyan",
+    "location": "Jalan Elmina 8 · Verge 05",
+    "age": 52,
+    "health": "Poor",
+    "soil": "Dry",
+    "tilt": 10,
+    "lastInspection": "2026-10-14",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-629",
+    "species": "Yellow flame tree",
+    "location": "Jalan Elmina 8 · Verge 07",
+    "age": 64,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 14,
+    "lastInspection": "2026-10-12",
+    "history": [],
+    "zone": "Zone C"
+  },
+  {
+    "id": "TR-630",
+    "species": "Rain tree",
+    "location": "Jalan Elmina 8 · Verge 09",
+    "age": 59,
+    "health": "Poor",
+    "soil": "Moist",
+    "tilt": 13,
+    "lastInspection": "2026-10-10",
+    "history": [],
+    "zone": "Zone C"
+  }
 ]
