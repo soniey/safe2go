@@ -1,6 +1,3 @@
-import { Camera } from 'lucide-react';
-import ModulePlaceholder from '../components/ModulePlaceholder';
-export default function RoadVision() { return <ModulePlaceholder title="Road Vision" description="Planned module: CCTV verification of flooding, fallen trees, branches and obstructions. Potholes and road damage are extended capabilities." icon={Camera} />; }
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Camera, Radio, CameraOff, ScanLine, ArrowUpRight, Plus, CheckCircle2 } from 'lucide-react';
