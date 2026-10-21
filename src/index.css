@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme { --font-sans: 'Inter', 'Segoe UI', sans-serif; --color-canvas: #fafafa; }
@@ -77,3 +78,76 @@ main { padding: 30px 26px; max-width: 1600px; width: 100%; margin: 0 auto; flex:
 .tree-form { display: grid; gap: 14px; padding: 20px 23px 23px; }.tree-form label { display: grid; gap: 6px; color: #525252; font-size: 10px; font-weight: 550; }.tree-form input,.tree-form select,.tree-form textarea { width: 100%; border: 1px solid #e5e5e5; border-radius: 6px; padding: 9px 10px; color: #262626; background: white; font: inherit; font-weight: 400; outline: none; }.tree-form input:focus,.tree-form select:focus,.tree-form textarea:focus { border-color: #a3a3a3; }.tree-form textarea { resize: vertical; }.tree-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }.tree-form-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 4px; }.tree-form-actions .primary-button { font-size: 10px; padding: 9px 12px; }
 .tree-notice { position: fixed; right: 24px; bottom: 24px; z-index: 70; border: 1px solid #bbf7d0; border-radius: 7px; padding: 12px 16px; color: #166534; background: #f0fdf4; box-shadow: 0 5px 20px #0001; font-size: 11px; }
 @media(max-width:767px) { .tree-list-heading { align-items: stretch; flex-direction: column; }.tree-search { min-width: 0; }.tree-filters { overflow-x: auto; padding-inline: 12px; }.tree-filter { white-space: nowrap; }.tree-table-footer { flex-direction: column; }.tree-table th,.tree-table td { padding-inline: 12px; }.tree-form-row { grid-template-columns: 1fr; }.tree-metric { padding-inline: 13px; }.tree-metric>svg { right: 12px; } }
+
+/* Tree Risk page uses the Incident & Response Center visual system. */
+.tree-page {
+  --tree-navy: #14213d;
+  --tree-green: #14a05a;
+  --tree-green-dark: #0c7e45;
+  --tree-muted: #5b6472;
+  --tree-faint: #8a919c;
+  --tree-paper: #f5f3ee;
+  --tree-line: #dcd8ce;
+  --tree-soft-line: #ece8df;
+  font-family: 'IBM Plex Sans', var(--font-sans);
+  color: var(--tree-navy);
+}
+.tree-page h1 { color: var(--tree-navy); }
+.tree-page h2 { font-size: 14px; letter-spacing: 0; }
+.tree-page .eyebrow { color: var(--tree-green-dark); }
+.tree-page .panel { border-color: var(--tree-line); border-radius: 8px; }
+.tree-page .tree-metric { min-height: 102px; background: #fff; }
+.tree-page .tree-metric>span { color: var(--tree-muted); font-size: 12px; }
+.tree-page .tree-metric>strong { color: var(--tree-navy); font: 600 30px/1.2 'IBM Plex Mono', ui-monospace, monospace; letter-spacing: 0; }
+.tree-page .tree-metric-critical>strong,.tree-page .tree-metric-critical>svg { color: #c8102e; }
+.tree-page .tree-metric-high>strong,.tree-page .tree-metric-high>svg { color: #b66b00; }
+.tree-page .tree-list-heading,.tree-page .tree-filters,.tree-page .tree-table-footer { border-color: var(--tree-soft-line); }
+.tree-page .tree-list-heading p,.tree-page .tree-table-footer { color: var(--tree-faint); }
+.tree-page .tree-search { border-color: var(--tree-line); border-radius: 6px; }
+.tree-page .tree-search:focus-within { border-color: var(--tree-green); }
+.tree-page .tree-search input { font: 12px 'IBM Plex Sans', var(--font-sans); }
+.tree-page .tree-filter { color: var(--tree-muted); font-size: 12px; }
+.tree-page .tree-filter:hover,.tree-page .tree-filter-active { background: var(--tree-paper); }
+.tree-page .tree-filter-active { color: var(--tree-navy); }
+.tree-page .count-badge { border-color: var(--tree-line); color: var(--tree-muted); }
+.tree-page .tree-table th { color: var(--tree-muted); background: #faf9f6; border-color: var(--tree-soft-line); font-size: 11px; }
+.tree-page .tree-table td { padding-block: 14px; color: var(--tree-muted); border-color: #f0ede6; font-size: 12px; }
+.tree-page .tree-table tbody tr:hover { background: #faf9f6; }
+.tree-page .tree-table .tree-priority-row td:first-child { border-left-color: #c8102e; }
+.tree-page .tree-id,.tree-page .tree-risk-score>strong { color: var(--tree-navy); font-size: 12px; }
+.tree-page .tree-species { color: #354258; font-size: 12px; }
+.tree-page .tree-location { color: var(--tree-faint); font-size: 11px; }
+.tree-page .condition-pill { background: var(--tree-paper); color: var(--tree-muted); font-size: 11px; }
+.tree-page .condition-poor { background: #f9dde1; color: #7a0a1c; }
+.tree-page .condition-fair { background: #fdf3cf; color: #6b4e00; }
+.tree-page .condition-good { background: #dff3e6; color: #14532d; }
+.tree-page .tree-risk-score>strong { font: 600 14px 'IBM Plex Mono', ui-monospace, monospace; }
+.tree-page .tree-actions { gap: 7px; }
+.tree-page .tree-history-button,.tree-page .tree-inspect-button { border-color: var(--tree-line); border-radius: 6px; color: var(--tree-muted); background: #fff; font-size: 11px; }
+.tree-page .tree-history-button:hover,.tree-page .tree-inspect-button:hover { background: var(--tree-paper); color: var(--tree-navy); }
+.tree-page .history-row td { background: #faf9f6; }
+.tree-page .history-title,.tree-page .inspection-history article strong { color: var(--tree-navy); }
+.tree-page .history-title,.tree-page .inspection-history article { font-size: 12px; }
+.tree-page .history-title span,.tree-page .inspection-history time,.tree-page .inspection-history article p { color: var(--tree-muted); }
+.tree-page .tree-table-footer { font-size: 11px; }
+.tree-page .tree-modal { border-color: var(--tree-line); }
+.tree-page .tree-modal-heading,.tree-page .tree-form input,.tree-page .tree-form select,.tree-page .tree-form textarea { border-color: var(--tree-line); }
+.tree-page .tree-modal-heading h2 { font-size: 20px; }
+.tree-page .tree-form label { color: var(--tree-muted); font-size: 12px; }
+.tree-page .tree-form input,.tree-page .tree-form select,.tree-page .tree-form textarea { font-family: inherit; font-size: 13px; }
+.tree-page .tree-form input:focus,.tree-page .tree-form select:focus,.tree-page .tree-form textarea:focus { border-color: var(--tree-green); }
+.tree-page .tree-form-actions .primary-button { background: var(--tree-green); font-family: inherit; font-size: 12px; }
+.tree-page .tree-form-actions .primary-button:hover { background: var(--tree-green-dark); }
+.tree-page :focus-visible { outline-color: var(--tree-green); }
+.tree-critical-banner { display: flex; align-items: center; gap: 10px; position: relative; margin: 0 0 22px; padding: 11px 16px; border-radius: 8px 8px 0 0; color: #fff; background: #c8102e; font-size: 13px; }
+.tree-critical-banner::after { content: ''; position: absolute; right: 0; bottom: -6px; left: 0; height: 6px; border-radius: 0 0 4px 4px; background: repeating-linear-gradient(-45deg, #f2b705 0 10px, #14213d 10px 20px); }
+.tree-critical-banner>svg { flex: 0 0 auto; }
+.tree-critical-message { min-width: 0; }
+.tree-critical-banner strong { font-weight: 600; }
+.tree-critical-banner button { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; margin-left: auto; padding: 6px 10px; border: 1px solid #ffffff80; border-radius: 5px; color: #fff; font-size: 12px; font-weight: 500; }
+.tree-critical-banner button:hover { background: #ffffff1f; }
+@media(max-width:767px) {
+  .tree-critical-banner { align-items: flex-start; flex-wrap: wrap; font-size: 12px; }
+  .tree-critical-message { flex: 1; line-height: 1.5; }
+  .tree-critical-banner button { margin-left: 28px; }
+}

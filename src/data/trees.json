@@ -1,8 +1,126 @@
 [
-  {"id":"TR-204","species":"Rain tree","location":"Jalan Elmina 2 · Verge 04","age":48,"health":"Poor","soil":"Saturated","tilt":18,"lastInspection":"2026-10-16","history":[{"date":"2026-10-16","inspector":"N. Rahman","notes":"New canopy dieback and saturated soil after rainfall. Reinspect within 7 days."},{"date":"2026-08-22","inspector":"S. Lim","notes":"Moderate lean observed. Crown reduction recommended."}]},
-  {"id":"TR-118","species":"Angsana","location":"Persiaran Elmina · Median 12","age":36,"health":"Fair","soil":"Moist","tilt":14,"lastInspection":"2026-10-12","history":[{"date":"2026-10-12","inspector":"A. Kumar","notes":"Lean increased since previous inspection. Monitor root plate."}]},
-  {"id":"TR-072","species":"Golden penda","location":"Jalan Eserina · Park edge","age":19,"health":"Good","soil":"Saturated","tilt":7,"lastInspection":"2026-10-15","history":[{"date":"2026-10-15","inspector":"N. Rahman","notes":"Healthy canopy. Check drainage after storm event."}]},
-  {"id":"TR-301","species":"Rain tree","location":"Elmina Valley · Trail 3","age":62,"health":"Poor","soil":"Dry","tilt":11,"lastInspection":"2026-10-08","history":[{"date":"2026-10-08","inspector":"S. Lim","notes":"Deadwood in upper canopy. Pruning assessment requested."}]},
-  {"id":"TR-156","species":"Banyan","location":"Jalan Elaria · Verge 09","age":28,"health":"Good","soil":"Normal","tilt":3,"lastInspection":"2026-10-10","history":[{"date":"2026-10-10","inspector":"A. Kumar","notes":"No significant defects. Routine inspection."}]},
-  {"id":"TR-089","species":"Angsana","location":"Elmina Central · Square","age":41,"health":"Fair","soil":"Moist","tilt":9,"lastInspection":"2026-10-03","history":[{"date":"2026-10-03","inspector":"N. Rahman","notes":"Small branch dieback. Recheck next monthly round."}]}
+  {
+    "id": "TR-204",
+    "species": "Rain tree",
+    "location": "Persiaran Elmina ? Verge 04",
+    "age": 48,
+    "health": "Poor",
+    "soil": "Saturated",
+    "tilt": 18,
+    "lastInspection": "2026-10-16",
+    "history": [
+      {
+        "date": "2026-10-16",
+        "inspector": "N. Rahman",
+        "notes": "New canopy dieback and saturated soil after rainfall. Reinspect within 7 days."
+      },
+      {
+        "date": "2026-08-22",
+        "inspector": "S. Lim",
+        "notes": "Moderate lean observed. Crown reduction recommended."
+      }
+    ],
+    "roadId": "RD-002"
+  },
+  {
+    "id": "TR-118",
+    "species": "Angsana",
+    "location": "Persiaran Elmina · Median 12",
+    "age": 36,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 14,
+    "lastInspection": "2026-10-12",
+    "history": [
+      {
+        "date": "2026-10-12",
+        "inspector": "A. Kumar",
+        "notes": "Lean increased since previous inspection. Monitor root plate."
+      }
+    ],
+    "roadId": "RD-002"
+  },
+  {
+    "id": "TR-072",
+    "species": "Golden penda",
+    "location": "Jalan Eserina · Park edge",
+    "age": 19,
+    "health": "Good",
+    "soil": "Saturated",
+    "tilt": 7,
+    "lastInspection": "2026-10-15",
+    "history": [
+      {
+        "date": "2026-10-15",
+        "inspector": "N. Rahman",
+        "notes": "Healthy canopy. Check drainage after storm event."
+      }
+    ]
+  },
+  {
+    "id": "TR-301",
+    "species": "Rain tree",
+    "location": "Elmina Valley · Trail 3",
+    "age": 62,
+    "health": "Poor",
+    "soil": "Dry",
+    "tilt": 11,
+    "lastInspection": "2026-10-08",
+    "history": [
+      {
+        "date": "2026-10-08",
+        "inspector": "S. Lim",
+        "notes": "Deadwood in upper canopy. Pruning assessment requested."
+      }
+    ]
+  },
+  {
+    "id": "TR-156",
+    "species": "Banyan",
+    "location": "Jalan Elaria · Verge 09",
+    "age": 28,
+    "health": "Good",
+    "soil": "Normal",
+    "tilt": 3,
+    "lastInspection": "2026-10-10",
+    "history": [
+      {
+        "date": "2026-10-10",
+        "inspector": "A. Kumar",
+        "notes": "No significant defects. Routine inspection."
+      }
+    ]
+  },
+  {
+    "id": "TR-089",
+    "species": "Angsana",
+    "location": "Elmina Central · Square",
+    "age": 41,
+    "health": "Fair",
+    "soil": "Moist",
+    "tilt": 9,
+    "lastInspection": "2026-10-03",
+    "history": [
+      {
+        "date": "2026-10-03",
+        "inspector": "N. Rahman",
+        "notes": "Small branch dieback. Recheck next monthly round."
+      }
+    ],
+    "roadId": "RD-005"
+  },
+  {"id":"TR-243","species":"Yellow flame tree","location":"Jalan Eserina · Verge 06","age":33,"health":"Fair","soil":"Saturated","tilt":16,"lastInspection":"2026-10-14","history":[{"date":"2026-10-14","inspector":"S. Lim","notes":"Waterlogged root zone and moderate lean. Drainage review scheduled."}]},
+  {"id":"TR-331","species":"Rain tree","location":"Elmina Valley · Trail 3","age":57,"health":"Poor","soil":"Moist","tilt":8,"lastInspection":"2026-10-11","history":[{"date":"2026-10-11","inspector":"A. Kumar","notes":"Sparse upper canopy and several dead branches. Pruning assessment requested."}]},
+  {"id":"TR-097","species":"Banyan","location":"Jalan Elaria · Pocket Park","age":44,"health":"Fair","soil":"Normal","tilt":13,"lastInspection":"2026-10-09","history":[{"date":"2026-10-09","inspector":"N. Rahman","notes":"Slight increase in trunk lean. Check root flare on next visit."}]},
+  {"id":"TR-412","species":"Angsana","location":"Elmina Valley · Trail 1","age":29,"health":"Good","soil":"Moist","tilt":4,"lastInspection":"2026-10-13","history":[{"date":"2026-10-13","inspector":"S. Lim","notes":"Canopy and root flare appear healthy. Routine monitoring."}]},
+  {"id":"TR-176","species":"Golden penda","location":"Jalan Elmina 5 · Verge 02","age":17,"health":"Good","soil":"Normal","tilt":2,"lastInspection":"2026-10-06","history":[{"date":"2026-10-06","inspector":"A. Kumar","notes":"Healthy growth and stable trunk. No action required."}]},
+  {"id":"TR-285","species":"Rain tree","location":"Persiaran Elmina · Median 07","age":51,"health":"Fair","soil":"Dry","tilt":10,"lastInspection":"2026-10-07","history":[{"date":"2026-10-07","inspector":"N. Rahman","notes":"Minor canopy thinning. Review during the next scheduled round."}]},
+  {"id":"TR-063","species":"Sea apple","location":"Jalan Eserina · Verge 11","age":22,"health":"Good","soil":"Moist","tilt":5,"lastInspection":"2026-10-05","history":[{"date":"2026-10-05","inspector":"S. Lim","notes":"Tree is stable with healthy foliage. Routine inspection."}]},
+  {"id":"TR-358","species":"Banyan","location":"Elmina Central · Green 3","age":66,"health":"Poor","soil":"Saturated","tilt":21,"lastInspection":"2026-10-17","history":[{"date":"2026-10-17","inspector":"A. Kumar","notes":"Large lean with saturated soil. Restrict nearby access pending arborist review."}]},
+  {"id":"TR-129","species":"Yellow flame tree","location":"Jalan Elmina 1 · Verge 08","age":38,"health":"Fair","soil":"Moist","tilt":7,"lastInspection":"2026-10-02","history":[{"date":"2026-10-02","inspector":"N. Rahman","notes":"Small areas of canopy dieback. Recheck at the next monthly inspection."}]},
+  {"id":"TR-447","species":"Angsana","location":"Elmina Valley · Trail 5","age":25,"health":"Good","soil":"Dry","tilt":3,"lastInspection":"2026-10-01","history":[{"date":"2026-10-01","inspector":"S. Lim","notes":"Healthy canopy. Soil dry but no visible stress."}]},
+  {"id":"TR-214","species":"Sea apple","location":"Persiaran Elmina · Median 03","age":47,"health":"Fair","soil":"Saturated","tilt":12,"lastInspection":"2026-10-18","history":[{"date":"2026-10-18","inspector":"A. Kumar","notes":"Soft ground around root plate after rain. Monitor drainage and stability."}]},
+  {"id":"TR-390","species":"Golden penda","location":"Jalan Elaria · Verge 04","age":14,"health":"Good","soil":"Normal","tilt":1,"lastInspection":"2026-10-04","history":[{"date":"2026-10-04","inspector":"N. Rahman","notes":"Young tree established well. Routine inspection only."}]},
+  {"id":"TR-265","species":"Rain tree","location":"Elmina Central · Plaza North","age":59,"health":"Poor","soil":"Dry","tilt":15,"lastInspection":"2026-10-19","history":[{"date":"2026-10-19","inspector":"S. Lim","notes":"Deadwood and declining canopy noted. Arborist assessment recommended."}]},
+  {"id":"TR-508","species":"Sea apple","location":"Jalan Elmina 4 · Verge 01","age":31,"health":"Good","soil":"Normal","tilt":6,"lastInspection":"2026-10-20","history":[{"date":"2026-10-20","inspector":"A. Kumar","notes":"Stable trunk and healthy crown. Routine inspection completed."}]}
 ]

@@ -1,22 +1,21 @@
-import { Fragment, useEffect, useMemo, useState } from 'react';
-import { ArrowDownUp, ClipboardCheck, Clock3, Leaf, Search, ShieldAlert, Trees, X } from 'lucide-react';
+import { Fragment, useMemo, useState } from 'react';
+import { ArrowDownUp, ChevronRight, ClipboardCheck, Clock3, Leaf, OctagonAlert, Search, ShieldAlert, Trees, X } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import RiskBadge from '../components/RiskBadge';
-import { treeApi } from '../utils/treeRisk';
+import { treeApi, useTrees } from '../utils/treeRisk';
 
 const filters = ['All trees', 'Critical', 'High', 'Watch', 'Safe'];
 const today = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kuala_Lumpur' });
 
 export default function TreeRisk() {
-  const [trees, setTrees] = useState([]);
+  const trees = useTrees();
   const [filter, setFilter] = useState('All trees');
   const [query, setQuery] = useState('');
   const [historyId, setHistoryId] = useState(null);
   const [inspectTree, setInspectTree] = useState(null);
   const [notice, setNotice] = useState('');
 
-  async function refresh() { setTrees(await treeApi.list()); }
-  useEffect(() => { refresh(); }, []);
+
 
   const counts = useMemo(() => trees.reduce((result, tree) => {
     result[tree.risk] = (result[tree.risk] || 0) + 1;
@@ -38,13 +37,21 @@ export default function TreeRisk() {
     setInspectTree(null);
     setNotice(`Inspection saved for ${inspectTree.id}`);
     window.setTimeout(() => setNotice(''), 3500);
-    await refresh();
+
   }
 
-  return <>
+  const criticalTrees = trees.filter(tree => tree.risk === 'CRITICAL');
+
+  return <div className="tree-page">
     <PageHeader title="Tree Risk" description="Assess tree condition, environmental factors and inspection priorities.">
       <div className="heading-meta"><span className="simulation-badge"><span className="h-1.5 w-1.5 rounded-full bg-neutral-500" />DEMO RECORDS</span><span className="flex items-center gap-1.5 text-[11px] text-neutral-400"><Clock3 size={12} />Risk recalculated from latest inspection</span></div>
     </PageHeader>
+
+    {criticalTrees.length > 0 && <div className="tree-critical-banner" role="alert">
+      <OctagonAlert size={18} aria-hidden="true" />
+      <span className="tree-critical-message"><strong>{criticalTrees.length} critical tree{criticalTrees.length === 1 ? '' : 's'} need{criticalTrees.length === 1 ? 's' : ''} assessment</strong><span> · {criticalTrees.map(tree => `${tree.location} (${tree.id})`).join(', ')}</span></span>
+      <button type="button" onClick={() => { setFilter('Critical'); document.getElementById('tree-register')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>Review critical trees<ChevronRight size={14} aria-hidden="true" /></button>
+    </div>}
 
     <div className="tree-summary grid grid-cols-2 gap-3 sm:grid-cols-4">
       <article className="panel tree-metric"><span>Total tree records</span><strong>{trees.length}</strong><Trees size={17} /></article>
@@ -53,7 +60,7 @@ export default function TreeRisk() {
       <article className="panel tree-metric"><span>Inspection due</span><strong>{trees.filter(tree => ['CRITICAL', 'HIGH'].includes(tree.risk)).length}</strong><ClipboardCheck size={17} /></article>
     </div>
 
-    <section className="panel tree-panel">
+    <section id="tree-register" className="panel tree-panel">
       <div className="panel-heading tree-list-heading"><div><div className="flex items-center gap-2.5"><h2>Tree register</h2><span className="count-badge">{visibleTrees.length}</span></div><p>Inspection priority is sorted by calculated risk score.</p></div>
         <label className="tree-search"><Search size={14} /><span className="sr-only">Search tree records</span><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Search ID, species or location" /></label>
       </div>
@@ -75,5 +82,5 @@ export default function TreeRisk() {
 
     {notice && <div className="tree-notice" role="status">{notice}</div>}
     {inspectTree && <div className="tree-modal-backdrop" onMouseDown={event => { if (event.target === event.currentTarget) setInspectTree(null); }}><section className="tree-modal panel" role="dialog" aria-modal="true" aria-labelledby="inspection-title"><div className="tree-modal-heading"><div><span className="eyebrow">{inspectTree.id} · {inspectTree.species}</span><h2 id="inspection-title">Record inspection</h2></div><button className="icon-button" onClick={() => setInspectTree(null)} aria-label="Close inspection form"><X size={18} /></button></div><form onSubmit={saveInspection} className="tree-form"><label>Inspection date<input type="date" name="date" defaultValue={today()} required /></label><label>Inspector<input name="inspector" placeholder="Inspector name" required /></label><div className="tree-form-row"><label>Health<select name="health" defaultValue={inspectTree.health}><option>Good</option><option>Fair</option><option>Poor</option></select></label><label>Soil condition<select name="soil" defaultValue={inspectTree.soil}><option>Dry</option><option>Normal</option><option>Moist</option><option>Saturated</option></select></label></div><label>Trunk tilt (degrees)<input type="number" name="tilt" min="0" max="90" defaultValue={inspectTree.tilt} required /></label><label>Findings and follow-up<textarea name="notes" rows="3" placeholder="Describe observations and recommended action" required /></label><div className="tree-form-actions"><button type="button" className="tree-history-button" onClick={() => setInspectTree(null)}>Cancel</button><button className="primary-button" type="submit"><ClipboardCheck size={15} />Save inspection</button></div></form></section></div>}
-  </>;
+  </div>;
 }
