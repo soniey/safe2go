@@ -1,10 +1,11 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { ShieldAlert } from 'lucide-react';
-import { distribution, overallRisk, roads } from '../utils/dashboard';
+import { useDashboard } from '../utils/dashboard';
 import { riskStyles } from '../utils/risk';
 import RiskBadge from './RiskBadge';
 
 export default function RiskStatus({ selectedRisk = 'ALL', onSelectRisk }) {
+  const { distribution, overallRisk, roads } = useDashboard();
   return (
     <section className="panel risk-status" aria-labelledby="township-risk-heading">
       <div className="panel-heading"><div><h2 id="township-risk-heading">Township Risk Status</h2><p>Across {roads.length} monitored roads.</p></div><ShieldAlert size={17} className="text-neutral-400" /></div>

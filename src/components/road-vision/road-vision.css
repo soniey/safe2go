@@ -1,9 +1,147 @@
-.road-vision .rv-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:24px}.rv-workspace{display:grid;grid-template-columns:290px minmax(0,1fr);gap:20px;align-items:start}.rv-main{min-width:0;display:grid;gap:20px}.rv-camera-list{padding:10px;display:grid;gap:6px}.rv-camera{padding:14px;text-align:left;border:1px solid transparent;border-radius:8px;display:grid;gap:8px;width:100%;background:white;font-size:12px;color:#525252}.rv-camera:hover{background:#f8faf9}.rv-camera.rv-selected{border-color:#a3b9ac;background:#f3f7f4}.rv-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.rv-row strong,.rv-row h3{font-size:13px;font-weight:600;color:#262626}.rv-camera small,.rv-capture{font-size:10px;color:#737373;line-height:1.7}.rv-status{font-size:9px;padding:3px 6px;border-radius:4px;background:#f1f1f1;color:#626262}.rv-online{background:#eaf5ee;color:#247044}.rv-maintenance{background:#fff5df;color:#8b641c}.rv-feed{position:relative;aspect-ratio:16/9;background:#d3dbd6;isolation:isolate}.rv-feed>img{display:block;width:100%;height:100%;object-fit:contain}.rv-hazards{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.rv-feed-label{position:absolute;top:12px;left:12px;background:#182822d9;color:#fff;padding:6px 9px;font-size:9px;letter-spacing:.06em;border-radius:4px}.rv-feed-caption{position:absolute;bottom:0;left:0;right:0;background:#17231dd9;color:#fff;font-size:10px;padding:9px 12px}.rv-box{position:absolute;border:2px solid;background:transparent;border-radius:3px;cursor:pointer}.rv-box>span{position:absolute;bottom:100%;left:-2px;white-space:nowrap;color:#fff;font-size:10px;padding:4px 6px;border-radius:3px 3px 0 0}.rv-selected-box{background:transparent}.road-vision button:focus-visible,.road-vision a:focus-visible{outline:3px solid #2563eb;outline-offset:3px}.rv-capture{padding:12px 16px}.rv-unavailable{min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#f6f7f7;padding:24px;text-align:center;color:#737373;font-size:12px}.rv-unavailable h3{font-weight:600;color:#404040}.rv-details-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;align-items:start}.rv-detection{border-color:#e5e5e5}.rv-detail-body{padding:20px}.rv-description,.rv-empty{font-size:12px;line-height:1.8;color:#737373;margin:14px 0}.rv-empty{padding:8px}.rv-facts{display:grid;gap:7px;font-size:11px;margin:18px 0}.rv-facts dt{color:#737373}.rv-facts dd{margin-bottom:7px;color:#404040}.rv-primary{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:#263f32;color:white;border-radius:6px;padding:12px;font-size:12px;font-weight:500;text-decoration:none}.rv-primary:disabled{opacity:.6;cursor:wait}.rv-linked{display:flex;align-items:center;gap:6px;color:#247044;font-size:11px;margin-bottom:12px}.rv-integration{font-size:10px;line-height:1.8;color:#737373;margin-top:14px}.rv-integration a{text-decoration:underline}.rv-success,.rv-error{font-size:12px;padding:12px;border-radius:5px;margin-top:14px;line-height:1.7}.rv-success{background:#eaf5ee;color:#247044}.rv-error{background:#fff0ed;color:#a53d2a}@media(max-width:1200px){.rv-details-grid{grid-template-columns:1fr}.rv-workspace{grid-template-columns:250px minmax(0,1fr)}}@media(max-width:767px){.road-vision .rv-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.rv-workspace{grid-template-columns:1fr}.rv-camera-list{grid-template-columns:repeat(2,minmax(0,1fr))}.rv-feed-label{font-size:7px;top:6px;left:6px}.rv-box>span{font-size:8px;padding:3px}.rv-feed-caption{font-size:8px}}@media(max-width:420px){.rv-camera-list{grid-template-columns:1fr}.rv-camera{padding:12px}.rv-detail-body{padding:16px}}
+﻿.road-vision .rv-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
 
+.rv-metric { min-width: 0; }
+.rv-metric-network { --metric-color: #2563a6; --metric-tint: #edf4fc; }
+.rv-metric-online { --metric-color: #247044; --metric-tint: #eaf5ee; }
+.rv-metric-offline { --metric-color: #b04438; --metric-tint: #fdf0ed; }
+.rv-metric-detections { --metric-color: #946211; --metric-tint: #fff6e2; }
+.rv-metric .stat-card { height: 100%; border-left: 4px solid var(--metric-color); }
+.rv-metric .stat-icon { color: var(--metric-color); background: var(--metric-tint); }
+.rv-metric .stat-value { color: var(--metric-color); }
 
-.rv-feed{display:flex;align-items:center;justify-content:center;background:#17231d;border-radius:8px;overflow:hidden}.rv-image-stage{position:relative;flex:none}.rv-image-stage>img{display:block;width:100%;height:100%;object-fit:contain}.rv-box{border-width:1px}.rv-feed-label{max-width:calc(100% - 24px)}.rv-feed-caption{line-height:1.5}.simulation-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:6px 9px;border-radius:5px;background:#f1f5f2;color:#365443}
+.rv-workspace {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
 
+.rv-main { min-width: 0; display: grid; gap: 20px; }
+.rv-workspace > *, .rv-details-grid > * { min-width: 0; }
+.rv-camera-list, .rv-detection-list { padding: 10px; display: grid; gap: 6px; }
 
-/* Source images contain static camera captions; show current camera metadata over them. */
-.rv-feed-label{top:0;left:0;right:0;max-width:none;min-height:9%;display:flex;align-items:center;border-radius:0;background:#17231df5;padding:6px 12px}.rv-feed-caption{min-height:6%;display:flex;align-items:center;background:#17231df5}
+.rv-camera {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: white;
+  color: #525252;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+}
 
+.rv-camera:hover { background: #f8faf9; }
+.rv-camera.rv-selected { border-color: #a3b9ac; background: #f3f7f4; }
+.rv-camera-location { font-size: 14px; font-weight: 600; color: #262626; overflow-wrap: anywhere; }
+.rv-camera-id { font-size: 11px; color: #737373; }
+.rv-camera small { font-size: 12px; color: #737373; }
+.rv-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.rv-row strong { font-size: 13px; font-weight: 600; color: #262626; }
+
+.rv-status { flex-shrink: 0; font-size: 11px; padding: 3px 7px; border-radius: 4px; background: #f1f1f1; color: #626262; }
+.rv-online { background: #eaf5ee; color: #247044; }
+.rv-maintenance { background: #fff5df; color: #8b641c; }
+.simulation-badge { display: inline-flex; align-items: center; font-size: 12px; padding: 6px 10px; border: 1px solid #dce5df; border-radius: 5px; background: #f3f7f4; color: #365443; }
+
+.rv-preview { overflow: hidden; }
+.rv-feed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: #17231d;
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.rv-image-stage { position: relative; flex: none; }
+.rv-image-stage > img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+/* Cover captions embedded in the source images without cropping hazards. */
+.rv-feed-label, .rv-feed-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: #17231d;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.5;
+  pointer-events: none;
+}
+.rv-feed-label { top: 0; min-height: 9%; justify-content: space-between; letter-spacing: .04em; }
+.rv-feed-label > :last-child { color: #a8d6b9; font-size: 10px; }
+.rv-feed-caption { bottom: 0; min-height: 6%; }
+.rv-box { position: absolute; border: 1px solid; background: transparent; border-radius: 3px; cursor: pointer; }
+.rv-box > span { position: absolute; bottom: 100%; left: -1px; white-space: nowrap; color: #fff; font-size: 10px; padding: 4px 6px; border-radius: 3px 3px 0 0; }
+.road-vision button:focus-visible, .road-vision a:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+.rv-capture { padding: 12px 16px; font-size: 12px; line-height: 1.6; color: #737373; }
+
+.rv-unavailable {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f6f7f7;
+  padding: 24px;
+  text-align: center;
+  color: #737373;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.rv-unavailable h3 { font-size: 14px; font-weight: 600; color: #404040; }
+.rv-details-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 20px; align-items: start; }
+.rv-detection { border-color: #e5e5e5; }
+.rv-detail-body { padding: 20px; }
+.rv-hazard-heading { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.rv-hazard-heading h3 { font-size: 15px; font-weight: 600; color: #262626; }
+.rv-description, .rv-empty { font-size: 13px; line-height: 1.7; color: #737373; }
+.rv-description { margin-top: 12px; }
+.rv-empty { padding: 8px; }
+.rv-facts { margin: 18px 0; font-size: 12px; line-height: 1.6; }
+.rv-facts > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.rv-facts dt { color: #737373; }
+.rv-facts dd { margin: 0; color: #404040; overflow-wrap: anywhere; }
+.rv-primary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #263f32; color: white; border-radius: 6px; padding: 12px; font-size: 13px; font-weight: 500; text-decoration: none; cursor: pointer; }
+.rv-primary:hover { background: #1d3227; }
+.rv-primary:disabled { opacity: .6; cursor: wait; }
+.rv-linked { display: flex; align-items: center; gap: 6px; color: #247044; font-size: 12px; margin-bottom: 12px; }
+.rv-integration { font-size: 11px; line-height: 1.6; color: #737373; margin-top: 14px; }
+.rv-success, .rv-error { font-size: 12px; padding: 12px; border-radius: 5px; margin-top: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.rv-success { background: #eaf5ee; color: #247044; }
+.rv-error { background: #fff0ed; color: #a53d2a; }
+
+@media (max-width: 1200px) {
+  .rv-details-grid { grid-template-columns: 1fr; }
+  .rv-workspace { grid-template-columns: 240px minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+  .road-vision .rv-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .rv-workspace { grid-template-columns: 1fr; }
+  .rv-camera-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rv-feed-label, .rv-feed-caption { font-size: 10px; padding: 4px 10px; }
+  .rv-feed-label > :last-child { font-size: 9px; }
+  .rv-box > span { font-size: 8px; padding: 3px; }
+}
+@media (max-width: 420px) {
+  .rv-camera-list { grid-template-columns: 1fr; }
+  .rv-camera { padding: 12px; }
+  .rv-detail-body { padding: 16px; }
+  .rv-facts > div { grid-template-columns: 76px minmax(0, 1fr); gap: 8px; }
+}

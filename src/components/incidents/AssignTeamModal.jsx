@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { X, Users, Timer, Star } from 'lucide-react';
-import { assignTeam, teams } from '../../utils/incidentStore';
+import { assignTeam } from '../../utils/incidentStore';
+import { useTeams } from '../../utils/teamRegistry';
 
 export default function AssignTeamModal({ incident, incidents, onClose }) {
+  const teams = useTeams();
   const [teamId, setTeamId] = useState(incident.recommendedTeamId || teams[0].id);
   const dialogRef = useRef(null);
   const closeRef = useRef(onClose);

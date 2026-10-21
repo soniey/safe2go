@@ -1,5 +1,6 @@
 import sharedIncidents from '../data/incidents.json';
 import { detections } from '../data/roadVision';
+import { notifyDataChanged } from './dataEvents';
 
 export const INCIDENT_STORAGE_KEY = 'safe2go.roadVision.incidents.v1';
 const risks = ['SAFE', 'WATCH', 'HIGH', 'CRITICAL'];
@@ -44,5 +45,6 @@ export function createRoadVisionIncident(detectionId, storage = window.localStor
     summary: detection.description, simulated: true,
   };
   storage.setItem(INCIDENT_STORAGE_KEY, JSON.stringify([...records, incident]));
+  notifyDataChanged();
   return { incident, created: true };
 }

@@ -2,17 +2,9 @@ import sharedCameras from './cameras.json';
 import roads from './roads.json';
 
 const capture = '2026-10-20T09:55:00+08:00';
-const settings = {
-  'CAM-02': { status: 'Online', image: '/images/cctv/cam-02-flood.jpg', imageAspect: 2560 / 1389, imageAlt: 'Standing water covering the foreground of a residential road', embeddedAnnotations: true },
-  'CAM-03': { status: 'Online', image: '/images/cctv/cam-03-pothole.jpg', imageAspect: 1600 / 893, imageAlt: 'Cracked pothole in the foreground of a residential road', embeddedAnnotations: true },
-};
-export const cameras = [
-  ...sharedCameras.map(camera => ({ ...camera, ...settings[camera.id], status: settings[camera.id]?.status ?? 'Offline' })),
-  { id: 'CAM-DEMO-04', roadId: 'RD-004', status: 'Online', image: '/images/cctv/cam-04-fallen-tree.jpg', imageAspect: 1600 / 893, imageAlt: 'Fallen tree across the road with separate branches in the foreground', embeddedAnnotations: true, simulated: true },
-  { id: 'CAM-DEMO-05', roadId: 'RD-005', status: 'Offline', simulated: true },
-  { id: 'CAM-DEMO-06', roadId: 'RD-006', status: 'Maintenance', simulated: true },
-  { id: 'CAM-DEMO-07', roadId: 'RD-002', status: 'Online', image: '/images/cctv/cam-01-normal.jpg', imageAspect: 1600 / 893, imageAlt: 'Clear residential road with no visible hazards', simulated: true },
-].map(camera => ({ ...camera, simulated: true, location: roads.find(road => road.id === camera.roadId)?.name ?? 'Unknown road', capturedAt: capture }));
+export const cameras = sharedCameras.map(camera => ({
+  ...camera, location: roads.find(road => road.id === camera.roadId)?.name ?? 'Unknown road',
+}));
 
 export const detections = [
   { id: 'DET-001', cameraId: 'CAM-02', type: 'Standing Water', confidence: 87, risk: 'CRITICAL', incidentId: 'RG-001', box: { x: 32.6, y: 59.8, width: 42.6, height: 25.2 }, description: 'Simulated standing water covers part of the carriageway. Inspect drainage and restrict access if needed.' },

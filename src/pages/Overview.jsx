@@ -9,8 +9,8 @@ import HazardSummary from '../components/HazardSummary';
 import RecentIncidents from '../components/RecentIncidents';
 import RoadRiskEvidence from '../components/RoadRiskEvidence';
 import ResilienceWorkflow from '../components/ResilienceWorkflow';
-import { stats, coreHazardSummaries, extendedHazardSummaries, corePriorityHazards, extendedPriorityHazards, coreRecentIncidents, roadRiskEvidence } from '../utils/dashboard';
-import weather from '../data/weather.json';
+import { useDashboard } from '../utils/dashboard';
+import { weather } from '../utils/sharedData';
 
 const RiskStatus = lazy(() => import('../components/RiskStatus'));
 const cards = [
@@ -21,6 +21,7 @@ const cards = [
 ];
 
 export default function Overview() {
+  const { stats, coreHazardSummaries, extendedHazardSummaries, corePriorityHazards, extendedPriorityHazards, coreRecentIncidents, roadRiskEvidence } = useDashboard();
   const [roadFocus, setRoadFocus] = useState({ risk: 'ALL', request: 0 });
   function focusRoadRisk(risk) {
     setRoadFocus(previous => ({ risk, request: previous.request + 1 }));

@@ -39,8 +39,8 @@
     "type": "Tree Fall Risk",
     "risk": "HIGH",
     "status": "Inspection needed",
-    "treeId": "T-204",
-    "summary": "Risk score 86% · Highly saturated soil",
+    "treeId": "TR-204",
+    "summary": "Tree TR-204: inspection-derived risk; saturated soil",
     "mapPosition": {
       "x": 69,
       "y": 49

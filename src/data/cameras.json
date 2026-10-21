@@ -2,26 +2,79 @@
   {
     "id": "CAM-02",
     "roadId": "RD-001",
-    "simulated": true
+    "simulated": true,
+    "status": "Online",
+    "image": "/images/cctv/cam-02-flood.jpg",
+    "imageAspect": 1.8430525557955364,
+    "imageAlt": "Standing water covering the foreground of a residential road",
+    "embeddedAnnotations": true,
+    "capturedAt": "2026-10-20T09:55:00+08:00"
   },
   {
     "id": "CAM-03",
     "roadId": "RD-003",
-    "simulated": true
+    "simulated": true,
+    "status": "Online",
+    "image": "/images/cctv/cam-03-pothole.jpg",
+    "imageAspect": 1.7917133258678613,
+    "imageAlt": "Cracked pothole in the foreground of a residential road",
+    "embeddedAnnotations": true,
+    "capturedAt": "2026-10-20T09:55:00+08:00"
   },
   {
     "id": "CAM-04",
     "roadId": "RD-004",
-    "simulated": true
+    "simulated": true,
+    "status": "Offline",
+    "capturedAt": "2026-10-20T09:55:00+08:00"
   },
   {
     "id": "CAM-05",
     "roadId": "RD-005",
-    "simulated": true
+    "simulated": true,
+    "status": "Offline",
+    "capturedAt": "2026-10-20T09:55:00+08:00"
   },
   {
     "id": "CAM-06",
     "roadId": "RD-006",
-    "simulated": true
+    "simulated": true,
+    "status": "Offline",
+    "capturedAt": "2026-10-20T09:55:00+08:00"
+  },
+  {
+    "id": "CAM-DEMO-04",
+    "roadId": "RD-004",
+    "status": "Online",
+    "image": "/images/cctv/cam-04-fallen-tree.jpg",
+    "imageAspect": 1.7917133258678613,
+    "imageAlt": "Fallen tree across the road with separate branches in the foreground",
+    "embeddedAnnotations": true,
+    "simulated": true,
+    "capturedAt": "2026-10-20T09:55:00+08:00"
+  },
+  {
+    "id": "CAM-DEMO-05",
+    "roadId": "RD-005",
+    "status": "Offline",
+    "simulated": true,
+    "capturedAt": "2026-10-20T09:55:00+08:00"
+  },
+  {
+    "id": "CAM-DEMO-06",
+    "roadId": "RD-006",
+    "status": "Maintenance",
+    "simulated": true,
+    "capturedAt": "2026-10-20T09:55:00+08:00"
+  },
+  {
+    "id": "CAM-DEMO-07",
+    "roadId": "RD-002",
+    "status": "Online",
+    "image": "/images/cctv/cam-01-normal.jpg",
+    "imageAspect": 1.7917133258678613,
+    "imageAlt": "Clear residential road with no visible hazards",
+    "simulated": true,
+    "capturedAt": "2026-10-20T09:55:00+08:00"
   }
 ]

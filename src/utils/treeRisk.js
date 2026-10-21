@@ -1,4 +1,7 @@
 import seedTrees from '../data/trees.json';
+import roads from '../data/roads.json';
+import { useSyncExternalStore } from 'react';
+import { DATA_CHANGED, notifyDataChanged } from './dataEvents';
 
 const STORAGE_KEY = 'roadguard.tree-records.v1';
 
@@ -20,22 +23,72 @@ export function treeRiskLevel(score) {
 // Small local API adapter: the UI uses async CRUD calls just like a remote API.
 // localStorage keeps inspection updates available when the demo is reopened.
 function readRecords() {
+  if (memoryOnly) return memoryRecords;
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) return JSON.parse(saved);
+    if (saved) {
+      const records = JSON.parse(saved);
+      if (Array.isArray(records) && records.every(tree => tree && typeof tree.id === 'string')) return records;
+    }
   } catch { /* Use the bundled demo records if storage is unavailable. */ }
-  return seedTrees;
+  return memoryRecords;
 }
 
+let memoryRecords = seedTrees;
+let memoryOnly = false;
+let cachedRaw;
+let cachedMemory;
+let cachedTrees = [];
+
+export function getTrees() {
+  let raw = null;
+  try { raw = localStorage.getItem(STORAGE_KEY); } catch { /* Use session records. */ }
+  if (raw !== cachedRaw || memoryRecords !== cachedMemory) {
+    cachedRaw = raw;
+    cachedMemory = memoryRecords;
+    cachedTrees = readRecords().map(tree => {
+      const seed = seedTrees.find(item => item.id === tree.id);
+      const roadId = seed?.roadId ?? tree.roadId;
+      const road = roads.find(item => item.id === roadId);
+      const riskScore = scoreTree(tree);
+      return { ...tree, roadId, location: road ? `${road.name}${seed?.locationSuffix ? ` · ${seed.locationSuffix}` : ''}` : tree.location,
+        riskScore, risk: treeRiskLevel(riskScore) };
+    }).sort((a, b) => b.riskScore - a.riskScore);
+  }
+  return cachedTrees;
+}
+
+function subscribe(listener) {
+  const onStorage = event => {
+    if (event.key === STORAGE_KEY || event.key === null) {
+      memoryOnly = false;
+      if (event.key === null || event.newValue === null) memoryRecords = seedTrees;
+      listener();
+    }
+  };
+  window.addEventListener('storage', onStorage);
+  window.addEventListener(DATA_CHANGED, listener);
+  return () => {
+    window.removeEventListener('storage', onStorage);
+    window.removeEventListener(DATA_CHANGED, listener);
+  };
+}
+
+export function useTrees() { return useSyncExternalStore(subscribe, getTrees, getTrees); }
+
 function writeRecords(records) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(records)); } catch { /* Session still works in memory. */ }
+  memoryRecords = records;
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+    memoryOnly = false;
+  } catch { memoryOnly = true; }
+  notifyDataChanged();
   return records;
 }
 
 export const treeApi = {
   async list() {
-    return readRecords().map(tree => ({ ...tree, riskScore: scoreTree(tree), risk: treeRiskLevel(scoreTree(tree)) }))
-      .sort((a, b) => b.riskScore - a.riskScore);
+    return getTrees();
   },
   async addInspection(id, inspection) {
     const records = readRecords().map(tree => tree.id === id ? {

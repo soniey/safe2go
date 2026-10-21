@@ -1,22 +1,21 @@
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import { ArrowDownUp, ClipboardCheck, Clock3, Leaf, Search, ShieldAlert, Trees, X } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import RiskBadge from '../components/RiskBadge';
-import { treeApi } from '../utils/treeRisk';
+import { treeApi, useTrees } from '../utils/treeRisk';
 
 const filters = ['All trees', 'Critical', 'High', 'Watch', 'Safe'];
 const today = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kuala_Lumpur' });
 
 export default function TreeRisk() {
-  const [trees, setTrees] = useState([]);
+  const trees = useTrees();
   const [filter, setFilter] = useState('All trees');
   const [query, setQuery] = useState('');
   const [historyId, setHistoryId] = useState(null);
   const [inspectTree, setInspectTree] = useState(null);
   const [notice, setNotice] = useState('');
 
-  async function refresh() { setTrees(await treeApi.list()); }
-  useEffect(() => { refresh(); }, []);
+
 
   const counts = useMemo(() => trees.reduce((result, tree) => {
     result[tree.risk] = (result[tree.risk] || 0) + 1;
@@ -38,7 +37,7 @@ export default function TreeRisk() {
     setInspectTree(null);
     setNotice(`Inspection saved for ${inspectTree.id}`);
     window.setTimeout(() => setNotice(''), 3500);
-    await refresh();
+
   }
 
   return <>

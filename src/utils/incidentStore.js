@@ -6,13 +6,14 @@ import baseIncidents from '../data/incidents.json';
 import roads from '../data/roads.json';
 import weather from '../data/weather.json';
 import details from '../data/incidentDetails.json';
-import teams from '../data/teams.json';
+import { getTeams, TEAM_REGISTRY_KEY } from './teamRegistry';
 import { riskLevels } from './risk';
+import { DATA_CHANGED } from './dataEvents';
+import { getTrees } from './treeRisk';
 import { INCIDENT_STORAGE_KEY as ROAD_VISION_KEY, readRoadVisionIncidents } from './roadVisionIncidents';
 
 const STORAGE_KEY = 'safe2go.incidentResponse.v1';
 
-export { teams };
 
 // Ordered response workflow. "Road closed" is tracked separately because it can happen at any point.
 export const stages = [
@@ -108,11 +109,16 @@ function emit() { listeners.forEach(listener => listener()); }
 function subscribe(listener) {
   listeners.add(listener);
   const onStorage = event => {
-    if (event.key === STORAGE_KEY) { saved = loadSaved(); emit(); }
-    if (event.key === ROAD_VISION_KEY) emit();
+    if (event.key === STORAGE_KEY || event.key === null) { saved = loadSaved(); emit(); }
+    if (event.key === ROAD_VISION_KEY || event.key === TEAM_REGISTRY_KEY || event.key === 'roadguard.tree-records.v1') emit();
   };
   window.addEventListener('storage', onStorage);
-  return () => { listeners.delete(listener); window.removeEventListener('storage', onStorage); };
+  window.addEventListener(DATA_CHANGED, listener);
+  return () => {
+    listeners.delete(listener);
+    window.removeEventListener('storage', onStorage);
+    window.removeEventListener(DATA_CHANGED, listener);
+  };
 }
 
 function allSourceIncidents() {
@@ -128,6 +134,8 @@ function demoNow(records) {
 }
 
 function buildIncident(incident, record, now) {
+  const tree = getTrees().find(item => item.id === incident.treeId);
+  if (tree) incident = { ...incident, risk: tree.risk, summary: `Tree risk score ${tree.riskScore}% · ${tree.soil} soil` };
   const extra = details[incident.id] || {};
   const road = roads.find(item => item.id === incident.roadId);
   const at = type => record.timeline.find(event => event.type === type)?.at ?? null;
@@ -140,16 +148,18 @@ function buildIncident(incident, record, now) {
   ].filter(Boolean);
   return {
     ...incident,
+    detectedAtISO: incident.detectedAt,
+    status: stages[stageIndex(record.stage)]?.label || incident.status,
     location: road?.name || incident.location || 'Unknown road',
     priority: priorityByRisk[incident.risk] || 'P3',
-    whyFlagged: extra.whyFlagged || incident.summary || 'Flagged by the monitoring system.',
-    evidence,
+    whyFlagged: tree ? incident.summary : extra.whyFlagged || incident.summary || 'Flagged by the monitoring system.',
+    evidence: tree ? [{ source: tree.id, value: `Risk ${tree.riskScore}%, ${tree.soil} soil` }] : evidence,
     recommendedAction: extra.recommendedAction || '',
     recommendedTeamId: extra.recommendedTeamId || teamByType[incident.type] || null,
     residents: extra.residents || null,
     stage: record.stage,
     stageLabel: stages[stageIndex(record.stage)]?.label || record.stage,
-    team: teams.find(team => team.id === record.teamId) || null,
+    team: getTeams().find(team => team.id === record.teamId) || null,
     roadClosed: record.roadClosed,
     roadEverClosed: record.roadEverClosed,
     notifiedAt: record.notifiedAt,
@@ -166,14 +176,16 @@ const riskRank = risk => riskLevels.indexOf(risk);
 function getSnapshot() {
   let roadVisionRaw = null;
   try { roadVisionRaw = localStorage.getItem(ROAD_VISION_KEY); } catch { /* ignore */ }
-  if (cache.saved !== saved || cache.roadVisionRaw !== roadVisionRaw) {
+  const trees = getTrees();
+  const teams = getTeams();
+  if (cache.saved !== saved || cache.roadVisionRaw !== roadVisionRaw || cache.trees !== trees || cache.teams !== teams) {
     const sources = allSourceIncidents();
     const records = sources.map(recordFor);
     const now = demoNow(records);
     const list = sources
       .map((incident, index) => buildIncident(incident, records[index], now))
       .sort((a, b) => (b.isOpen - a.isOpen) || (riskRank(b.risk) - riskRank(a.risk)) || ((a.detectedAt ?? 0) - (b.detectedAt ?? 0)) || a.id.localeCompare(b.id));
-    cache = { saved, roadVisionRaw, list };
+    cache = { saved, roadVisionRaw, trees, teams, list };
   }
   return cache.list;
 }
@@ -219,7 +231,7 @@ function advance(id, from, to, note) {
 export function acknowledgeIncident(id) { advance(id, 'detected', 'verified', 'Acknowledged by Township Admin'); }
 
 export function assignTeam(id, teamId) {
-  const team = teams.find(item => item.id === teamId);
+  const team = getTeams().find(item => item.id === teamId);
   update(id, record => {
     if (!team || record.stage !== 'verified') return false;
     record.stage = 'assigned';
@@ -231,7 +243,7 @@ export function assignTeam(id, teamId) {
 export function dispatchTeam(id) {
   update(id, record => {
     if (record.stage !== 'assigned') return false;
-    const team = teams.find(item => item.id === record.teamId);
+    const team = getTeams().find(item => item.id === record.teamId);
     record.stage = 'dispatched';
     log(record, 'dispatched', team ? `${team.name} en route, ETA ${team.etaMin} min` : undefined);
   });

@@ -3,12 +3,14 @@ import { loadMapFilters, saveMapFilters } from '../utils/mapFilters';
 import HazardDetails from './HazardDetails';
 import { MapPin } from 'lucide-react';
 import LeafletHazardMap from './LeafletHazardMap';
-import { hazards, roads } from '../utils/dashboard';
+import { useDashboard } from '../utils/dashboard';
 import { riskLevels, riskStyles } from '../utils/risk';
 
-const hazardTypes = [...new Set(['Flood', 'Tree Fall Risk', 'Pothole', 'Road Obstruction', ...hazards.map(hazard => hazard.type)])];
+
 
 export default function RiskMap({ roadFocus, onRoadRiskChange }) {
+  const { hazards, roads } = useDashboard();
+  const hazardTypes = [...new Set(['Flood', 'Standing Water', 'Tree Fall Risk', 'Pothole', 'Fallen Tree', 'Fallen Branch', 'Road Obstruction', 'Road Blockage', ...hazards.map(hazard => hazard.type)])];
   const [selectedId, setSelectedId] = useState(null);
   const detailsRef = useRef(null);
   function viewDetails() {
