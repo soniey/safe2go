@@ -265,3 +265,58 @@ Files: `pages/Login.jsx`, `pages/login.css`, `utils/demoSession.jsx`,
 `components/RequireDemoSession.jsx`, plus route/header integration.
 Browser validation: invalid credentials, password visibility, redirect back to /teams,
 refresh persistence, sign-out and 375px mobile layout. Production build passes.
+
+## Audit & Reports
+
+Route `/reports` reuses the Incident & Response Center visual styles. Internal and
+community views offer separate CSV exports. Incident totals use the selected MYT
+**detection-month cohort and current workflow state**, not calendar-month completion
+counts. Average response is detection to first dispatch, excluding missing timestamps;
+no prior-period improvement is claimed. Tree totals count distinct trees with inspection
+history in the month via the existing tree API. Refresh inspections reloads saved records.
+Response actions come from the existing incident store without changing teammate modules.
+
+Internal view includes location references, assigned teams, unresolved incidents,
+open HIGH/CRITICAL roads, repeated road/type combinations, tree findings, drainage-related
+flood proxies, and recorded response events. Coordinates remain illustrative. Public
+CSV contains only aggregate metrics; it excludes incident locations, contacts and notes.
+This is a summary view inside the demo workspace, not a published public portal or
+role-based access boundary. Costs, contractor organisations, sensor/camera performance,
+actor identities and historical response baselines are not available in existing data.
+The browser audit trail is a prototype event history, not a tamper-proof compliance log.
+
+Validation: production build; aggregation, MYT month boundary, missing response,
+repeat hazards, distinct inspection and CSV escaping checks; browser audience switching,
+empty-month filtering and public CSV download.
+
+### Report-only historical demonstration data
+
+`src/data/reportHistory.json` adds 66 fictional incidents and 36 inspection records:
+July 2026: 18 incidents / 16 resolved; August: 22 / 20; September: 26 / 24.
+Each month includes 12 distinct inspected trees, repeated road/type combinations,
+assigned demo crews, and ordered detection/dispatch/maintenance timelines. Historical
+IDs use HIST- and never link to current Incident Center work orders. Statuses are frozen
+month-end snapshots; historical unresolved cases do not enter active operational queues.
+Only Reports imports this file. Existing shared mock records and teammate modules are unchanged.
+
+August/September response comparisons use detection-to-dispatch means for both cohorts,
+requiring at least three timed records in each month. These descriptive fictional
+comparisons are not real operational performance claims. The current October cohort
+remains separate; no comparison is inferred across incompatible historical/live demos.
+
+PDF export: select audience and month, click Export PDF, then choose Save as PDF in the
+browser print dialog. The A4 landscape print layout hides application navigation and
+controls, repeats table headers, wraps long cells and includes the selected report title
+and month. Internal audit histories expand for printing and restore their prior state
+after the dialog closes. The public view prints aggregate content only. No PDF package
+or external data service is used. Production build and whitespace checks pass.
+
+Report generation now separates Incident Report and Tree Inspection Report. Each retains
+internal/public audience selection and the month filter. Generate report opens PDF/CSV
+choices; filenames and print headings include the report type. Incident exports exclude
+tree inspection rows, tree exports exclude incident registers and audit histories, and
+public tree exports include aggregate totals only.
+
+Audience selection is the top-level control. Incident/Tree report tabs appear beneath it
+only for Internal Management. Public Community Safety Summary always combines incident
+and tree aggregates; its CSV and print heading do not depend on the last internal tab.

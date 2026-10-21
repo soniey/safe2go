@@ -1,0 +1,4435 @@
+{
+  "description": "Report-only fictional historical snapshots. Open statuses are frozen at each month end; not active work orders. Coordinates reuse illustrative demo map placements.",
+  "incidents": [
+    {
+      "id": "HIST-202607-001",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-02T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 36,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 516,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 528,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 571,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-002",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-03T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 39,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 579,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 591,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 634,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-003",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-07-04T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 42,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 642,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 654,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 697,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-004",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-05T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 45,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 705,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 717,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 760,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-005",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-07-06T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 48,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 768,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 780,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 823,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-006",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-07-07T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 36,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 516,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 528,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 571,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-007",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-08T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 39,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 579,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 591,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 634,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-008",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-09T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 42,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 642,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 654,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 697,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-009",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-07-10T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 45,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 705,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 717,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 760,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-010",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-11T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 48,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 768,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 780,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 823,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-011",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-07-12T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 36,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 516,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 528,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 571,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-012",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-07-13T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 39,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 579,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 591,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 634,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-013",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-14T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 42,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 642,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 654,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 697,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-014",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-15T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 45,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 705,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 717,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 760,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-015",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-07-16T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 48,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 768,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 780,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 823,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-016",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-07-17T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 36,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 516,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 528,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 571,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-017",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-07-18T09:00:00+08:00",
+      "isOpen": true,
+      "stage": "dispatched",
+      "stageLabel": "Team dispatched",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 39,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 579,
+          "note": "Scripted dispatch time recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202607-018",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-07-19T10:00:00+08:00",
+      "isOpen": true,
+      "stage": "dispatched",
+      "stageLabel": "Team dispatched",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 42,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 642,
+          "note": "Scripted dispatch time recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-001",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-02T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 29,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 509,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 521,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 564,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-002",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-03T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 32,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 572,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 584,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 627,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-003",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-08-04T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 35,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 635,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 647,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 690,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-004",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-05T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 38,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 698,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 710,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 753,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-005",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-08-06T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 41,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 761,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 773,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 816,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-006",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-08-07T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 29,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 509,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 521,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 564,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-007",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-08T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 32,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 572,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 584,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 627,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-008",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-09T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 35,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 635,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 647,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 690,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-009",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-08-10T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 38,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 698,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 710,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 753,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-010",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-11T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 41,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 761,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 773,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 816,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-011",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-08-12T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 29,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 509,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 521,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 564,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-012",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-08-13T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 32,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 572,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 584,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 627,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-013",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-14T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 35,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 635,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 647,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 690,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-014",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-15T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 38,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 698,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 710,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 753,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-015",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-08-16T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 41,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 761,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 773,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 816,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-016",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-17T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 29,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 509,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 521,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 564,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-017",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-08-18T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 32,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 572,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 584,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 627,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-018",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-08-19T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 35,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 635,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 647,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 690,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-019",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-20T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 38,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 698,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 710,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 753,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-020",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-21T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 41,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 761,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 773,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 816,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-021",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-08-22T08:00:00+08:00",
+      "isOpen": true,
+      "stage": "dispatched",
+      "stageLabel": "Team dispatched",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 29,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 509,
+          "note": "Scripted dispatch time recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202608-022",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-08-23T09:00:00+08:00",
+      "isOpen": true,
+      "stage": "dispatched",
+      "stageLabel": "Team dispatched",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 32,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 572,
+          "note": "Scripted dispatch time recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-001",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-02T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 22,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 502,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 514,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 557,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-002",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-03T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 25,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 565,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 577,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 620,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-003",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-04T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 28,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 628,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 640,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 683,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-004",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-05T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 31,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 691,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 703,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 746,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-005",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-09-06T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 34,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 754,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 766,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 809,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-006",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-07T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 22,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 502,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 514,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 557,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-007",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-08T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 25,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 565,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 577,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 620,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-008",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-09T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 28,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 628,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 640,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 683,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-009",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-10T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 31,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 691,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 703,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 746,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-010",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-11T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 34,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 754,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 766,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 809,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-011",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-09-12T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 22,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 502,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 514,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 557,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-012",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-13T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 25,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 565,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 577,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 620,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-013",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-14T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 28,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 628,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 640,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 683,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-014",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-15T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 31,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 691,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 703,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 746,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-015",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-16T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 34,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 754,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 766,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 809,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-016",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-17T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 22,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 502,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 514,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 557,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-017",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-09-18T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 25,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 565,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 577,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 620,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-018",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-19T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 28,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 628,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 640,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 683,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-019",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-20T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 31,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 691,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 703,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 746,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-020",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-21T12:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 34,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 754,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 766,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 809,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-021",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-003",
+      "location": "Jalan Elmina 2",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-22T08:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 22,
+      "coordinates": {
+        "lat": 3.1754581,
+        "lng": 101.5099321,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1R",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061532"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 502,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 514,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 557,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-022",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-004",
+      "location": "Jalan Elmina 1",
+      "type": "Fallen Branch",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-23T09:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 25,
+      "coordinates": {
+        "lat": 3.1792069160236074,
+        "lng": 101.50470663188214,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/765804051"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 540,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 543,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 545,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 565,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 577,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 620,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-023",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-005",
+      "location": "Elmina Central",
+      "type": "Flood",
+      "risk": "CRITICAL",
+      "detectedAt": "2026-09-24T10:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 28,
+      "coordinates": {
+        "lat": 3.1821262941139516,
+        "lng": 101.50877354731159,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Garcinia",
+        "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 600,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 603,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 605,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 628,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 640,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 683,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-024",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-006",
+      "location": "Elmina Park Access",
+      "type": "Pothole",
+      "risk": "WATCH",
+      "detectedAt": "2026-09-25T11:00:00+08:00",
+      "isOpen": false,
+      "stage": "resolved",
+      "stageLabel": "Resolved",
+      "team": {
+        "id": "TM-RDW-A",
+        "name": "Road Works Team A",
+        "specialty": "Pothole",
+        "crew": 3,
+        "etaMin": 20,
+        "simulated": true
+      },
+      "responseMinutes": 31,
+      "coordinates": {
+        "lat": 3.1746305,
+        "lng": 101.5066984,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Jalan Metafasa U16/1N",
+        "sourceUrl": "https://www.openstreetmap.org/way/653061540"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 660,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 663,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 665,
+          "note": "Assigned to Road Works Team A in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 691,
+          "note": "Scripted dispatch time recorded."
+        },
+        {
+          "type": "in_progress",
+          "at": 703,
+          "note": "Demo maintenance work started."
+        },
+        {
+          "type": "resolved",
+          "at": 746,
+          "note": "Scripted clearance confirmed after maintenance."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-025",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-001",
+      "location": "Jalan Elmina 3",
+      "type": "Flood",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-26T12:00:00+08:00",
+      "isOpen": true,
+      "stage": "dispatched",
+      "stageLabel": "Team dispatched",
+      "team": {
+        "id": "TM-DRN-B",
+        "name": "Drainage Team B",
+        "specialty": "Flood",
+        "crew": 4,
+        "etaMin": 8,
+        "simulated": true
+      },
+      "responseMinutes": 34,
+      "coordinates": {
+        "lat": 3.1793488291482865,
+        "lng": 101.50823489071783,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Alstonia",
+        "sourceUrl": "https://www.openstreetmap.org/way/866518974"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 720,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 723,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 725,
+          "note": "Assigned to Drainage Team B in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 754,
+          "note": "Scripted dispatch time recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-202609-026",
+      "historical": true,
+      "simulated": true,
+      "roadId": "RD-002",
+      "location": "Persiaran Elmina",
+      "type": "Tree Fall Risk",
+      "risk": "HIGH",
+      "detectedAt": "2026-09-27T08:00:00+08:00",
+      "isOpen": true,
+      "stage": "dispatched",
+      "stageLabel": "Team dispatched",
+      "team": {
+        "id": "TM-ARB-1",
+        "name": "Arborist Crew 1",
+        "specialty": "Tree Fall Risk",
+        "crew": 3,
+        "etaMin": 15,
+        "simulated": true
+      },
+      "responseMinutes": 22,
+      "coordinates": {
+        "lat": 3.1797285205132697,
+        "lng": 101.5128389070421,
+        "isMock": true,
+        "placement": "On OpenStreetMap road geometry; simulated incident",
+        "basemapRoadName": "Persiaran Elmina",
+        "sourceUrl": "https://www.openstreetmap.org/way/909861395"
+      },
+      "timeline": [
+        {
+          "type": "detected",
+          "at": 480,
+          "note": "Historical demo hazard observation recorded."
+        },
+        {
+          "type": "verified",
+          "at": 483,
+          "note": "Scripted field inspection confirms the reported hazard."
+        },
+        {
+          "type": "assigned",
+          "at": 485,
+          "note": "Assigned to Arborist Crew 1 in this historical scenario."
+        },
+        {
+          "type": "dispatched",
+          "at": 502,
+          "note": "Scripted dispatch time recorded."
+        }
+      ]
+    }
+  ],
+  "trees": [
+    {
+      "id": "HIST-T-001",
+      "location": "Jalan Elmina 3 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-03",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-002",
+      "location": "Persiaran Elmina (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-04",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-003",
+      "location": "Jalan Elmina 2 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-05",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-004",
+      "location": "Jalan Elmina 1 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-06",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-005",
+      "location": "Elmina Central (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-07",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-006",
+      "location": "Elmina Park Access (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-08",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-007",
+      "location": "Jalan Elmina 3 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-09",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-008",
+      "location": "Persiaran Elmina (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-10",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-009",
+      "location": "Jalan Elmina 2 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-11",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-010",
+      "location": "Jalan Elmina 1 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-12",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-011",
+      "location": "Elmina Central (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-13",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-012",
+      "location": "Elmina Park Access (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-07-14",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-001",
+      "location": "Jalan Elmina 3 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-03",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-002",
+      "location": "Persiaran Elmina (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-04",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-003",
+      "location": "Jalan Elmina 2 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-05",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-004",
+      "location": "Jalan Elmina 1 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-06",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-005",
+      "location": "Elmina Central (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-07",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-006",
+      "location": "Elmina Park Access (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-08",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-007",
+      "location": "Jalan Elmina 3 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-09",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-008",
+      "location": "Persiaran Elmina (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-10",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-009",
+      "location": "Jalan Elmina 2 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-11",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-010",
+      "location": "Jalan Elmina 1 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-12",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-011",
+      "location": "Elmina Central (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-13",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-012",
+      "location": "Elmina Park Access (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-08-14",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-001",
+      "location": "Jalan Elmina 3 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-03",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-002",
+      "location": "Persiaran Elmina (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-04",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-003",
+      "location": "Jalan Elmina 2 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-05",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-004",
+      "location": "Jalan Elmina 1 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-06",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-005",
+      "location": "Elmina Central (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-006",
+      "location": "Elmina Park Access (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-08",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-007",
+      "location": "Jalan Elmina 3 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-09",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-008",
+      "location": "Persiaran Elmina (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-10",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-009",
+      "location": "Jalan Elmina 2 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-11",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-010",
+      "location": "Jalan Elmina 1 (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-12",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Canopy and lean checked; routine follow-up recorded."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-011",
+      "location": "Elmina Central (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-13",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Saturated soil noted; drainage review recommended."
+        }
+      ]
+    },
+    {
+      "id": "HIST-T-012",
+      "location": "Elmina Park Access (illustrative inspection zone)",
+      "history": [
+        {
+          "date": "2026-09-14",
+          "inspector": "Historical demo inspection crew",
+          "notes": "Deadwood removed and follow-up inspection scheduled."
+        }
+      ]
+    }
+  ]
+}
