@@ -28,7 +28,10 @@ function readRecords() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const records = JSON.parse(saved);
-      if (Array.isArray(records) && records.every(tree => tree && typeof tree.id === 'string')) return records;
+      if (Array.isArray(records) && records.every(tree => tree && typeof tree.id === 'string')) {
+        const savedIds = new Set(records.map(tree => tree.id));
+        return [...records, ...seedTrees.filter(tree => !savedIds.has(tree.id))];
+      }
     }
   } catch { /* Use the bundled demo records if storage is unavailable. */ }
   return memoryRecords;
