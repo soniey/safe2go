@@ -188,6 +188,8 @@ main { padding: 30px 26px; max-width: 1600px; width: 100%; margin: 0 auto; flex:
 .tree-page .tree-metric { min-height: 102px; background: #fff; }
 .tree-page .tree-metric>span { color: var(--tree-muted); font-size: 12px; }
 .tree-page .tree-metric>strong { color: var(--tree-navy); font: 600 30px/1.2 'IBM Plex Mono', ui-monospace, monospace; letter-spacing: 0; }
+.tree-page .tree-metric-critical { border-left: 4px solid #c8102e; }
+.tree-page .tree-metric-high { border-left: 4px solid #f2b705; }
 .tree-page .tree-metric-critical>strong,.tree-page .tree-metric-critical>svg { color: #c8102e; }
 .tree-page .tree-metric-high>strong,.tree-page .tree-metric-high>svg { color: #b66b00; }
 .tree-page .tree-list-heading,.tree-page .tree-filters,.tree-page .tree-table-footer { border-color: var(--tree-soft-line); }
@@ -206,6 +208,9 @@ main { padding: 30px 26px; max-width: 1600px; width: 100%; margin: 0 auto; flex:
 .tree-page .tree-id,.tree-page .tree-risk-score>strong { color: var(--tree-navy); font-size: 12px; }
 .tree-page .tree-species { color: #354258; font-size: 12px; }
 .tree-page .tree-location { color: var(--tree-faint); font-size: 11px; }
+.tree-page .tree-zone-street,.tree-page .tree-zone-label { display: block; }
+.tree-page .tree-zone-street { color: #354258; font-size: 12px; }
+.tree-page .tree-zone-label { margin-top: 4px; color: var(--tree-faint); font-size: 11px; }
 .tree-page .condition-pill { background: var(--tree-paper); color: var(--tree-muted); font-size: 11px; }
 .tree-page .condition-poor { background: #f9dde1; color: #7a0a1c; }
 .tree-page .condition-fair { background: #fdf3cf; color: #6b4e00; }
@@ -228,15 +233,3 @@ main { padding: 30px 26px; max-width: 1600px; width: 100%; margin: 0 auto; flex:
 .tree-page .tree-form-actions .primary-button { background: var(--tree-green); font-family: inherit; font-size: 12px; }
 .tree-page .tree-form-actions .primary-button:hover { background: var(--tree-green-dark); }
 .tree-page :focus-visible { outline-color: var(--tree-green); }
-.tree-critical-banner { display: flex; align-items: center; gap: 10px; position: relative; margin: 0 0 22px; padding: 11px 16px; border-radius: 8px 8px 0 0; color: #fff; background: #c8102e; font-size: 13px; }
-.tree-critical-banner::after { content: ''; position: absolute; right: 0; bottom: -6px; left: 0; height: 6px; border-radius: 0 0 4px 4px; background: repeating-linear-gradient(-45deg, #f2b705 0 10px, #14213d 10px 20px); }
-.tree-critical-banner>svg { flex: 0 0 auto; }
-.tree-critical-message { min-width: 0; }
-.tree-critical-banner strong { font-weight: 600; }
-.tree-critical-banner button { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; margin-left: auto; padding: 6px 10px; border: 1px solid #ffffff80; border-radius: 5px; color: #fff; font-size: 12px; font-weight: 500; }
-.tree-critical-banner button:hover { background: #ffffff1f; }
-@media(max-width:767px) {
-  .tree-critical-banner { align-items: flex-start; flex-wrap: wrap; font-size: 12px; }
-  .tree-critical-message { flex: 1; line-height: 1.5; }
-  .tree-critical-banner button { margin-left: 28px; }
-}
