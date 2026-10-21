@@ -37,7 +37,7 @@ export default function CameraFeed({ camera, detections, selectedId, onSelect })
             aria-label={`Select ${item.type}, ${item.confidence}% confidence, ${item.risk} risk`}
             aria-pressed={selectedId === item.id}>
             {!camera.embeddedAnnotations && (
-              <span style={{ background: riskStyles[item.risk].color }}>{item.type} · {item.confidence}%</span>
+              <span style={{ background: riskStyles[item.risk].bg, color: riskStyles[item.risk].fg }}>{item.type} · {item.confidence}%</span>
             )}
           </button>
         ))}

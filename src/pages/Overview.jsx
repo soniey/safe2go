@@ -15,8 +15,8 @@ import { weather } from '../utils/sharedData';
 const RiskStatus = lazy(() => import('../components/RiskStatus'));
 const cards = [
   { label: 'Active Hazards', metric: 'activeHazards', description: 'Includes core climate hazards and extended detections', icon: AlertTriangle, note: 'All capabilities' },
-  { label: 'Critical Roads', metric: 'criticalRoads', description: 'Immediate management attention required', icon: ShieldAlert, note: 'Priority response' },
-  { label: 'Roads Under Watch', metric: 'watchRoads', description: 'Elevated road-level monitoring', icon: Activity, note: 'Across township' },
+  { label: 'Critical Roads', metric: 'criticalRoads', description: 'Immediate management attention required', icon: ShieldAlert, note: 'Priority response', tone: 'CRITICAL' },
+  { label: 'Roads Under Watch', metric: 'watchRoads', description: 'Elevated road-level monitoring', icon: Activity, note: 'Across township', tone: 'WATCH' },
   { label: 'Open Incidents', metric: 'openIncidents', description: 'Awaiting action or resolution across capabilities', icon: ClipboardList, note: 'All capabilities' },
 ];
 

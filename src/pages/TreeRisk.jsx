@@ -59,7 +59,7 @@ export default function TreeRisk() {
       <div className="tree-filters" aria-label="Filter by risk level">{filters.map(item => <button key={item} type="button" onClick={() => setFilter(item)} className={filter === item ? 'tree-filter tree-filter-active' : 'tree-filter'}>{item}{item === 'Critical' && counts.CRITICAL ? <span>{counts.CRITICAL}</span> : null}</button>)}</div>
       <div className="overflow-x-auto"><table className="tree-table"><caption className="sr-only">Tree records ordered by calculated risk</caption><thead><tr>{['Tree record', 'Zone / street', 'Condition', 'Soil', 'Tilt', 'Risk score', 'Last inspection', ''].map(label => <th key={label} scope="col">{label}</th>)}</tr></thead><tbody>
         {visibleTrees.map(tree => <Fragment key={tree.id}>
-          <tr key={tree.id} className={tree.risk === 'CRITICAL' || tree.risk === 'HIGH' ? 'tree-priority-row' : ''}>
+          <tr key={tree.id} className={tree.risk === 'CRITICAL' || tree.risk === 'HIGH' ? `tree-priority-row tree-priority-${tree.risk.toLowerCase()}` : ''}>
             <td><strong className="tree-id">{tree.id}</strong><span className="tree-species">{tree.species} · {tree.age} yrs</span><span className="tree-location">{tree.location}</span></td>
             <td><span className="tree-zone-street">{tree.location.split(' · ')[0]}</span><span className="tree-zone-label">{tree.zone}</span></td>
             <td><span className={`condition-pill condition-${tree.health.toLowerCase()}`}>{tree.health}</span></td><td>{tree.soil}</td><td>{tree.tilt}&deg;</td>
