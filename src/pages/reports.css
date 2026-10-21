@@ -137,3 +137,12 @@
 .reports-page .report-active-title { font-size: 15px; font-weight: 600; margin-bottom: 16px; }
 .reports-page .report-active-title > span { font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 10px; }
 @media print { .reports-page .report-active-title { display: none; } }
+
+/* Use the same metric accent palette as Overview and Road Vision. */
+.reports-page .report-stat-blue { --report-stat-accent: #2563a6; }
+.reports-page .report-stat-green { --report-stat-accent: #247044; }
+.reports-page .report-stat-amber { --report-stat-accent: #946211; }
+.reports-page .report-stat-red { --report-stat-accent: #b04438; }
+.reports-page .report-stat-neutral { --report-stat-accent: #5b6472; }
+.reports-page .inc-stat { border-left: 4px solid var(--report-stat-accent, var(--line)); }
+.reports-page .inc-stat > strong { color: var(--report-stat-accent, var(--navy)); }

@@ -1,3 +1,4 @@
+import { ChevronUp } from 'lucide-react';
 import RiskBadge from './RiskBadge';
 import { useEffect, useRef, useState } from 'react';
 import { CircleMarker, MapContainer, Polyline, Popup, TileLayer, Tooltip, useMap } from 'react-leaflet';
@@ -68,9 +69,7 @@ export default function LeafletHazardMap({ hazards, roads, allHazards, selectedI
   const focusKey = `${roadFocus?.request ?? 0}:${roadSelectionRequest}:${hazardSelectionRequest}`;
   return (
     <>
-      <p className="border-b border-neutral-200 p-3 text-xs text-neutral-500">
-        Road shapes follow OpenStreetMap. Incidents and risk colours are illustrative; demo road names may differ from basemap names.
-      </p>
+
       <div className="border-b border-neutral-200 p-3 text-xs text-neutral-500"><label className="flex items-center gap-2"><input type="checkbox" checked={showRoads} onChange={event => { setShowRoads(event.target.checked); setSelectedRoadId(null); }} />Road statuses ({mappedRoads.length} of {roads.length} roads)</label><p className="mt-2" role="status">Road risk: {roadRisk === 'ALL' ? 'All levels' : roadRisk}. <button type="button" className="detail-link" onClick={() => onRoadRiskChange?.('ALL')}>Show all roads</button></p><p className="mt-2">Dashed lines: road risk · Solid circles: active hazards. Hazard filters do not hide road statuses.</p></div><MapContainer center={demoCenter} zoom={14} scrollWheelZoom={true} style={{ height: 360, width: '100%', zIndex: 0 }} aria-label="Elmina demo hazard map">
         <TileLayer
           attribution={'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}
@@ -125,7 +124,7 @@ export default function LeafletHazardMap({ hazards, roads, allHazards, selectedI
         <div className="flex flex-wrap items-center justify-between gap-2"><h3 className="font-semibold">{selectedRoad.name}</h3><RiskBadge risk={selectedRoad.risk} /></div>
         {selectedRoad.basemapRoadName && <p className="mt-2">Basemap road: {selectedRoad.basemapRoadName}</p>}<p className="mt-2">{selectedRoad.id} · {selectedRoadHazards.length} active hazards</p>
         <p className="mt-2 text-neutral-500">Road status matches the chart. The OSM road shape carries an illustrative risk overlay.</p>
-        <button type="button" className="detail-link mt-3" onClick={() => setSelectedRoadId(null)}>Close road status</button>
+        <button type="button" className="mt-3 flex min-h-9 w-full items-center justify-center rounded text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2" onClick={() => setSelectedRoadId(null)} aria-label="Collapse road status" title="Collapse road status" aria-expanded="true" aria-controls="map-road-details"><ChevronUp size={20} aria-hidden="true" /></button>
       </section>}
       {tileError && <p role="status" className="p-3 text-xs text-neutral-500">Map tiles could not load. Check your internet connection. Hazard selection below remains available.</p>}
       {mappedHazards.length < hazards.length && <p className="p-3 text-xs text-neutral-500">{hazards.length - mappedHazards.length} hazards have no valid map position. Their details remain available below.</p>}

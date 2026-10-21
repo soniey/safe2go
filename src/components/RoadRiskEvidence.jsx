@@ -6,7 +6,7 @@ export default function RoadRiskEvidence({ incidents, weather }) {
   return (
     <section className="panel mt-6" aria-labelledby="road-intelligence-heading">
       <div className="panel-heading">
-        <div><h2 id="road-intelligence-heading">One road-risk picture</h2><p>Shared signals, road-level interpretation, verification needs and next actions.</p></div>
+        <div><h2 id="road-intelligence-heading">One road-risk picture</h2></div>
       </div>
       <p className="px-5 pt-4 text-xs text-neutral-500">Weather context: {weather.condition}, {weather.temperatureC}°C. Forecast-driven prediction and a live CCTV pipeline are not connected.</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-5">

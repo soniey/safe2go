@@ -1,3 +1,4 @@
+import ReportDocument from '../components/ReportDocument';
 import history from '../data/reportHistory.json';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,12 +15,27 @@ import '../components/incidents/incidents.css';
 import './reports.css';
 
 function Panel({ title, children }) { return <section className="inc-panel report-panel"><div className="inc-panel-head"><h2>{title}</h2></div><div className="report-body">{children}</div></section>; }
-function Stats({ items }) { return <div className="inc-stats">{items.map(([label, value, note]) => <div className="inc-stat" key={label}><p>{label}</p><strong className={value === 'Unavailable' ? 'report-stat-unavailable' : undefined}>{value}</strong><span>{note}</span></div>)}</div>; }
+const statTones = {
+  'Incidents detected': 'blue',
+  'Unresolved incidents': 'amber',
+  'Average response': 'blue',
+  'High-risk roads': 'red',
+  'Trees inspected': 'green',
+  'Inspection records': 'blue',
+  'Inspection locations': 'blue',
+  'Inspection personnel': 'blue',
+  'Road hazards resolved': 'green',
+  'Potholes repaired': 'green',
+  'Roadside trees inspected': 'green',
+  'Flood / standing-water incidents resolved': 'green',
+};
+function Stats({ items }) { return <div className="inc-stats">{items.map(([label, value, note]) => <div className={`inc-stat report-stat-${value === 'Unavailable' ? 'neutral' : statTones[label] || 'blue'}`} key={label}><p>{label}</p><strong className={value === 'Unavailable' ? 'report-stat-unavailable' : undefined}>{value}</strong><span>{note}</span></div>)}</div>; }
 export default function Reports() {
   const incidents = useIncidents();
   const [month, setMonth] = useState('2026-10');
   const [view, setView] = useState('internal');
   const [reportType, setReportType] = useState('incident');
+  const [pdfPreview, setPdfPreview] = useState(false);
   const [trees, setTrees] = useState([]);
   const [error, setError] = useState('');
   const [revision, setRevision] = useState(0);
@@ -28,24 +44,6 @@ export default function Reports() {
     treeApi.list().then(result => { if (active) { setTrees(result); setError(''); } }).catch(() => { if (active) setError('Tree inspection records could not be loaded. Inspection totals are unavailable.'); });
     return () => { active = false; };
   }, [revision]);
-  useEffect(() => {
-    let auditStates = [];
-    const preparePrint = () => {
-      auditStates = [...document.querySelectorAll('.reports-page .report-audit-incident')].map(element => ({ element, open: element.open }));
-      auditStates.forEach(({ element }) => { element.open = true; });
-    };
-    const restorePrint = () => {
-      auditStates.forEach(({ element, open }) => { element.open = open; });
-      auditStates = [];
-    };
-    window.addEventListener('beforeprint', preparePrint);
-    window.addEventListener('afterprint', restorePrint);
-    return () => {
-      window.removeEventListener('beforeprint', preparePrint);
-      window.removeEventListener('afterprint', restorePrint);
-      restorePrint();
-    };
-  }, []);
   let sources = seeds;
   let sourceError = '';
   try { sources = [...seeds, ...readRoadVisionIncidents().filter(item => !seeds.some(seed => seed.id === item.id))]; }
@@ -73,7 +71,7 @@ export default function Reports() {
   ];
   function generate(event, format) {
     event.currentTarget.closest('details')?.removeAttribute('open');
-    if (format === 'pdf') window.print();
+    if (format === 'pdf') { setPdfPreview(true); window.scrollTo(0, 0); }
     else download();
   }
   function download() {
@@ -98,13 +96,15 @@ export default function Reports() {
     const url = URL.createObjectURL(new Blob(['\uFEFF', csvText(rows)], { type: 'text/csv;charset=utf-8;' }));
     const anchor = document.createElement('a'); anchor.href = url; anchor.download = `safe2go-${view === 'public' ? 'community' : reportType}-${view}-${month}.csv`; anchor.click(); URL.revokeObjectURL(url);
   }
-  return <div className="inc-page reports-page">
+  return <div className={`inc-page reports-page${pdfPreview ? ' report-preview-open' : ''}`}>
+    {pdfPreview && <div className="report-preview-controls"><p>PDF preview · A4 landscape · In the print dialog, choose Save as PDF and turn off browser headers and footers.</p><div><button className="inc-btn inc-btn-ghost" onClick={() => setPdfPreview(false)}>Back to reports</button><button className="inc-btn inc-btn-primary" onClick={() => window.print()}>Save as PDF</button></div></div>}
+    <div className="report-screen" hidden={pdfPreview}>
     <PageHeader title="Audit & Reports" description="Management accountability and a clear community safety summary."><div className="heading-meta"><span className="simulation-badge">SIMULATED DATA</span><details className="report-generate" onKeyDown={event => { if (event.key === 'Escape') { event.currentTarget.open = false; event.currentTarget.querySelector('summary')?.focus(); } }}>
         <summary className="inc-btn inc-btn-secondary"><Download size={15} />Generate report<ChevronDown size={14} /></summary>
-        <div className="report-generate-options"><span>{reportTitle} · {audienceTitle}</span><button type="button" disabled={!month} onClick={event => generate(event, 'pdf')}><FileDown size={15} />PDF (Save as PDF)</button><button type="button" disabled={!month} onClick={event => generate(event, 'csv')}><Download size={15} />CSV spreadsheet</button></div>
+        <div className="report-generate-options"><span>{reportTitle} · {audienceTitle}</span><button type="button" disabled={!month} onClick={event => generate(event, 'pdf')}><FileDown size={15} />PDF report preview</button><button type="button" disabled={!month} onClick={event => generate(event, 'csv')}><Download size={15} />CSV spreadsheet</button></div>
       </details></div></PageHeader>
     <p className="report-print-title">{reportTitle} | {audienceTitle} | {label} | City of Elmina</p>
-    <p className="report-pdf-help">PDF export: choose <strong>Save as PDF</strong> in the print dialog. Only the selected report type, audience and month are included.</p>
+    <p className="report-pdf-help">PDF export: review the document preview, then choose <strong>Save as PDF</strong>. Only the selected report type, audience and month are included.</p>
     <div className="report-toolbar"><div role="group" aria-label="Report audience"><button className={`inc-btn ${view === 'internal' ? 'inc-btn-primary' : 'inc-btn-ghost'}`} aria-pressed={view === 'internal'} onClick={() => setView('internal')}>Internal Management Report</button><button className={`inc-btn ${view === 'public' ? 'inc-btn-primary' : 'inc-btn-ghost'}`} aria-pressed={view === 'public'} onClick={() => setView('public')}>Public Community Safety Summary</button></div><label>Reporting month<input type="month" value={month} onInput={event => setMonth(event.currentTarget.value)} onChange={event => setMonth(event.target.value)} /></label><button className="inc-btn inc-btn-ghost" onClick={() => setRevision(value => value + 1)}><RefreshCw size={14} />Refresh inspections</button></div>
     {view === 'internal' && <div className="report-toolbar"><div role="group" aria-label="Report type"><button type="button" className={`inc-btn ${reportType === 'incident' ? 'inc-btn-primary' : 'inc-btn-ghost'}`} aria-pressed={reportType === 'incident'} onClick={() => setReportType('incident')}>Incident Report</button><button type="button" className={`inc-btn ${reportType === 'tree' ? 'inc-btn-primary' : 'inc-btn-ghost'}`} aria-pressed={reportType === 'tree'} onClick={() => setReportType('tree')}>Tree Inspection Report</button></div></div>}
     <p className="report-context"><strong>Source context:</strong> {view === 'internal' && reportType === 'tree' ? <>Shared Tree Risk inspection records and report-only historical inspections for July, August and September 2026. Records are grouped by inspection date in {label}. Locations are illustrative; historical trees are separate from the operational registry.</> : <>Shared demo incidents and browser-saved response actions, plus separate report-only historical scenarios for July, August and September 2026. Incident metrics cover hazards detected in {label}, using {historicalMonth ? 'a frozen month-end status' : 'their current status'}, rather than work completed during that calendar month. Historical unresolved records are not active work orders. Tree inspections use recorded inspection dates. All locations are illustrative.</>}</p>
@@ -147,5 +147,7 @@ export default function Reports() {
         {!records.length && <p>No workflow events for this month.</p>}
       </Panel>
     </> : <Panel title="This Month in Your Township"><div className="community-intro"><span className="inc-pill">City of Elmina: {label}</span><h2>Safer roads. Visible progress.</h2><p>Community summary of the selected demo cohort. Counts reflect recorded resolutions and inspections.</p></div><Stats items={[[ 'Road hazards resolved', resolved.length, 'Detected this month; now resolved'], ['Potholes repaired', report.potholes, 'Pothole incidents marked resolved'], ['Roadside trees inspected', inspectionValue, 'Distinct trees inspected this month'], ['Flood / standing-water incidents resolved', report.drainage, 'Drainage-related hazard proxy']]} /><p><strong>Average response time comparison:</strong> {improvementText}</p><p>This public summary omits exact locations, team contacts and internal audit notes. Figures are prototype demonstration data.</p></Panel>}
+    </div>
+    <ReportDocument report={report} reportType={reportType} view={view} month={month} label={label} title={reportTitle} inspectionValue={inspectionValue} improvementText={improvementText} historicalMonth={historicalMonth} error={view === 'public' ? `${error} ${sourceError}`.trim() : reportType === 'tree' ? error : sourceError} />
   </div>;
 }
