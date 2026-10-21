@@ -1,6 +1,6 @@
 [
-  { "id": "TM-DRN-B", "name": "Drainage Team B", "specialty": "Flood", "crew": 4, "etaMin": 8, "simulated": true },
-  { "id": "TM-ARB-1", "name": "Arborist Crew 1", "specialty": "Tree Fall Risk", "crew": 3, "etaMin": 15, "simulated": true },
-  { "id": "TM-RDW-A", "name": "Road Works Team A", "specialty": "Pothole", "crew": 3, "etaMin": 20, "simulated": true },
-  { "id": "TM-SEC-1", "name": "Security Patrol 1", "specialty": "Traffic control", "crew": 2, "etaMin": 5, "simulated": true }
+  { "id": "TM-DRN-B", "name": "Drainage Team B", "specialty": "Flood", "crew": 4, "etaMin": 8, "username": "drainage", "password": "drainage123", "simulated": true },
+  { "id": "TM-ARB-1", "name": "Arborist Crew 1", "specialty": "Tree Fall Risk", "crew": 3, "etaMin": 15, "username": "arborist", "password": "arborist123", "simulated": true },
+  { "id": "TM-RDW-A", "name": "Road Works Team A", "specialty": "Pothole", "crew": 3, "etaMin": 20, "username": "roadworks", "password": "roadworks123", "simulated": true },
+  { "id": "TM-SEC-1", "name": "Security Patrol 1", "specialty": "Traffic control", "crew": 2, "etaMin": 5, "username": "security", "password": "security123", "simulated": true }
 ]

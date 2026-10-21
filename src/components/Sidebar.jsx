@@ -1,14 +1,15 @@
 import { useDemoSession } from '../utils/demoSession';
 import { NavLink } from 'react-router-dom';
-import { ChevronDown, ShieldCheck, Radio, X } from 'lucide-react';
+import { ChevronDown, Radio, X } from 'lucide-react';
 import { navigation } from '../utils/navigation';
+import logo from '../assets/safe2go-logo.png';
 
 export default function Sidebar({ open, hidden, onClose }) {
   const { session } = useDemoSession();
   return <>{open && <button className="sidebar-backdrop" aria-label="Close navigation" onClick={onClose} />}
     <aside aria-label="Township navigation" id="main-sidebar" inert={hidden} className={`sidebar ${open ? 'sidebar-open' : ''}`}>
       <a href="#main-content" className="sr-only focus:not-sr-only">Skip to content</a>
-      <div className="brand"><span className="brand-mark"><ShieldCheck size={23} strokeWidth={1.7} /></span><div><strong>Safe2Go<span className="text-neutral-400">.</span></strong><p>See risk earlier. Respond faster.</p></div><button className="icon-button ml-auto lg:hidden" onClick={onClose} aria-label="Close navigation"><X size={18} /></button></div>
+      <div className="brand"><img src={logo} alt="" width={118} height={108} className="h-9 w-auto shrink-0" /><div><strong>Safe2Go<span className="text-neutral-400">.</span></strong><p>See risk earlier. Respond faster.</p></div><button className="icon-button ml-auto lg:hidden" onClick={onClose} aria-label="Close navigation"><X size={18} /></button></div>
       <div className="township-selector"><span className="township-icon">E</span><div><strong>City of Elmina</strong><p>Township workspace</p></div></div>
       <p className="eyebrow px-3 mb-3 mt-7">Township operations</p>
       <nav aria-label="Main navigation" className="space-y-1">{navigation.map(({ path, label, icon: Icon }) => <NavLink key={path} to={path} end={path === '/'} onClick={onClose} className={({ isActive }) => `nav-item ${isActive ? 'nav-active' : ''}`}><Icon size={18} strokeWidth={1.7} /><span>{label}</span></NavLink>)}</nav>
