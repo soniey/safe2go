@@ -1,0 +1,105 @@
+{
+  "RG-001": {
+    "whyFlagged": "Water on the road reached 16 cm with heavy rain still falling. Flood risk is 87%, the highest in the township.",
+    "evidence": [
+      { "source": "Flood reading FL-001", "value": "16 cm, flood risk 87%" },
+      { "source": "CAM-02", "value": "Standing water, 87% confidence" },
+      { "source": "Weather feed", "value": "Rain continuing" }
+    ],
+    "recommendedAction": "Close the road and dispatch the drainage team.",
+    "recommendedTeamId": "TM-DRN-B",
+    "residents": {
+      "zone": "Elmina West, Zone B",
+      "count": 1240,
+      "titleOpen": "Flooding on Jalan Elmina 3",
+      "messageOpen": "Water is rising on the road. Avoid the area and use Elmina Park Access instead.",
+      "title": "Jalan Elmina 3 is closed",
+      "message": "Road flooding. Use Elmina Park Access instead and never drive through floodwater."
+    },
+    "seed": {
+      "verifiedAt": "10:21",
+      "notes": { "detected": "FL-001 crossed the 15 cm alert line", "verified": "Standing water confirmed on CAM-02" }
+    }
+  },
+  "RG-002": {
+    "whyFlagged": "Tree T-204 has a risk score of 86% and the soil around it is highly saturated, so it is more likely to fall in wind or rain.",
+    "evidence": [
+      { "source": "Tree T-204", "value": "Risk score 86%" },
+      { "source": "Soil condition", "value": "Highly saturated" }
+    ],
+    "recommendedAction": "Send an arborist to inspect before the wind picks up.",
+    "recommendedTeamId": "TM-ARB-1",
+    "residents": {
+      "zone": "Persiaran Elmina corridor",
+      "count": 860,
+      "titleOpen": "Tree inspection on Persiaran Elmina",
+      "messageOpen": "Crews are checking a roadside tree. Expect slow traffic and keep clear of the work area.",
+      "title": "Persiaran Elmina lane closed",
+      "message": "A lane is closed while crews make a roadside tree safe. Expect delays."
+    },
+    "seed": { "notes": { "detected": "Tree risk score crossed the HIGH threshold" } }
+  },
+  "RG-003": {
+    "whyFlagged": "CAM-03 spotted surface damage in the travel lane with 91% confidence. Not urgent, but it can damage vehicles and grow after rain.",
+    "evidence": [
+      { "source": "CAM-03", "value": "Pothole, 91% confidence" },
+      { "source": "Original severity", "value": "Medium" }
+    ],
+    "recommendedAction": "Schedule a patch repair. No closure needed.",
+    "recommendedTeamId": "TM-RDW-A",
+    "residents": {
+      "zone": "Jalan Elmina 2",
+      "count": 410,
+      "titleOpen": "Road repair on Jalan Elmina 2",
+      "messageOpen": "A pothole repair is scheduled. Drive carefully in the left lane.",
+      "title": "Jalan Elmina 2 closed for repair",
+      "message": "The road is closed for a short pothole repair. Please use another route."
+    },
+    "seed": { "notes": { "detected": "Computer vision detection on CAM-03" } }
+  },
+  "RG-004": {
+    "whyFlagged": "Early warning: water is starting to collect at 4 cm. Flood risk is 35% and could rise if the rain continues.",
+    "evidence": [
+      { "source": "Flood reading FL-002", "value": "4 cm, flood risk 35%" },
+      { "source": "CAM-04", "value": "Wet road surface" }
+    ],
+    "recommendedAction": "Inspect the drains now so it doesn't become a flood.",
+    "recommendedTeamId": "TM-DRN-B",
+    "residents": {
+      "zone": "Jalan Elmina 1",
+      "count": 520,
+      "titleOpen": "Water building up on Jalan Elmina 1",
+      "messageOpen": "Drive slowly and avoid low spots. Crews are checking the drains.",
+      "title": "Jalan Elmina 1 is closed",
+      "message": "Rising water. Use Elmina Park Access instead."
+    },
+    "seed": { "notes": { "detected": "FL-002 early-warning level reached" } }
+  },
+  "RG-005": {
+    "whyFlagged": "CCTV shows a weather-related fallen branch partly blocking Elmina Central. Confirmed in footage.",
+    "evidence": [
+      { "source": "CAM-05", "value": "Fallen branch, partial blockage" },
+      { "source": "CCTV review", "value": "Confirmed 10:18" }
+    ],
+    "recommendedAction": "Close the blocked lane and send a crew to clear the branch.",
+    "recommendedTeamId": "TM-ARB-1",
+    "residents": {
+      "zone": "Elmina Central",
+      "count": 980,
+      "titleOpen": "Fallen branch on Elmina Central",
+      "messageOpen": "One lane is partly blocked. Expect delays and follow crew directions.",
+      "title": "Elmina Central lane closed",
+      "message": "A lane is closed while crews clear a fallen branch. Expect delays."
+    },
+    "seed": { "notes": { "detected": "Obstruction detected on CAM-05", "verified": "Confirmed in simulated CCTV review" } }
+  },
+  "RG-006": {
+    "whyFlagged": "Standing water after rain at the park entrance. Cleared after a drainage check; water level is back to 0 cm.",
+    "evidence": [
+      { "source": "Flood reading FL-003", "value": "0 cm, flood risk 8%" },
+      { "source": "CAM-06", "value": "Road clear" }
+    ],
+    "recommendedTeamId": "TM-DRN-B",
+    "seed": { "notes": { "detected": "Standing water reported on CAM-06", "resolved": "Cleared after a drainage check" } }
+  }
+}
