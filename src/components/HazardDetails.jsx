@@ -16,7 +16,7 @@ export default function HazardDetails({ hazard, onClose }) {
       </div>
       <dl className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
         <div><dt className="text-neutral-500">Location</dt><dd className="mt-1">{hazard.location}</dd></div>
-        <div><dt className="text-neutral-500">Hazard type</dt><dd className="mt-1">{hazard.type}</dd></div>
+        {hazard.coordinates?.basemapRoadName && <div><dt className="text-neutral-500">Basemap road (demo placement)</dt><dd className="mt-1">{hazard.coordinates.basemapRoadName}</dd></div>}<div><dt className="text-neutral-500">Hazard type</dt><dd className="mt-1">{hazard.type}</dd></div>
         <div><dt className="text-neutral-500">Risk level</dt><dd className="mt-1"><RiskBadge risk={hazard.risk} /></dd></div>
         <div><dt className="text-neutral-500">Incident status</dt><dd className="mt-1">{hazard.status}</dd></div>
         <div><dt className="text-neutral-500">Detection time</dt><dd className="mt-1">{detectionTime}</dd></div>

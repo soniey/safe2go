@@ -188,8 +188,8 @@ The line is a process guide, not a claim that all seven stages are implemented.
 ### Road-status map layer
 
 `roads.json` includes `illustrativePath: { isMock: true, positions: [[lat, lng], ...] }`.
-These fictional dashed overlays are not surveyed road segments and do not match verified
-OpenStreetMap road geometry. They demonstrate the road risk layer using the exact same
+The initial fictional overlays have been replaced with road segments extracted from
+OpenStreetMap road geometry. Risk colours remain illustrative and use the exact same
 `roads[].risk` values as Township Risk Status. Basemap streets remain external context.
 
 The road-status layer includes all six roads (including the SAFE road) and has an on/off
@@ -209,3 +209,16 @@ Selecting a hazard now opens a compact map popup (ID, location, type, risk and s
 "View details below" scrolls and focuses the full details for that same shared record.
 Hazard filters clear hidden selections; road/chart selection clears the hazard popup.
 The compact popup is readable on mobile, with full detail retained below the map.
+
+### On-road demonstration placement
+
+Marker coordinates and short road overlays now share OpenStreetMap road geometry,
+retrieved from the public OSM map API on 21 October 2026. Each marker is an explicit
+vertex of its matching road overlay. Stored OSM way IDs/source URLs record provenance.
+Road geometry is sourced; incidents, road risks and their placement remain simulated.
+
+The original demo location names are retained. `basemapRoadName` shows the actual street
+used for display and is surfaced in road/incident cards to avoid claiming aliases match
+real street names. RG-002 uses mapped Persiaran Elmina. Other demo aliases use nearby
+named road segments; those are demonstration placements, not verified hazard locations.
+No external request is required at runtime beyond the existing map tiles.

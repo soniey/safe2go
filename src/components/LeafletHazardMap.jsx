@@ -69,9 +69,9 @@ export default function LeafletHazardMap({ hazards, roads, allHazards, selectedI
   return (
     <>
       <p className="border-b border-neutral-200 p-3 text-xs text-neutral-500">
-        OpenStreetMap basemap · Dashed road overlays and hazard positions are illustrative, not verified geography.
+        Road shapes follow OpenStreetMap. Incidents and risk colours are illustrative; demo road names may differ from basemap names.
       </p>
-      <div className="border-b border-neutral-200 p-3 text-xs text-neutral-500"><label className="flex items-center gap-2"><input type="checkbox" checked={showRoads} onChange={event => { setShowRoads(event.target.checked); setSelectedRoadId(null); }} />Road statuses ({mappedRoads.length} of {roads.length} roads)</label><p className="mt-2" role="status">Road risk: {roadRisk === 'ALL' ? 'All levels' : roadRisk}. <button type="button" className="detail-link" onClick={() => onRoadRiskChange?.('ALL')}>Show all roads</button></p><p className="mt-2">Dashed lines: road risk · Solid circles: active hazards. Hazard filters do not hide road statuses.</p></div><MapContainer center={demoCenter} zoom={14} scrollWheelZoom={false} style={{ height: 360, width: '100%', zIndex: 0 }} aria-label="Elmina demo hazard map">
+      <div className="border-b border-neutral-200 p-3 text-xs text-neutral-500"><label className="flex items-center gap-2"><input type="checkbox" checked={showRoads} onChange={event => { setShowRoads(event.target.checked); setSelectedRoadId(null); }} />Road statuses ({mappedRoads.length} of {roads.length} roads)</label><p className="mt-2" role="status">Road risk: {roadRisk === 'ALL' ? 'All levels' : roadRisk}. <button type="button" className="detail-link" onClick={() => onRoadRiskChange?.('ALL')}>Show all roads</button></p><p className="mt-2">Dashed lines: road risk · Solid circles: active hazards. Hazard filters do not hide road statuses.</p></div><MapContainer center={demoCenter} zoom={14} scrollWheelZoom={true} style={{ height: 360, width: '100%', zIndex: 0 }} aria-label="Elmina demo hazard map">
         <TileLayer
           attribution={'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -100,7 +100,7 @@ export default function LeafletHazardMap({ hazards, roads, allHazards, selectedI
         {selectedHazard?.coordinates && <Popup key={`${selectedHazard.id}:${hazardSelectionRequest}`} position={[selectedHazard.coordinates.lat, selectedHazard.coordinates.lng]} maxWidth={240} autoPanPadding={[16, 16]}>
           <section aria-label="Map hazard summary" className="text-xs">
             <div className="font-semibold">{selectedHazard.id} · {selectedHazard.location}</div>
-            <div className="mt-2">{selectedHazard.type}</div>
+            <div className="mt-2">{selectedHazard.type}</div>{selectedHazard.coordinates.basemapRoadName && <div className="mt-2 text-neutral-500">Basemap: {selectedHazard.coordinates.basemapRoadName}</div>}
             <div className="mt-2"><RiskBadge risk={selectedHazard.risk} /></div>
             <div className="mt-2">{selectedHazard.status}</div>
             <button type="button" className="detail-link mt-3" onClick={onViewDetails}>View details below</button>
@@ -108,7 +108,7 @@ export default function LeafletHazardMap({ hazards, roads, allHazards, selectedI
         </Popup>}
         {selectedRoad && <Popup key={`road:${selectedRoad.id}:${roadSelectionRequest}`} position={roadPopupPosition} maxWidth={240} autoPanPadding={[16, 16]}>
           <section aria-label="Map road summary" className="text-xs">
-            <div className="font-semibold">{selectedRoad.name}</div>
+            <div className="font-semibold">{selectedRoad.name}</div>{selectedRoad.basemapRoadName && <div className="mt-2 text-neutral-500">Basemap: {selectedRoad.basemapRoadName}</div>}
             <div className="mt-2"><RiskBadge risk={selectedRoad.risk} /></div>
             <div className="mt-2">{selectedRoadHazards.length} active {selectedRoadHazards.length === 1 ? 'hazard' : 'hazards'}</div>
             <button type="button" className="detail-link mt-3" onClick={viewRoadDetails}>View road details below</button>
@@ -123,8 +123,8 @@ export default function LeafletHazardMap({ hazards, roads, allHazards, selectedI
       </div>}
       {selectedRoad && <section id="map-road-details" ref={roadDetailsRef} tabIndex={-1} aria-label="Selected road status" className="scroll-mt-24 border-b border-neutral-200 p-4 text-xs">
         <div className="flex flex-wrap items-center justify-between gap-2"><h3 className="font-semibold">{selectedRoad.name}</h3><RiskBadge risk={selectedRoad.risk} /></div>
-        <p className="mt-2">{selectedRoad.id} · {selectedRoadHazards.length} active hazards</p>
-        <p className="mt-2 text-neutral-500">Road status is taken from the same shared road record as the chart. Dashed path is illustrative.</p>
+        {selectedRoad.basemapRoadName && <p className="mt-2">Basemap road: {selectedRoad.basemapRoadName}</p>}<p className="mt-2">{selectedRoad.id} · {selectedRoadHazards.length} active hazards</p>
+        <p className="mt-2 text-neutral-500">Road status matches the chart. The OSM road shape carries an illustrative risk overlay.</p>
         <button type="button" className="detail-link mt-3" onClick={() => setSelectedRoadId(null)}>Close road status</button>
       </section>}
       {tileError && <p role="status" className="p-3 text-xs text-neutral-500">Map tiles could not load. Check your internet connection. Hazard selection below remains available.</p>}

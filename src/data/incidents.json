@@ -2,9 +2,12 @@
   {
     "id": "RG-001",
     "coordinates": {
-      "lat": 3.1785,
-      "lng": 101.507,
-      "isMock": true
+      "lat": 3.1793488291482865,
+      "lng": 101.50823489071783,
+      "isMock": true,
+      "placement": "On OpenStreetMap road geometry; simulated incident",
+      "basemapRoadName": "Persiaran Alstonia",
+      "sourceUrl": "https://www.openstreetmap.org/way/866518974"
     },
     "detectedAt": "2026-10-20T10:20:00+08:00",
     "simulated": true,
@@ -23,9 +26,12 @@
   {
     "id": "RG-002",
     "coordinates": {
-      "lat": 3.181,
-      "lng": 101.512,
-      "isMock": true
+      "lat": 3.1797285205132697,
+      "lng": 101.5128389070421,
+      "isMock": true,
+      "placement": "On OpenStreetMap road geometry; simulated incident",
+      "basemapRoadName": "Persiaran Elmina",
+      "sourceUrl": "https://www.openstreetmap.org/way/909861395"
     },
     "detectedAt": "2026-10-20T10:10:00+08:00",
     "simulated": true,
@@ -43,9 +49,12 @@
   {
     "id": "RG-003",
     "coordinates": {
-      "lat": 3.1755,
-      "lng": 101.51,
-      "isMock": true
+      "lat": 3.1754581,
+      "lng": 101.5099321,
+      "isMock": true,
+      "placement": "On OpenStreetMap road geometry; simulated incident",
+      "basemapRoadName": "Jalan Metafasa U16/1R",
+      "sourceUrl": "https://www.openstreetmap.org/way/653061532"
     },
     "detectedAt": "2026-10-20T09:55:00+08:00",
     "simulated": true,
@@ -75,9 +84,12 @@
     "weatherRelated": true,
     "summary": "Simulated early warning: water level 4 cm; flood risk 35%. Continue monitoring and inspect drainage.",
     "coordinates": {
-      "lat": 3.1795,
-      "lng": 101.5045,
-      "isMock": true
+      "lat": 3.1792069160236074,
+      "lng": 101.50470663188214,
+      "isMock": true,
+      "placement": "On OpenStreetMap road geometry; simulated incident",
+      "basemapRoadName": "Persiaran Garcinia",
+      "sourceUrl": "https://www.openstreetmap.org/way/765804051"
     }
   },
   {
@@ -98,9 +110,12 @@
     },
     "summary": "Scripted weather-related branch obstruction; simulated CCTV review confirms partial road blockage. Clearance is pending.",
     "coordinates": {
-      "lat": 3.1825,
-      "lng": 101.5085,
-      "isMock": true
+      "lat": 3.1821262941139516,
+      "lng": 101.50877354731159,
+      "isMock": true,
+      "placement": "On OpenStreetMap road geometry; simulated incident",
+      "basemapRoadName": "Persiaran Garcinia",
+      "sourceUrl": "https://www.openstreetmap.org/way/1307905628"
     }
   },
   {
@@ -118,9 +133,12 @@
     "weatherRelated": true,
     "summary": "Resolved demo scenario: standing water cleared after a drainage check. Current water level 0 cm; road returned to SAFE.",
     "coordinates": {
-      "lat": 3.1745,
-      "lng": 101.5065,
-      "isMock": true
+      "lat": 3.1746305,
+      "lng": 101.5066984,
+      "isMock": true,
+      "placement": "On OpenStreetMap road geometry; simulated incident",
+      "basemapRoadName": "Jalan Metafasa U16/1N",
+      "sourceUrl": "https://www.openstreetmap.org/way/653061540"
     }
   }
 ]

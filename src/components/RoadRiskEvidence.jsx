@@ -15,8 +15,12 @@ export default function RoadRiskEvidence({ incidents, weather }) {
             <div className="flex flex-wrap items-center justify-between gap-2"><h3 className="text-sm font-semibold">{incident.location}</h3><span className="flex items-center gap-3"><RiskBadge risk={incident.risk} /><ChevronDown size={16} className="shrink-0 text-neutral-500 transition-transform group-open:rotate-180" aria-hidden="true" /></span></div>
             <p className="mt-2 text-xs text-neutral-500">{incident.id} · {incident.type} · {incident.status}</p>
             </summary><div className="border-t border-neutral-200 p-4"><dl className="space-y-3 text-xs">
-              <div><dt className="font-medium">Source context</dt><dd className="mt-1 text-neutral-500">
-                {incident.floodReading ? `Water level ${incident.floodReading.waterLevelCm} cm; supplied flood risk ${incident.floodReading.floodRiskPercent}%.` : incident.tree ? `Tree ${incident.tree.id}; supplied risk score ${incident.tree.riskScore}%; soil: ${incident.tree.soil}.` : incident.verification?.simulated ? incident.summary : 'Source context is not available.'}
+              <div><dt className="font-semibold">Source context</dt><dd className="mt-1 text-neutral-500">
+                {incident.floodReading ? <>
+                  Water level <strong className="font-semibold text-neutral-800">{incident.floodReading.waterLevelCm} cm</strong>; supplied flood risk <strong className="font-semibold text-neutral-800">{incident.floodReading.floodRiskPercent}%</strong>.
+                </> : incident.tree ? <>
+                  Tree <strong className="font-semibold text-neutral-800">{incident.tree.id}</strong>; supplied risk score <strong className="font-semibold text-neutral-800">{incident.tree.riskScore}%</strong>; soil: <strong className="font-semibold text-neutral-800">{incident.tree.soil}</strong>.
+                </> : incident.verification?.simulated ? <strong className="font-semibold text-neutral-800">{incident.summary}</strong> : 'Source context is not available.'}
               </dd></div>
               <div><dt className="font-medium">Risk interpretation</dt><dd className="mt-1 text-neutral-500">{incident.floodReading ? 'Rising-water scenario: prioritise a road-condition check and drainage inspection.' : incident.tree ? 'Saturated-soil tree-risk scenario: prioritise a professional stability inspection, not an exact fall-time prediction.' : 'Weather-related branch obstruction: prioritise a physical road-condition check and safe clearance.'}</dd></div>
               <div><dt className="font-medium">Verification needed</dt><dd className="mt-1 text-neutral-500">{incident.verification?.simulated ? `${incident.verification.status} · ${incident.verification.method}.` : incident.camera ? `${incident.camera.id} is linked to this road; no CCTV confirmation is recorded.` : 'No linked camera verification is recorded; arrange a field inspection.'}</dd></div>

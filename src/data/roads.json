@@ -7,19 +7,25 @@
       "isMock": true,
       "positions": [
         [
-          3.178,
-          101.5063
+          3.178682897543274,
+          101.50869404631112
         ],
         [
-          3.1785,
-          101.507
+          3.1793488291482865,
+          101.50823489071783
         ],
         [
-          3.1789,
-          101.5078
+          3.180014760753299,
+          101.50777573512454
         ]
-      ]
-    }
+      ],
+      "geometrySource": "OpenStreetMap",
+      "osmWayId": "866518974",
+      "sourceUrl": "https://www.openstreetmap.org/way/866518974",
+      "retrievedOn": "2026-10-21",
+      "note": "OSM road shape with illustrative risk overlay. Demo road name may differ from mapped street name."
+    },
+    "basemapRoadName": "Persiaran Alstonia"
   },
   {
     "id": "RD-002",
@@ -29,19 +35,41 @@
       "isMock": true,
       "positions": [
         [
-          3.1804,
-          101.5113
+          3.1792817306427166,
+          101.51216406446231
         ],
         [
-          3.181,
-          101.512
+          3.1794762,
+          101.5124553
         ],
         [
-          3.1816,
-          101.5124
+          3.1797285205132697,
+          101.5128389070421
+        ],
+        [
+          3.1799438,
+          101.5131662
+        ],
+        [
+          3.1800117,
+          101.5132685
+        ],
+        [
+          3.1801501,
+          101.5134767
+        ],
+        [
+          3.1801748897190536,
+          101.5135140319415
         ]
-      ]
-    }
+      ],
+      "geometrySource": "OpenStreetMap",
+      "osmWayId": "909861395",
+      "sourceUrl": "https://www.openstreetmap.org/way/909861395",
+      "retrievedOn": "2026-10-21",
+      "note": "OSM road shape with illustrative risk overlay. Demo road name may differ from mapped street name."
+    },
+    "basemapRoadName": "Persiaran Elmina"
   },
   {
     "id": "RD-003",
@@ -51,19 +79,25 @@
       "isMock": true,
       "positions": [
         [
-          3.1751,
-          101.5093
+          3.1751787441571016,
+          101.50917232001252
         ],
         [
-          3.1755,
-          101.51
+          3.1753042,
+          101.5094984
         ],
         [
-          3.176,
-          101.5107
+          3.1754581,
+          101.5099321
         ]
-      ]
-    }
+      ],
+      "geometrySource": "OpenStreetMap",
+      "osmWayId": "653061532",
+      "sourceUrl": "https://www.openstreetmap.org/way/653061532",
+      "retrievedOn": "2026-10-21",
+      "note": "OSM road shape with illustrative risk overlay. Demo road name may differ from mapped street name."
+    },
+    "basemapRoadName": "Jalan Metafasa U16/1R"
   },
   {
     "id": "RD-004",
@@ -73,19 +107,33 @@
       "isMock": true,
       "positions": [
         [
-          3.179,
-          101.5038
+          3.17874108511628,
+          101.50404482440295
         ],
         [
-          3.1795,
-          101.5045
+          3.1789209,
+          101.5042999
         ],
         [
-          3.1801,
-          101.505
+          3.1790633,
+          101.5045023
+        ],
+        [
+          3.1792069160236074,
+          101.50470663188214
+        ],
+        [
+          3.179672295701019,
+          101.5053687578971
         ]
-      ]
-    }
+      ],
+      "geometrySource": "OpenStreetMap",
+      "osmWayId": "765804051",
+      "sourceUrl": "https://www.openstreetmap.org/way/765804051",
+      "retrievedOn": "2026-10-21",
+      "note": "OSM road shape with illustrative risk overlay. Demo road name may differ from mapped street name."
+    },
+    "basemapRoadName": "Persiaran Garcinia"
   },
   {
     "id": "RD-005",
@@ -95,19 +143,29 @@
       "isMock": true,
       "positions": [
         [
-          3.182,
-          101.5078
+          3.181653222741839,
+          101.5081169128958
         ],
         [
-          3.1825,
-          101.5085
+          3.1820978,
+          101.5087345
         ],
         [
-          3.183,
-          101.5092
+          3.1821262941139516,
+          101.50877354731159
+        ],
+        [
+          3.18260334871741,
+          101.50942728582667
         ]
-      ]
-    }
+      ],
+      "geometrySource": "OpenStreetMap",
+      "osmWayId": "1307905628",
+      "sourceUrl": "https://www.openstreetmap.org/way/1307905628",
+      "retrievedOn": "2026-10-21",
+      "note": "OSM road shape with illustrative risk overlay. Demo road name may differ from mapped street name."
+    },
+    "basemapRoadName": "Persiaran Garcinia"
   },
   {
     "id": "RD-006",
@@ -117,18 +175,28 @@
       "isMock": true,
       "positions": [
         [
-          3.174,
-          101.5058
+          3.1743977587352057,
+          101.50746369604913
         ],
         [
-          3.1745,
-          101.5065
+          3.1744271,
+          101.507355
         ],
         [
-          3.175,
-          101.5071
+          3.1745885,
+          101.506733
+        ],
+        [
+          3.1746305,
+          101.5066984
         ]
-      ]
-    }
+      ],
+      "geometrySource": "OpenStreetMap",
+      "osmWayId": "653061540",
+      "sourceUrl": "https://www.openstreetmap.org/way/653061540",
+      "retrievedOn": "2026-10-21",
+      "note": "OSM road shape with illustrative risk overlay. Demo road name may differ from mapped street name."
+    },
+    "basemapRoadName": "Jalan Metafasa U16/1N"
   }
 ]
