@@ -1,5 +1,6 @@
 import { ChevronUp } from 'lucide-react';
 import RiskBadge from './RiskBadge';
+import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { CircleMarker, MapContainer, Polyline, Popup, TileLayer, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -123,7 +124,10 @@ export default function LeafletHazardMap({ hazards, roads, allHazards, selectedI
       {selectedRoad && <section id="map-road-details" ref={roadDetailsRef} tabIndex={-1} aria-label="Selected road status" className="scroll-mt-24 border-b border-neutral-200 p-4 text-xs">
         <div className="flex flex-wrap items-center justify-between gap-2"><h3 className="font-semibold">{selectedRoad.name}</h3><RiskBadge risk={selectedRoad.risk} /></div>
         {selectedRoad.basemapRoadName && <p className="mt-2">Basemap road: {selectedRoad.basemapRoadName}</p>}<p className="mt-2">{selectedRoad.id} · {selectedRoadHazards.length} active hazards</p>
-        <p className="mt-2 text-neutral-500">Road status matches the chart. The OSM road shape carries an illustrative risk overlay.</p>
+        <div className="mt-2 flex items-center justify-between gap-3">
+          <p className="min-w-0 text-neutral-500">Road status matches the chart. The OSM road shape carries an illustrative risk overlay.</p>
+          <Link className="detail-link min-h-10 shrink-0 items-center whitespace-nowrap rounded border border-neutral-200 px-3" to={`/vision?road=${encodeURIComponent(selectedRoad.id)}`}>See camera</Link>
+        </div>
         <button type="button" className="mt-3 flex min-h-9 w-full items-center justify-center rounded text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2" onClick={() => setSelectedRoadId(null)} aria-label="Collapse road status" title="Collapse road status" aria-expanded="true" aria-controls="map-road-details"><ChevronUp size={20} aria-hidden="true" /></button>
       </section>}
       {tileError && <p role="status" className="p-3 text-xs text-neutral-500">Map tiles could not load. Check your internet connection. Hazard selection below remains available.</p>}

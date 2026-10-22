@@ -1,5 +1,7 @@
 import RiskBadge from './RiskBadge';
 
+import { Link } from 'react-router-dom';
+
 export default function HazardDetails({ hazard, onClose }) {
   const detectionDate = hazard.detectedAt ? new Date(hazard.detectedAt) : null;
   const detectionTime = detectionDate && !Number.isNaN(detectionDate.getTime())
@@ -25,7 +27,10 @@ export default function HazardDetails({ hazard, onClose }) {
         {hazard.verification?.simulated && <div><dt className="text-neutral-500">Verification (simulated)</dt><dd className="mt-1">{hazard.verification.status} · {hazard.verification.method}</dd></div>}{hazard.originalSeverity && <div><dt className="text-neutral-500">Original demo severity</dt><dd className="mt-1">{hazard.originalSeverity}</dd></div>}
       </dl>
       {hazard.summary && <p className="mt-4 text-xs text-neutral-500">{hazard.summary}</p>}
-      <p className="mt-3 text-xs text-neutral-500">Illustrative hazard location; not a verified road position.</p>
+      <div className="mt-3 flex items-center justify-between gap-3">
+        <p className="min-w-0 text-xs text-neutral-500">Illustrative hazard location; not a verified road position.</p>
+        {hazard.roadId && <Link className="detail-link min-h-10 shrink-0 items-center whitespace-nowrap rounded border border-neutral-200 px-3" to={`/vision?road=${encodeURIComponent(hazard.roadId)}${hazard.cameraId ? `&camera=${encodeURIComponent(hazard.cameraId)}` : ''}`}>See camera</Link>}
+      </div>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 ﻿import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Camera, Radio, CameraOff, ScanLine, ArrowUpRight, Plus, CheckCircle2 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import StatCard from '../components/StatCard';
@@ -7,6 +8,7 @@ import RiskBadge from '../components/RiskBadge';
 import CameraFeed from '../components/road-vision/CameraFeed';
 import { useSharedData } from '../utils/sharedData';
 import { createRoadVisionIncident } from '../utils/roadVisionIncidents';
+import { riskStyles } from '../utils/risk';
 import '../components/road-vision/road-vision.css';
 
 const formatter = new Intl.DateTimeFormat('en-MY', {
@@ -23,10 +25,22 @@ export default function RoadVision() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [busy, setBusy] = useState(false);
+  const [searchParams] = useSearchParams();
+  const requestedRoad = searchParams.get('road');
+  const requestedCamera = cameras.find(item => item.id === searchParams.get('camera') && (!requestedRoad || item.roadId === requestedRoad))
+    ?? cameras.find(item => item.roadId === requestedRoad && item.status === 'Online')
+    ?? cameras.find(item => item.roadId === requestedRoad);
+  const requestedCameraId = requestedCamera?.id;
+  useEffect(() => {
+    if (!requestedCameraId) return;
+    setCameraId(requestedCameraId);
+    setDetectionId(null);
+    setMessage('');
+  }, [requestedCameraId]);
 
   const camera = cameras.find(item => item.id === cameraId);
   const visible = camera.status === 'Online' ? detections.filter(item => item.cameraId === cameraId) : [];
-  const detection = visible.find(item => item.id === detectionId);
+  const detection = detectionId === null ? visible[0] : visible.find(item => item.id === detectionId);
   const incident = detection && incidents.find(item => item.id === detection.incidentId || item.detectionId === detection.id);
   const activeCount = cameras.reduce((total, item) => total + detectionCount(item, detections), 0);
   const maintenanceCount = cameras.filter(item => item.status === 'Maintenance').length;
@@ -84,9 +98,12 @@ export default function RoadVision() {
           <div className="rv-camera-list">
             {cameras.map(item => {
               const count = detectionCount(item, detections);
+              const highestRisk = count ? ['CRITICAL', 'HIGH', 'WATCH', 'SAFE'].find(risk =>
+                detections.some(record => record.cameraId === item.id && record.risk === risk)) : null;
               return (
                 <button type="button" key={item.id}
                   className={`rv-camera ${cameraId === item.id ? 'rv-selected' : ''}`}
+                  style={{ '--camera-detection-color': highestRisk ? riskStyles[highestRisk].color : '#e5e5e5' }}
                   onClick={() => selectCamera(item)} aria-pressed={cameraId === item.id}>
                   <strong className="rv-camera-location">{item.location}</strong>
                   <span className="rv-row">
@@ -94,7 +111,7 @@ export default function RoadVision() {
                     <span className={`rv-status rv-${item.status.toLowerCase()}`}>{item.status}</span>
                   </span>
                   <small>{item.status === 'Online'
-                    ? `${count} ${count === 1 ? 'detection' : 'detections'}` : 'No active detections'}</small>
+                    ? `${count} ${count === 1 ? 'detection' : 'detections'}${highestRisk ? ` · ${riskStyles[highestRisk].label} risk` : ''}` : 'No active detections'}</small>
                 </button>
               );
             })}
@@ -107,7 +124,7 @@ export default function RoadVision() {
               <span className={`rv-status rv-${camera.status.toLowerCase()}`}>{camera.status}</span>
             </div>
             <CameraFeed key={camera.id} camera={camera} detections={visible}
-              selectedId={detectionId} onSelect={selectDetection} />
+              selectedId={detection?.id} onSelect={selectDetection} />
             <p className="rv-capture">
               {camera.status === 'Online' ? 'Captured' : 'Last recorded'}{' '}
               <time dateTime={camera.capturedAt}>{time(camera.capturedAt)} MYT</time>
@@ -118,8 +135,8 @@ export default function RoadVision() {
               <div className="panel-heading"><h2>Detections</h2><span className="count-badge">{visible.length}</span></div>
               <div className="rv-detection-list">
                 {visible.length ? visible.map(item => (
-                  <button type="button" key={item.id} aria-pressed={detectionId === item.id}
-                    className={`rv-camera rv-detection ${detectionId === item.id ? 'rv-selected' : ''}`}
+                  <button type="button" key={item.id} aria-pressed={detection?.id === item.id}
+                    className={`rv-camera rv-detection ${detection?.id === item.id ? 'rv-selected' : ''}`}
                     onClick={() => selectDetection(item.id)}>
                     <span className="rv-row"><strong>{item.type}</strong><RiskBadge risk={item.risk} /></span>
                     <small>{item.confidence}% confidence</small>

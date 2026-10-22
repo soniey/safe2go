@@ -2,6 +2,7 @@
 .login-page .login-shell { width:100%; max-width:460px; }
 .login-page .login-brand { display:flex; align-items:center; justify-content:center; gap:10px; color:var(--navy); }
 .login-page .login-brand strong { font-size:28px; letter-spacing:-1px; }
+.login-page .login-logo { display:block; width:48px; height:auto; flex-shrink:0; object-fit:contain; }
 .login-page .login-brand strong span { color:var(--g); }
 .login-page .login-tagline { max-width:360px; margin:10px auto 24px; text-align:center; font-size:12px; line-height:1.6; color:var(--muted); }
 .login-page .login-card { padding:28px; }
