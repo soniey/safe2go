@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, LogIn, ShieldCheck } from 'lucide-react';
+import { Eye, EyeOff, LogIn } from 'lucide-react';
+import logo from '../assets/safe2go-logo.png';
 import { DEMO_ACCOUNTS, useDemoSession } from '../utils/demoSession';
 import '../components/incidents/incidents.css';
 import './login.css';
@@ -31,7 +32,7 @@ export default function Login() {
   return (
     <main className="inc-page login-page">
       <div className="login-shell">
-        <div className="login-brand"><ShieldCheck size={30} aria-hidden="true" /><strong>Safe2Go<span>.</span></strong></div>
+        <div className="login-brand"><img className="login-logo" src={logo} alt="" width={118} height={108} /><strong>Safe2Go<span>.</span></strong></div>
         <p className="login-tagline">Township Road Climate Resilience &amp; Hazard Intelligence Platform</p>
         <section className="inc-panel login-card" aria-labelledby="login-heading">
           <div className="login-intro"><span className="inc-pill inc-pill-ok">TOWNSHIP MANAGEMENT</span><h1 id="login-heading">Team & Admin Login</h1><p>Sign in to monitor road risks and coordinate your township workspace.</p></div>

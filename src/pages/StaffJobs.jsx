@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Bell, LogOut, HardHat, Inbox, CheckCheck, CircleCheck, Signal, Wifi, BatteryFull } from 'lucide-react';
+import { Bell, LogOut, Inbox, CheckCheck, CircleCheck, Signal, Wifi, BatteryFull } from 'lucide-react';
+import logo from '../assets/safe2go-logo.png';
 import JobCard from '../components/staff/JobCard';
 import ActionSheet from '../components/staff/ActionSheet';
 import { useResponseBoard, formatTime } from '../utils/incidentStore';
@@ -68,7 +69,7 @@ export default function StaffJobs() {
           </div>
 
           <header className="crew-bar">
-            <span className="crew-mark"><HardHat size={18} aria-hidden="true" /></span>
+            <img className="crew-mark" src={logo} alt="Safe2Go" width={118} height={108} />
             <div className="crew-bar-title">
               <strong>Field Jobs</strong>
               <span>{session?.label || 'Maintenance Team'} · {myTeamId ? 'Your crew' : 'All crews'}</span>

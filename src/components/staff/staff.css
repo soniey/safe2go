@@ -8,7 +8,7 @@
 .crew-shell .crew-statusbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 28px 2px; font-size: 13px; font-weight: 600; color: var(--navy); }
 .crew-shell .crew-statusbar > span:last-child { display: inline-flex; align-items: center; gap: 4px; }
 .crew-shell .crew-bar { display: flex; align-items: center; gap: 10px; padding: 10px 14px 12px; border-bottom: 1px solid var(--line-soft); }
-.crew-shell .crew-mark { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border-radius: 11px; background: var(--g); color: #fff; }
+.crew-shell .crew-mark { display: block; width: 36px; height: auto; flex-shrink: 0; object-fit: contain; }
 .crew-shell .crew-bar-title { display: grid; flex: 1; min-width: 0; line-height: 1.25; }
 .crew-shell .crew-bar-title strong { font-size: 17px; font-weight: 600; }
 .crew-shell .crew-bar-title span { font-size: 11px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

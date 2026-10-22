@@ -1,3 +1,5 @@
+﻿> Historical handoff, superseded by [current module documentation](04-module-documentation.md) and [data design](05-data-design.md). Current previews use seven JPEG assets, camera metadata comes from cameras.json, and incident integration is implemented. The original notes below are retained for history; their SVG, placeholder and pending-integration statements no longer describe the working tree.
+
 # Road Vision handoff
 
 Branch: `feature/road-vision`. Existing uncommitted team changes were preserved.
